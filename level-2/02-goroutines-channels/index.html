@@ -970,6 +970,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · Goroutines & Channels Basics
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -986,6 +1004,157 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#goroutines-concurrency-that-costs-almost-nothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goroutines: concurrency that costs almost nothing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syncwaitgroup-waiting-properly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sync.WaitGroup: waiting properly
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#channels-typed-pipes-between-goroutines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Channels: typed pipes between goroutines
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buffered-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Buffered channels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closing-and-ranging-over-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Closing and ranging over channels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directional-channel-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Directional channel types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#select-waiting-on-several-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        select: waiting on several channels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deadlocks-and-goroutine-leaks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deadlocks and goroutine leaks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protecting-shared-state-with-a-mutex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protecting shared state with a mutex
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-lessons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related lessons
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1991,6 +2160,146 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#goroutines-concurrency-that-costs-almost-nothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goroutines: concurrency that costs almost nothing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syncwaitgroup-waiting-properly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sync.WaitGroup: waiting properly
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#channels-typed-pipes-between-goroutines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Channels: typed pipes between goroutines
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buffered-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Buffered channels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closing-and-ranging-over-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Closing and ranging over channels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directional-channel-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Directional channel types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#select-waiting-on-several-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        select: waiting on several channels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deadlocks-and-goroutine-leaks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deadlocks and goroutine leaks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protecting-shared-state-with-a-mutex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protecting shared state with a mutex
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-lessons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related lessons
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2010,12 +2319,351 @@
 
 
 <h1 id="02-goroutines-channels-basics">02 · Goroutines &amp; Channels Basics<a class="headerlink" href="#02-goroutines-channels-basics" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and code snippets are being written next.
-Launching goroutines, unbuffered/buffered channels, basic synchronization.</p>
-</div>
-<p>More lessons are on the way — check back soon.</p>
+<h2 id="goroutines-concurrency-that-costs-almost-nothing">Goroutines: concurrency that costs almost nothing<a class="headerlink" href="#goroutines-concurrency-that-costs-almost-nothing" title="Permanent link">&para;</a></h2>
+<p>A goroutine is a function running independently alongside others, scheduled by
+the Go runtime rather than the operating system. Starting one costs a few
+kilobytes of stack — you can run hundreds of thousands of them, which is why
+Go code reaches for concurrency far more casually than most languages.</p>
+<p>Put <code>go</code> in front of any function call and it runs concurrently:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="s">&quot;time&quot;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="kd">func</span><span class="w"> </span><span class="nx">worker</span><span class="p">(</span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;step&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">i</span><span class="p">)</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="nx">time</span><span class="p">.</span><span class="nx">Sleep</span><span class="p">(</span><span class="mi">10</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Millisecond</span><span class="p">)</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">}</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="k">go</span><span class="w"> </span><span class="nx">worker</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="k">go</span><span class="w"> </span><span class="nx">worker</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="c1">// main is itself a goroutine -- when it returns, the program exits</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="c1">// and any still-running goroutines are killed instantly.</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="nx">time</span><span class="p">.</span><span class="nx">Sleep</span><span class="p">(</span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Millisecond</span><span class="p">)</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;main done&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="p">}</span>
+</code></pre></div>
+<p>Two things to internalise immediately:</p>
+<ol>
+<li><strong><code>main</code> returning kills everything.</strong> There is no "wait for children" by
+   default. The <code>time.Sleep</code> above is a placeholder for real synchronisation.</li>
+<li><strong>Interleaving order is undefined.</strong> <code>A step 1</code> may print before or after
+   <code>B step 1</code>. Never write code that depends on scheduling order.</li>
+</ol>
+<h2 id="syncwaitgroup-waiting-properly"><code>sync.WaitGroup</code>: waiting properly<a class="headerlink" href="#syncwaitgroup-waiting-properly" title="Permanent link">&para;</a></h2>
+<p><code>time.Sleep</code> is never the right answer in real code. A <code>WaitGroup</code> is a
+counter: <code>Add</code> before launching, <code>Done</code> when finished, <code>Wait</code> blocks until the
+counter reaches zero.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="s">&quot;sync&quot;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">)</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">wg</span><span class="w"> </span><span class="nx">sync</span><span class="p">.</span><span class="nx">WaitGroup</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">        </span><span class="nx">wg</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="c1">// increment BEFORE the go statement</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">        </span><span class="k">go</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">id</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">            </span><span class="k">defer</span><span class="w"> </span><span class="nx">wg</span><span class="p">.</span><span class="nx">Done</span><span class="p">()</span><span class="w"> </span><span class="c1">// deferred, so a panic still decrements</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">            </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;worker&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">id</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;finished&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">        </span><span class="p">}(</span><span class="nx">i</span><span class="p">)</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="nx">wg</span><span class="p">.</span><span class="nx">Wait</span><span class="p">()</span><span class="w"> </span><span class="c1">// blocks until all three call Done</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;all workers finished&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="p">}</span>
+</code></pre></div>
+<p>Note <code>go func(id int){...}(i)</code> — the loop variable is passed as an argument.
+In Go versions before 1.22 every goroutine shared one <code>i</code> variable and would
+often print the same value three times. Go 1.22 made loop variables
+per-iteration, fixing this, but passing explicitly is still the clearest form
+and works on every version.</p>
+<h2 id="channels-typed-pipes-between-goroutines">Channels: typed pipes between goroutines<a class="headerlink" href="#channels-typed-pipes-between-goroutines" title="Permanent link">&para;</a></h2>
+<p>A channel carries values of one type between goroutines <em>and</em> synchronises
+them at the same time. The Go proverb: <em>don't communicate by sharing memory;
+share memory by communicating.</em></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nx">ch</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">make</span><span class="p">(</span><span class="kd">chan</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="c1">// unbuffered channel of strings</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="k">go</span><span class="w"> </span><span class="kd">func</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="nx">ch</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;hello from the goroutine&quot;</span><span class="w"> </span><span class="c1">// send: blocks until someone receives</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="p">}()</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="nx">msg</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">&lt;-</span><span class="nx">ch</span><span class="w"> </span><span class="c1">// receive: blocks until someone sends</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="c1">// Output: hello from the goroutine</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="p">}</span>
+</code></pre></div>
+<p>An <strong>unbuffered</strong> channel is a rendezvous point: the sender blocks until a
+receiver is ready and vice versa. That blocking <em>is</em> the synchronisation — no
+mutex required.</p>
+<h2 id="buffered-channels">Buffered channels<a class="headerlink" href="#buffered-channels" title="Permanent link">&para;</a></h2>
+<p><code>make(chan T, n)</code> gives the channel a queue of capacity <code>n</code>. Sends block only
+when the buffer is full; receives block only when it is empty.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nx">ch</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">make</span><span class="p">(</span><span class="kd">chan</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="c1">// capacity 3</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="nx">ch</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="c1">// no receiver needed -- goes into the buffer</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="nx">ch</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="mi">2</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="nx">ch</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="mi">3</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="c1">// ch &lt;- 4 would block forever: buffer full, nobody receiving</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nx">ch</span><span class="p">),</span><span class="w"> </span><span class="nb">cap</span><span class="p">(</span><span class="nx">ch</span><span class="p">))</span><span class="w"> </span><span class="c1">// 3 3</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="o">&lt;-</span><span class="nx">ch</span><span class="p">)</span><span class="w"> </span><span class="c1">// 1</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="o">&lt;-</span><span class="nx">ch</span><span class="p">)</span><span class="w"> </span><span class="c1">// 2</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="o">&lt;-</span><span class="nx">ch</span><span class="p">)</span><span class="w"> </span><span class="c1">// 3</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="p">}</span>
+</code></pre></div>
+<p>Use a buffer when a producer legitimately runs ahead of a consumer, or when
+you know exactly how many results are coming. Do not use it to "make the
+deadlock go away" — that only hides the bug until the buffer fills.</p>
+<h2 id="closing-and-ranging-over-channels">Closing and ranging over channels<a class="headerlink" href="#closing-and-ranging-over-channels" title="Permanent link">&para;</a></h2>
+<p>The <strong>sender</strong> closes a channel to say "no more values are coming". Receivers
+can then <code>range</code> over it and the loop ends automatically.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="kd">func</span><span class="w"> </span><span class="nx">produce</span><span class="p">(</span><span class="nx">n</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="kd">chan</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="nx">out</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">make</span><span class="p">(</span><span class="kd">chan</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="k">go</span><span class="w"> </span><span class="kd">func</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">        </span><span class="k">defer</span><span class="w"> </span><span class="nb">close</span><span class="p">(</span><span class="nx">out</span><span class="p">)</span><span class="w"> </span><span class="c1">// signal completion however we exit</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nx">n</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">            </span><span class="nx">out</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">i</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="p">}()</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">out</span><span class="w"> </span><span class="c1">// receive-only channel: callers cannot send or close</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="p">}</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">v</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">produce</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Print</span><span class="p">(</span><span class="nx">v</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">)</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">()</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">    </span><span class="c1">// Output: 1 4 9 16 25</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="p">}</span>
+</code></pre></div>
+<p>Receiving from a closed channel returns the zero value immediately. Use the
+comma-ok form to tell "closed" from "genuine zero":</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nx">v</span><span class="p">,</span><span class="w"> </span><span class="nx">ok</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">&lt;-</span><span class="nx">ch</span><span class="w"> </span><span class="c1">// ok == false means the channel is closed and drained</span>
+</code></pre></div>
+<p>Closing rules that matter:</p>
+<ul>
+<li>Only the sender closes. A receiver closing makes the sender panic.</li>
+<li>Closing an already-closed channel panics.</li>
+<li>Sending on a closed channel panics.</li>
+<li>You do <strong>not</strong> have to close every channel. Closing is a signal, not
+  cleanup — garbage collection handles unreferenced channels fine.</li>
+</ul>
+<h2 id="directional-channel-types">Directional channel types<a class="headerlink" href="#directional-channel-types" title="Permanent link">&para;</a></h2>
+<p><code>chan&lt;- int</code> is send-only, <code>&lt;-chan int</code> is receive-only. Using them in
+function signatures lets the compiler enforce who does what:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">func</span><span class="w"> </span><span class="nx">producer</span><span class="p">(</span><span class="nx">out</span><span class="w"> </span><span class="kd">chan</span><span class="o">&lt;-</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">out</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// can only send</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kd">func</span><span class="w"> </span><span class="nx">consumer</span><span class="p">(</span><span class="nx">in</span><span class="w"> </span><span class="o">&lt;-</span><span class="kd">chan</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="o">&lt;-</span><span class="nx">in</span><span class="w"> </span><span class="p">}</span><span class="w">     </span><span class="c1">// can only receive</span>
+</code></pre></div>
+<p>A bidirectional <code>chan int</code> converts to either automatically, so callers just
+pass their normal channel.</p>
+<h2 id="select-waiting-on-several-channels"><code>select</code>: waiting on several channels<a class="headerlink" href="#select-waiting-on-several-channels" title="Permanent link">&para;</a></h2>
+<p><code>select</code> blocks until one of its cases can proceed. If several are ready, one
+is chosen at random.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="s">&quot;time&quot;</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="p">)</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">    </span><span class="nx">fast</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">make</span><span class="p">(</span><span class="kd">chan</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">    </span><span class="nx">slow</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">make</span><span class="p">(</span><span class="kd">chan</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">    </span><span class="k">go</span><span class="w"> </span><span class="kd">func</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Sleep</span><span class="p">(</span><span class="mi">20</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Millisecond</span><span class="p">);</span><span class="w"> </span><span class="nx">fast</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;fast result&quot;</span><span class="w"> </span><span class="p">}()</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">    </span><span class="k">go</span><span class="w"> </span><span class="kd">func</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Sleep</span><span class="p">(</span><span class="mi">80</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Millisecond</span><span class="p">);</span><span class="w"> </span><span class="nx">slow</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;slow result&quot;</span><span class="w"> </span><span class="p">}()</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">received</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="nx">received</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="nx">received</span><span class="o">++</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">        </span><span class="k">select</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="nx">msg</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">&lt;-</span><span class="nx">fast</span><span class="p">:</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">            </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;got:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">msg</span><span class="p">)</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="nx">msg</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">&lt;-</span><span class="nx">slow</span><span class="p">:</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">            </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;got:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">msg</span><span class="p">)</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="o">&lt;-</span><span class="nx">time</span><span class="p">.</span><span class="nx">After</span><span class="p">(</span><span class="mi">200</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Millisecond</span><span class="p">):</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="w">            </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;timed out&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="w">            </span><span class="k">return</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="w">    </span><span class="c1">// Output:</span>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a><span class="w">    </span><span class="c1">// got: fast result</span>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a><span class="w">    </span><span class="c1">// got: slow result</span>
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="p">}</span>
+</code></pre></div>
+<p><code>time.After</code> returns a channel that delivers a value after the duration — the
+standard way to bound how long you are willing to wait. Adding a <code>default:</code>
+case makes the <code>select</code> non-blocking: it runs immediately if nothing else is
+ready.</p>
+<h2 id="deadlocks-and-goroutine-leaks">Deadlocks and goroutine leaks<a class="headerlink" href="#deadlocks-and-goroutine-leaks" title="Permanent link">&para;</a></h2>
+<p>The two failure modes you will actually hit:</p>
+<p><strong>Deadlock</strong> — every goroutine is blocked. The runtime detects this and
+crashes with a clear message:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="nx">ch</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">make</span><span class="p">(</span><span class="kd">chan</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="c1">// unbuffered</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nx">ch</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="mi">1</span><span class="w">              </span><span class="c1">// nobody is receiving; main blocks forever</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="o">&lt;-</span><span class="nx">ch</span><span class="p">)</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="p">}</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="c1">// fatal error: all goroutines are asleep - deadlock!</span>
+</code></pre></div>
+<p><strong>Goroutine leak</strong> — a goroutine blocks forever while <code>main</code> carries on. The
+runtime <em>cannot</em> detect this; the goroutine just sits there holding memory:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">func</span><span class="w"> </span><span class="nx">leak</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="nx">ch</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">make</span><span class="p">(</span><span class="kd">chan</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="c1">// unbuffered</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="k">go</span><span class="w"> </span><span class="kd">func</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">        </span><span class="nx">ch</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nx">compute</span><span class="p">()</span><span class="w"> </span><span class="c1">// blocks forever if nobody ever receives</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="p">}()</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="c1">// ... function returns without receiving -- goroutine is stranded</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="p">}</span>
+</code></pre></div>
+<p>Give every goroutine a guaranteed exit path: a buffered channel with room for
+the result, or cancellation via <code>context</code> (covered in
+<a href="../../level-3/04-context-package/">Level 3, Module 4</a>). Printing
+<code>runtime.NumGoroutine()</code> before and after a workload is a quick leak check.</p>
+<h2 id="protecting-shared-state-with-a-mutex">Protecting shared state with a mutex<a class="headerlink" href="#protecting-shared-state-with-a-mutex" title="Permanent link">&para;</a></h2>
+<p>Channels are the idiomatic default, but plain shared state guarded by
+<code>sync.Mutex</code> is simpler for a counter or cache:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="s">&quot;sync&quot;</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="p">)</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="kd">type</span><span class="w"> </span><span class="nx">Counter</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">    </span><span class="nx">mu</span><span class="w"> </span><span class="nx">sync</span><span class="p">.</span><span class="nx">Mutex</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">    </span><span class="nx">n</span><span class="w">  </span><span class="kt">int</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="p">}</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">Counter</span><span class="p">)</span><span class="w"> </span><span class="nx">Inc</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">    </span><span class="nx">c</span><span class="p">.</span><span class="nx">mu</span><span class="p">.</span><span class="nx">Lock</span><span class="p">()</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">    </span><span class="k">defer</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">mu</span><span class="p">.</span><span class="nx">Unlock</span><span class="p">()</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">    </span><span class="nx">c</span><span class="p">.</span><span class="nx">n</span><span class="o">++</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="p">}</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="o">*</span><span class="nx">Counter</span><span class="p">)</span><span class="w"> </span><span class="nx">Value</span><span class="p">()</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="w">    </span><span class="nx">c</span><span class="p">.</span><span class="nx">mu</span><span class="p">.</span><span class="nx">Lock</span><span class="p">()</span>
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="w">    </span><span class="k">defer</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">mu</span><span class="p">.</span><span class="nx">Unlock</span><span class="p">()</span>
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">n</span>
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="p">}</span>
+<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>
+<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a><span class="w">    </span><span class="nx">c</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">Counter</span><span class="p">{}</span>
+<a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">wg</span><span class="w"> </span><span class="nx">sync</span><span class="p">.</span><span class="nx">WaitGroup</span>
+<a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a><span class="w">        </span><span class="nx">wg</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a><span class="w">        </span><span class="k">go</span><span class="w"> </span><span class="kd">func</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">defer</span><span class="w"> </span><span class="nx">wg</span><span class="p">.</span><span class="nx">Done</span><span class="p">();</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">Inc</span><span class="p">()</span><span class="w"> </span><span class="p">}()</span>
+<a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a><span class="w">    </span><span class="nx">wg</span><span class="p">.</span><span class="nx">Wait</span><span class="p">()</span>
+<a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">c</span><span class="p">.</span><span class="nx">Value</span><span class="p">())</span><span class="w"> </span><span class="c1">// 1000 -- always, thanks to the mutex</span>
+<a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a><span class="p">}</span>
+</code></pre></div>
+<p>Without the mutex, <code>c.n++</code> is a read-modify-write race and the total comes out
+below 1000. Run any concurrent program with <code>go run -race .</code> — the race
+detector finds these bugs reliably and is the most valuable tool in Go
+concurrency work.</p>
+<h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Start a goroutine</td>
+<td><code>go doWork(arg)</code></td>
+</tr>
+<tr>
+<td>Unbuffered channel</td>
+<td><code>ch := make(chan int)</code></td>
+</tr>
+<tr>
+<td>Buffered channel</td>
+<td><code>ch := make(chan int, 10)</code></td>
+</tr>
+<tr>
+<td>Send / receive</td>
+<td><code>ch &lt;- v</code> / <code>v := &lt;-ch</code></td>
+</tr>
+<tr>
+<td>Receive with closed check</td>
+<td><code>v, ok := &lt;-ch</code></td>
+</tr>
+<tr>
+<td>Close a channel</td>
+<td><code>close(ch)</code> (sender only)</td>
+</tr>
+<tr>
+<td>Loop until closed</td>
+<td><code>for v := range ch { ... }</code></td>
+</tr>
+<tr>
+<td>Send-only / receive-only</td>
+<td><code>chan&lt;- int</code> / <code>&lt;-chan int</code></td>
+</tr>
+<tr>
+<td>Wait for N goroutines</td>
+<td><code>wg.Add(1)</code> / <code>defer wg.Done()</code> / <code>wg.Wait()</code></td>
+</tr>
+<tr>
+<td>Multiplex channels</td>
+<td><code>select { case v := &lt;-a: ... }</code></td>
+</tr>
+<tr>
+<td>Timeout</td>
+<td><code>case &lt;-time.After(2 * time.Second):</code></td>
+</tr>
+<tr>
+<td>Mutual exclusion</td>
+<td><code>mu.Lock(); defer mu.Unlock()</code></td>
+</tr>
+<tr>
+<td>Detect data races</td>
+<td><code>go run -race .</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="related-lessons">Related lessons<a class="headerlink" href="#related-lessons" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Worker pools, fan-in/fan-out and pipelines build on this in
+  <a href="../../level-3/01-concurrency-patterns/">Level 3, Module 1</a>.</li>
+<li>Cancellation and deadlines: <a href="../../level-3/04-context-package/">Level 3, Module 4</a>.</li>
+<li>Functions and closures recap:
+  <a href="../../level-1/04-functions-multiple-returns/">Level 1, Module 4</a>.</li>
+</ul>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Write a program that squares the numbers 1–10 concurrently. Launch one
+goroutine per number, each sending <code>n*n</code> into a shared channel; use a
+<code>sync.WaitGroup</code> plus a separate goroutine that calls <code>close(ch)</code> after
+<code>wg.Wait()</code>. In <code>main</code>, <code>range</code> over the channel, sum the values, and print the
+total (it should be 385). Then run it with <code>go run -race .</code> and confirm it is
+clean. Bonus: rewrite it with a <code>sync.Mutex</code> guarding a shared <code>int</code> instead of
+a channel, and decide which version you find easier to read.</p>
 
 
 

@@ -1026,6 +1026,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · Custom Errors & Error Wrapping
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1042,6 +1060,135 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#beyond-errorsnew" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beyond errors.New
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sentinel-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sentinel errors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-error-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom error types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wrapping-with-w" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wrapping with %w
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errorsis-vs-errorsas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        errors.Is vs errors.As
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#joining-multiple-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Joining multiple errors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical guidelines
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-lessons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related lessons
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1991,6 +2138,124 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#beyond-errorsnew" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beyond errors.New
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sentinel-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sentinel errors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-error-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom error types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wrapping-with-w" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wrapping with %w
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errorsis-vs-errorsas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        errors.Is vs errors.As
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#joining-multiple-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Joining multiple errors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical guidelines
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-lessons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related lessons
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2010,12 +2275,326 @@
 
 
 <h1 id="04-custom-errors-error-wrapping">04 · Custom Errors &amp; Error Wrapping<a class="headerlink" href="#04-custom-errors-error-wrapping" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and code snippets are being written next.
-Custom error types, errors.Is/As, %w wrapping.</p>
-</div>
-<p>More lessons are on the way — check back soon.</p>
+<h2 id="beyond-errorsnew">Beyond <code>errors.New</code><a class="headerlink" href="#beyond-errorsnew" title="Permanent link">&para;</a></h2>
+<p><a href="../../level-1/08-error-handling/">Level 1, Module 8</a> established that errors
+are ordinary values returned as the last result. That works fine until a
+caller needs to <em>react differently</em> depending on what went wrong — retry a
+timeout, prompt the user on a validation failure, give up on a permission
+error. A plain string cannot be inspected reliably, and comparing error text
+(<code>if err.Error() == "not found"</code>) is fragile and breaks the moment someone
+rewords the message.</p>
+<p>Go gives you two better tools: <strong>sentinel errors</strong> for fixed conditions, and
+<strong>custom error types</strong> for errors carrying data. Wrapping ties them together
+across layers.</p>
+<h2 id="sentinel-errors">Sentinel errors<a class="headerlink" href="#sentinel-errors" title="Permanent link">&para;</a></h2>
+<p>A sentinel is a package-level error variable that callers compare against.
+Declare it once, return it everywhere the condition occurs:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="s">&quot;errors&quot;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1">// Sentinels are conventionally named Err... and declared at package level.</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="kd">var</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nx">ErrNotFound</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="nx">errors</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;record not found&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nx">ErrUnauthorized</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">errors</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;unauthorized&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">)</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="kd">var</span><span class="w"> </span><span class="nx">db</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">int</span><span class="p">]</span><span class="kt">string</span><span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Ada&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Grace&quot;</span><span class="p">}</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="kd">func</span><span class="w"> </span><span class="nx">lookup</span><span class="p">(</span><span class="nx">id</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="nx">admin</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">!</span><span class="nx">admin</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">ErrUnauthorized</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">ok</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">db</span><span class="p">[</span><span class="nx">id</span><span class="p">]</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">!</span><span class="nx">ok</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">ErrNotFound</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="kc">nil</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="p">}</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">tc</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="p">[]</span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">        </span><span class="nx">id</span><span class="w">    </span><span class="kt">int</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">        </span><span class="nx">admin</span><span class="w"> </span><span class="kt">bool</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">    </span><span class="p">}{{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">99</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">}}</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">        </span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">lookup</span><span class="p">(</span><span class="nx">tc</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span><span class="w"> </span><span class="nx">tc</span><span class="p">.</span><span class="nx">admin</span><span class="p">)</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="nx">errors</span><span class="p">.</span><span class="nx">Is</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">ErrNotFound</span><span class="p">):</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">            </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;id %d: no such record\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">tc</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="nx">errors</span><span class="p">.</span><span class="nx">Is</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">ErrUnauthorized</span><span class="p">):</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">            </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;id %d: access denied\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">tc</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="p">:</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">            </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;unexpected:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">        </span><span class="k">default</span><span class="p">:</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="w">            </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;id %d: %s\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">tc</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="p">)</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="w">    </span><span class="c1">// Output:</span>
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="w">    </span><span class="c1">// id 1: Ada</span>
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="w">    </span><span class="c1">// id 99: no such record</span>
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="w">    </span><span class="c1">// id 1: access denied</span>
+<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="p">}</span>
+</code></pre></div>
+<p>Standard-library examples you already use: <code>io.EOF</code>, <code>sql.ErrNoRows</code>,
+<code>os.ErrNotExist</code>.</p>
+<h2 id="custom-error-types">Custom error types<a class="headerlink" href="#custom-error-types" title="Permanent link">&para;</a></h2>
+<p>When the error needs to carry <em>data</em> — which field failed, which HTTP status,
+how long to wait before retrying — define a type implementing <code>error</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="s">&quot;errors&quot;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">)</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1">// ValidationError carries the offending field and value.</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="kd">type</span><span class="w"> </span><span class="nx">ValidationError</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nx">Field</span><span class="w"> </span><span class="kt">string</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="nx">Value</span><span class="w"> </span><span class="kt">any</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="nx">Rule</span><span class="w">  </span><span class="kt">string</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="p">}</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="w"> </span><span class="o">*</span><span class="nx">ValidationError</span><span class="p">)</span><span class="w"> </span><span class="nx">Error</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Sprintf</span><span class="p">(</span><span class="s">&quot;validation failed on %q (value %v): %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">Field</span><span class="p">,</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">Value</span><span class="p">,</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">Rule</span><span class="p">)</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="p">}</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="kd">type</span><span class="w"> </span><span class="nx">User</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">    </span><span class="nx">Name</span><span class="w">  </span><span class="kt">string</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">    </span><span class="nx">Email</span><span class="w"> </span><span class="kt">string</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">    </span><span class="nx">Age</span><span class="w">   </span><span class="kt">int</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="p">}</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="kd">func</span><span class="w"> </span><span class="nx">validate</span><span class="p">(</span><span class="nx">u</span><span class="w"> </span><span class="nx">User</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">u</span><span class="p">.</span><span class="nx">Name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">ValidationError</span><span class="p">{</span><span class="nx">Field</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Name&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">Value</span><span class="p">:</span><span class="w"> </span><span class="nx">u</span><span class="p">.</span><span class="nx">Name</span><span class="p">,</span><span class="w"> </span><span class="nx">Rule</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;must not be empty&quot;</span><span class="p">}</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">u</span><span class="p">.</span><span class="nx">Age</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">u</span><span class="p">.</span><span class="nx">Age</span><span class="w"> </span><span class="p">&gt;</span><span class="w"> </span><span class="mi">150</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">ValidationError</span><span class="p">{</span><span class="nx">Field</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Age&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">Value</span><span class="p">:</span><span class="w"> </span><span class="nx">u</span><span class="p">.</span><span class="nx">Age</span><span class="p">,</span><span class="w"> </span><span class="nx">Rule</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;must be between 0 and 150&quot;</span><span class="p">}</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">nil</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="p">}</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="w">    </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">validate</span><span class="p">(</span><span class="nx">User</span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Ada&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">Age</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">})</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">ve</span><span class="w"> </span><span class="o">*</span><span class="nx">ValidationError</span>
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">errors</span><span class="p">.</span><span class="nx">As</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">ve</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="w">        </span><span class="c1">// We now have the structured data, not just a string.</span>
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;field:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">ve</span><span class="p">.</span><span class="nx">Field</span><span class="p">)</span><span class="w"> </span><span class="c1">// field: Age</span>
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;rule:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">ve</span><span class="p">.</span><span class="nx">Rule</span><span class="p">)</span><span class="w">   </span><span class="c1">// rule: must be between 0 and 150</span>
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="w">    </span><span class="c1">// validation failed on &quot;Age&quot; (value 200): must be between 0 and 150</span>
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a><span class="p">}</span>
+</code></pre></div>
+<p>Use a <strong>pointer</strong> receiver (<code>*ValidationError</code>) and return <code>&amp;ValidationError{}</code>.
+Two different <code>*ValidationError</code> values then compare as different errors, which
+is what you want, and <code>errors.As</code> targets <code>**ValidationError</code> naturally.</p>
+<h2 id="wrapping-with-w">Wrapping with <code>%w</code><a class="headerlink" href="#wrapping-with-w" title="Permanent link">&para;</a></h2>
+<p>As an error travels up through layers, each layer wants to add context
+("reading config", "loading user 42") without destroying the original. The
+<code>%w</code> verb in <code>fmt.Errorf</code> wraps: the new error's message includes the old
+one, and the original stays retrievable.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="s">&quot;errors&quot;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="s">&quot;os&quot;</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">)</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="kd">func</span><span class="w"> </span><span class="nx">readConfig</span><span class="p">(</span><span class="nx">path</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="nx">data</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">ReadFile</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">nil</span><span class="p">,</span><span class="w"> </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Errorf</span><span class="p">(</span><span class="s">&quot;reading config %s: %w&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">path</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">data</span><span class="p">,</span><span class="w"> </span><span class="kc">nil</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="p">}</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="kd">func</span><span class="w"> </span><span class="nx">startup</span><span class="p">()</span><span class="w"> </span><span class="kt">error</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">readConfig</span><span class="p">(</span><span class="s">&quot;/nonexistent/app.yaml&quot;</span><span class="p">);</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Errorf</span><span class="p">(</span><span class="s">&quot;startup: %w&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">nil</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="p">}</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">    </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">startup</span><span class="p">()</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">    </span><span class="c1">// startup: reading config /nonexistent/app.yaml: open /nonexistent/app.yaml: no such file or directory</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">    </span><span class="c1">// Despite two layers of wrapping, the root cause is still identifiable:</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">errors</span><span class="p">.</span><span class="nx">Is</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">ErrNotExist</span><span class="p">))</span><span class="w"> </span><span class="c1">// true</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="p">}</span>
+</code></pre></div>
+<p><code>%v</code> would produce the same <em>text</em> but sever the chain — <code>errors.Is</code> would
+return <code>false</code>. Choose deliberately:</p>
+<ul>
+<li><code>%w</code> when callers may reasonably want to inspect the cause.</li>
+<li><code>%v</code> when the underlying error is an implementation detail you do not want
+  to commit to as part of your API.</li>
+</ul>
+<h2 id="errorsis-vs-errorsas"><code>errors.Is</code> vs <code>errors.As</code><a class="headerlink" href="#errorsis-vs-errorsas" title="Permanent link">&para;</a></h2>
+<p>Both walk the wrap chain; they answer different questions.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">errors</span><span class="p">.</span><span class="nx">Is</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">ErrNotFound</span><span class="p">)</span><span class="w">  </span><span class="c1">// &quot;is this specific error value anywhere in the chain?&quot;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nx">errors</span><span class="p">.</span><span class="nx">As</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">target</span><span class="p">)</span><span class="w">      </span><span class="c1">// &quot;is there an error of this TYPE in the chain? give it to me&quot;</span>
+</code></pre></div>
+<p>Never use <code>err == ErrNotFound</code> on a possibly-wrapped error — it compares only
+the outermost layer and silently returns <code>false</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="s">&quot;errors&quot;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="p">)</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="kd">var</span><span class="w"> </span><span class="nx">ErrNotFound</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">errors</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;not found&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="kd">type</span><span class="w"> </span><span class="nx">QueryError</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="nx">Query</span><span class="w"> </span><span class="kt">string</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="nx">Err</span><span class="w">   </span><span class="kt">error</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="p">}</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="w"> </span><span class="o">*</span><span class="nx">QueryError</span><span class="p">)</span><span class="w"> </span><span class="nx">Error</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;query &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">Query</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">Err</span><span class="p">.</span><span class="nx">Error</span><span class="p">()</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="c1">// Unwrap makes this type participate in the errors.Is/As chain.</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="w"> </span><span class="o">*</span><span class="nx">QueryError</span><span class="p">)</span><span class="w"> </span><span class="nx">Unwrap</span><span class="p">()</span><span class="w"> </span><span class="kt">error</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">Err</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="kd">func</span><span class="w"> </span><span class="nx">run</span><span class="p">()</span><span class="w"> </span><span class="kt">error</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">    </span><span class="nx">inner</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">QueryError</span><span class="p">{</span><span class="nx">Query</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;SELECT * FROM users&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">Err</span><span class="p">:</span><span class="w"> </span><span class="nx">ErrNotFound</span><span class="p">}</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Errorf</span><span class="p">(</span><span class="s">&quot;handler: %w&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">inner</span><span class="p">)</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="p">}</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">    </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">run</span><span class="p">()</span>
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">err</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">ErrNotFound</span><span class="p">)</span><span class="w">          </span><span class="c1">// false -- naive comparison fails</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">errors</span><span class="p">.</span><span class="nx">Is</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">ErrNotFound</span><span class="p">))</span><span class="w"> </span><span class="c1">// true  -- walks the whole chain</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">qe</span><span class="w"> </span><span class="o">*</span><span class="nx">QueryError</span>
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">errors</span><span class="p">.</span><span class="nx">As</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">qe</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;failing query:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">qe</span><span class="p">.</span><span class="nx">Query</span><span class="p">)</span><span class="w"> </span><span class="c1">// failing query: SELECT * FROM users</span>
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a><span class="p">}</span>
+</code></pre></div>
+<p>The <code>Unwrap() error</code> method is what makes a custom type transparent to
+<code>errors.Is</code>/<code>errors.As</code>. Without it the chain stops at your type.</p>
+<h2 id="joining-multiple-errors">Joining multiple errors<a class="headerlink" href="#joining-multiple-errors" title="Permanent link">&para;</a></h2>
+<p>Since Go 1.20, <code>errors.Join</code> combines several errors into one; <code>errors.Is</code>
+matches against any of them. Perfect for validating every field and reporting
+all problems at once instead of stopping at the first.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="s">&quot;errors&quot;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">)</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="kd">var</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="nx">ErrNameRequired</span><span class="w">  </span><span class="p">=</span><span class="w"> </span><span class="nx">errors</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;name is required&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="nx">ErrEmailRequired</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">errors</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;email is required&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="p">)</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="kd">func</span><span class="w"> </span><span class="nx">validateAll</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">email</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">errs</span><span class="w"> </span><span class="p">[]</span><span class="kt">error</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">        </span><span class="nx">errs</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">append</span><span class="p">(</span><span class="nx">errs</span><span class="p">,</span><span class="w"> </span><span class="nx">ErrNameRequired</span><span class="p">)</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">email</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">        </span><span class="nx">errs</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">append</span><span class="p">(</span><span class="nx">errs</span><span class="p">,</span><span class="w"> </span><span class="nx">ErrEmailRequired</span><span class="p">)</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">errors</span><span class="p">.</span><span class="nx">Join</span><span class="p">(</span><span class="nx">errs</span><span class="o">...</span><span class="p">)</span><span class="w"> </span><span class="c1">// returns nil if errs is empty</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="p">}</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="w">    </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">validateAll</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="w">    </span><span class="c1">// name is required</span>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="w">    </span><span class="c1">// email is required</span>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">errors</span><span class="p">.</span><span class="nx">Is</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">ErrEmailRequired</span><span class="p">))</span><span class="w"> </span><span class="c1">// true</span>
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="p">}</span>
+</code></pre></div>
+<p><code>fmt.Errorf</code> also accepts multiple <code>%w</code> verbs, e.g.
+<code>fmt.Errorf("%w and %w", err1, err2)</code>.</p>
+<h2 id="practical-guidelines">Practical guidelines<a class="headerlink" href="#practical-guidelines" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Add context at each layer, but do not repeat it. <code>"reading config: open
+  x: no such file"</code> is useful; <code>"error: failed: error reading: error"</code> is not.</li>
+<li>Error strings are lowercase and have no trailing punctuation, because they
+  get embedded into larger messages.</li>
+<li>Handle an error <em>or</em> return it — never both. Logging and returning produces
+  duplicate noise at every level.</li>
+<li>Sentinels and exported error types are part of your public API. Changing
+  them breaks callers.</li>
+</ul>
+<h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sentinel error</td>
+<td><code>var ErrX = errors.New("x")</code></td>
+</tr>
+<tr>
+<td>Formatted error</td>
+<td><code>fmt.Errorf("bad id %d", id)</code></td>
+</tr>
+<tr>
+<td>Wrap with context</td>
+<td><code>fmt.Errorf("loading: %w", err)</code></td>
+</tr>
+<tr>
+<td>Compare to a sentinel</td>
+<td><code>errors.Is(err, ErrX)</code></td>
+</tr>
+<tr>
+<td>Extract a typed error</td>
+<td><code>var e *MyErr; errors.As(err, &amp;e)</code></td>
+</tr>
+<tr>
+<td>Make a type unwrappable</td>
+<td><code>func (e *MyErr) Unwrap() error</code></td>
+</tr>
+<tr>
+<td>Peel one layer</td>
+<td><code>errors.Unwrap(err)</code></td>
+</tr>
+<tr>
+<td>Combine errors</td>
+<td><code>errors.Join(err1, err2)</code></td>
+</tr>
+<tr>
+<td>Custom error type</td>
+<td><code>func (e *MyErr) Error() string</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="related-lessons">Related lessons<a class="headerlink" href="#related-lessons" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Error basics and the <code>if err != nil</code> idiom:
+  <a href="../../level-1/08-error-handling/">Level 1, Module 8</a>.</li>
+<li><code>error</code> is an interface — see <a href="../01-interfaces/">Module 1</a>, including the
+  nil-interface trap that bites custom error types especially hard.</li>
+<li>Testing error paths with <code>errors.Is</code> in table-driven tests:
+  <a href="../06-testing-package/">Module 6</a>.</li>
+</ul>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Write a tiny file-based key/value store with two sentinels (<code>ErrKeyNotFound</code>,
+<code>ErrStoreClosed</code>) and one custom type <code>ParseError{Line int, Err error}</code> with an
+<code>Unwrap</code> method. <code>Get(key string)</code> should return <code>ErrKeyNotFound</code> for a missing
+key, and wrap any underlying <code>os</code> error with <code>fmt.Errorf("get %q: %w", key,
+err)</code>. In <code>main</code>, exercise all three paths and use <code>errors.Is</code> for the
+sentinels and <code>errors.As</code> to print the failing line number from <code>ParseError</code>.
+Verify that <code>errors.Is(err, os.ErrNotExist)</code> still works through your wrapping.</p>
 
 
 

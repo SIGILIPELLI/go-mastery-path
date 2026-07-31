@@ -1166,6 +1166,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Dependency Management
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1182,6 +1200,196 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#modules-are-gos-package-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modules are Go's package manager
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anatomy-of-gomod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anatomy of go.mod
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding dependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semantic-versioning-and-how-go-picks-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semantic versioning and how Go picks versions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Semantic versioning and how Go picks versions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-major-version-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The major-version rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gosum-and-integrity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        go.sum and integrity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-module-proxy-and-checksum-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The module proxy and checksum database
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inspecting-and-upgrading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inspecting and upgrading
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replace-for-local-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        replace for local development
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workspaces-for-multi-module-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workspaces for multi-module development
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vendoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vendoring
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reproducible-build-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reproducible-build checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-lessons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related lessons
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1991,6 +2199,185 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#modules-are-gos-package-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modules are Go's package manager
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anatomy-of-gomod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anatomy of go.mod
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding dependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semantic-versioning-and-how-go-picks-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semantic versioning and how Go picks versions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Semantic versioning and how Go picks versions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-major-version-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The major-version rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gosum-and-integrity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        go.sum and integrity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-module-proxy-and-checksum-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The module proxy and checksum database
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inspecting-and-upgrading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inspecting and upgrading
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replace-for-local-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        replace for local development
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workspaces-for-multi-module-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workspaces for multi-module development
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vendoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vendoring
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reproducible-build-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reproducible-build checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-lessons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related lessons
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2010,12 +2397,328 @@
 
 
 <h1 id="09-dependency-management">09 · Dependency Management<a class="headerlink" href="#09-dependency-management" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and code snippets are being written next.
-go.mod, go.sum, versioning, and the Go module proxy.</p>
-</div>
-<p>More lessons are on the way — check back soon.</p>
+<h2 id="modules-are-gos-package-manager">Modules are Go's package manager<a class="headerlink" href="#modules-are-gos-package-manager" title="Permanent link">&para;</a></h2>
+<p>Since Go 1.11 (and mandatory since 1.16), every Go project is a <strong>module</strong>: a
+directory tree with a <code>go.mod</code> file at its root declaring the module's own
+import path, the Go version it targets, and every external package it depends
+on. There is no separate package manager to install — <code>go</code> is the tool.</p>
+<p><a href="../../level-1/09-packages-modules/">Level 1, Module 9</a> introduced <code>go mod init</code>
+and internal packages. This module covers the other half: consuming third-party
+code safely, understanding versions, and keeping builds reproducible.</p>
+<h2 id="anatomy-of-gomod">Anatomy of <code>go.mod</code><a class="headerlink" href="#anatomy-of-gomod" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>module github.com/yourname/weathercli
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>go 1.22
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>require (
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    github.com/spf13/cobra v1.8.0
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    github.com/stretchr/testify v1.9.0
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>)
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>require (
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    github.com/inconshreveable/mousetrap v1.1.0 // indirect
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    github.com/spf13/pflag v1.0.5 // indirect
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    gopkg.in/yaml.v3 v3.0.1 // indirect
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>)
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>module</code></td>
+<td>this module's import path — how others import your packages</td>
+</tr>
+<tr>
+<td><code>go</code></td>
+<td>the language version the module targets, gating language features</td>
+</tr>
+<tr>
+<td><code>require</code></td>
+<td>a dependency and its minimum acceptable version</td>
+</tr>
+<tr>
+<td><code>// indirect</code></td>
+<td>pulled in by a dependency, not imported by your code directly</td>
+</tr>
+<tr>
+<td><code>replace</code></td>
+<td>substitute a different source or version for a module</td>
+</tr>
+<tr>
+<td><code>exclude</code></td>
+<td>forbid a specific version from being selected</td>
+</tr>
+<tr>
+<td><code>toolchain</code></td>
+<td>the minimum Go toolchain version to build with</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>module</code> line matters more than it looks: if you publish to
+<code>github.com/yourname/weathercli</code>, that path must match exactly, because it is
+both the import path <em>and</em> the address the tooling fetches from.</p>
+<h2 id="adding-dependencies">Adding dependencies<a class="headerlink" href="#adding-dependencies" title="Permanent link">&para;</a></h2>
+<p>Two workflows, both fine:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># 1. Explicit: fetch and record a dependency</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>go<span class="w"> </span>get<span class="w"> </span>github.com/spf13/cobra@latest
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>go<span class="w"> </span>get<span class="w"> </span>github.com/spf13/cobra@v1.8.0<span class="w">     </span><span class="c1"># a specific version</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>go<span class="w"> </span>get<span class="w"> </span>github.com/spf13/cobra@v1<span class="w">          </span><span class="c1"># latest v1.x.y</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># 2. Implicit: write the import, then let the toolchain resolve it</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>go<span class="w"> </span>mod<span class="w"> </span>tidy
+</code></pre></div>
+<p><code>go mod tidy</code> is the workhorse. It scans your source (including tests), adds
+anything imported but missing, removes anything recorded but unused, and
+updates <code>go.sum</code>. Run it before every commit — a <code>go.mod</code> with stale entries is
+a common source of confusing CI failures.</p>
+<p>Note that since Go 1.16, <code>go build</code> and <code>go run</code> will <strong>not</strong> silently modify
+<code>go.mod</code>; they error and tell you to run <code>go mod tidy</code>. That is deliberate:
+builds should be reproducible, not self-mutating.</p>
+<h2 id="semantic-versioning-and-how-go-picks-versions">Semantic versioning and how Go picks versions<a class="headerlink" href="#semantic-versioning-and-how-go-picks-versions" title="Permanent link">&para;</a></h2>
+<p>Go modules require semantic versioning: <code>vMAJOR.MINOR.PATCH</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Change</th>
+<th>Bump</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bug fix, no API change</td>
+<td><code>v1.2.3</code> → <code>v1.2.4</code></td>
+<td>patch: always safe</td>
+</tr>
+<tr>
+<td>new backwards-compatible feature</td>
+<td><code>v1.2.3</code> → <code>v1.3.0</code></td>
+<td>minor: safe to upgrade</td>
+</tr>
+<tr>
+<td>breaking change</td>
+<td><code>v1.2.3</code> → <code>v2.0.0</code></td>
+<td>major: requires code changes</td>
+</tr>
+</tbody>
+</table>
+<p>Go uses <strong>Minimal Version Selection (MVS)</strong>, and it is deliberately different
+from npm or pip. Go builds with the <em>highest version explicitly required by
+anyone in the graph</em> — and nothing newer. If your module needs <code>v1.2.0</code> and a
+dependency needs <code>v1.4.0</code>, you get <code>v1.4.0</code>. Nobody's build silently drifts to
+a version released this morning; upgrades happen only when someone edits
+<code>go.mod</code>. This is why Go builds are so reproducible.</p>
+<h3 id="the-major-version-rule">The major-version rule<a class="headerlink" href="#the-major-version-rule" title="Permanent link">&para;</a></h3>
+<p>For <code>v2</code> and above, the major version becomes part of the import path:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/user/lib&quot;</span><span class="w">      </span><span class="c1">// v0 or v1</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/user/lib/v2&quot;</span><span class="w">   </span><span class="c1">// v2.x.y</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/user/lib/v3&quot;</span><span class="w">   </span><span class="c1">// v3.x.y</span>
+</code></pre></div>
+<p>This looks strange at first, but it means <code>v1</code> and <code>v2</code> of the same library
+can coexist in one build — a genuine problem in other ecosystems ("diamond
+dependency hell") that Go sidesteps entirely.</p>
+<h2 id="gosum-and-integrity"><code>go.sum</code> and integrity<a class="headerlink" href="#gosum-and-integrity" title="Permanent link">&para;</a></h2>
+<p><code>go.sum</code> records a cryptographic hash for every module version your build has
+ever used:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>github.com/spf13/cobra v1.8.0 h1:7aJaZx1B85qltLMc546zn58BxxfZdR/W22ej9CFoEf0=
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>github.com/spf13/cobra v1.8.0/go.mod h1:WXLWApfZ71AjXPya3WOlMsY9yMs7YeiHhFVlvLyhcho=
+</code></pre></div>
+<p>Every download is verified against these hashes. If a published version is
+ever altered — a tag force-pushed, a proxy compromised — the build fails
+loudly instead of silently compiling different code.</p>
+<p><strong>Commit both <code>go.mod</code> and <code>go.sum</code>.</strong> They are not lockfile clutter; they are
+your build's integrity guarantee. Never edit <code>go.sum</code> by hand; regenerate it
+with <code>go mod tidy</code>.</p>
+<h2 id="the-module-proxy-and-checksum-database">The module proxy and checksum database<a class="headerlink" href="#the-module-proxy-and-checksum-database" title="Permanent link">&para;</a></h2>
+<p>By default the toolchain fetches through Google's public infrastructure:</p>
+<ul>
+<li><strong><code>proxy.golang.org</code></strong> — an immutable cache of module versions. Once
+  published, a version is stored forever, so a deleted or force-pushed GitHub
+  tag cannot break your build.</li>
+<li><strong><code>sum.golang.org</code></strong> — a transparency log of module hashes, cross-checking
+  what the proxy serves.</li>
+</ul>
+<p>Configure via environment variables:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>go<span class="w"> </span>env<span class="w"> </span>GOPROXY<span class="w">          </span><span class="c1"># https://proxy.golang.org,direct</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>go<span class="w"> </span>env<span class="w"> </span>GOSUMDB<span class="w">          </span><span class="c1"># sum.golang.org</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>go<span class="w"> </span>env<span class="w"> </span>GOPRIVATE<span class="w">        </span><span class="c1"># (empty by default)</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1"># Private repos: skip the proxy and checksum DB for your company&#39;s modules</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>go<span class="w"> </span>env<span class="w"> </span>-w<span class="w"> </span><span class="nv">GOPRIVATE</span><span class="o">=</span>github.com/mycompany/*
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="c1"># Corporate proxy, or fully offline</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>go<span class="w"> </span>env<span class="w"> </span>-w<span class="w"> </span><span class="nv">GOPROXY</span><span class="o">=</span>https://proxy.internal.example.com,direct
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>go<span class="w"> </span>env<span class="w"> </span>-w<span class="w"> </span><span class="nv">GOFLAGS</span><span class="o">=</span>-mod<span class="o">=</span>mod
+</code></pre></div>
+<p><code>GOPRIVATE</code> is the one you will actually need: without it, the toolchain tries
+to fetch your private repo through the public proxy, fails, and gives a
+confusing 404.</p>
+<h2 id="inspecting-and-upgrading">Inspecting and upgrading<a class="headerlink" href="#inspecting-and-upgrading" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>go<span class="w"> </span>list<span class="w"> </span>-m<span class="w"> </span>all<span class="w">                  </span><span class="c1"># every module in the build, with versions</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>go<span class="w"> </span>list<span class="w"> </span>-m<span class="w"> </span>-u<span class="w"> </span>all<span class="w">               </span><span class="c1"># ... and mark which have updates available</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>go<span class="w"> </span>list<span class="w"> </span>-m<span class="w"> </span>-versions<span class="w"> </span>github.com/spf13/cobra<span class="w">   </span><span class="c1"># all published versions</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>go<span class="w"> </span>get<span class="w"> </span>-u<span class="w"> </span>./...<span class="w">                 </span><span class="c1"># upgrade all deps to latest minor/patch</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>go<span class="w"> </span>get<span class="w"> </span>-u<span class="o">=</span>patch<span class="w"> </span>./...<span class="w">           </span><span class="c1"># patch releases only -- the conservative choice</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>go<span class="w"> </span>get<span class="w"> </span>github.com/x/y@v1.5.0<span class="w">    </span><span class="c1"># pin one dependency exactly</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>go<span class="w"> </span>get<span class="w"> </span>github.com/x/y@none<span class="w">      </span><span class="c1"># remove a dependency</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>go<span class="w"> </span>mod<span class="w"> </span>why<span class="w"> </span>github.com/spf13/pflag<span class="w">   </span><span class="c1"># explain why this module is in the build</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>go<span class="w"> </span>mod<span class="w"> </span>graph<span class="w">                        </span><span class="c1"># full dependency graph, one edge per line</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>go<span class="w"> </span>mod<span class="w"> </span>verify<span class="w">                       </span><span class="c1"># confirm downloads match go.sum</span>
+</code></pre></div>
+<p><code>go mod why</code> is invaluable when an unfamiliar <code>// indirect</code> entry appears and
+you want to know who dragged it in.</p>
+<p>Upgrade deliberately: <code>go get -u ./...</code> followed immediately by
+<code>go test ./...</code>. Minor versions are <em>supposed</em> to be compatible, but "supposed
+to" is not a guarantee.</p>
+<h2 id="replace-for-local-development"><code>replace</code> for local development<a class="headerlink" href="#replace-for-local-development" title="Permanent link">&para;</a></h2>
+<p>When you need to test an unreleased fix in a dependency, point the module at a
+local checkout:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>// go.mod
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>require github.com/user/lib v1.2.0
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>replace github.com/user/lib =&gt; ../lib
+</code></pre></div>
+<p>Or point at a fork:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>replace github.com/user/lib =&gt; github.com/yourfork/lib v1.2.1-fix
+</code></pre></div>
+<p><code>replace</code> directives are honoured only in the <strong>main</strong> module — they are
+ignored when your module is consumed as a dependency, so a stray local
+<code>replace</code> breaks nobody but you. Still, remove local-path replaces before
+publishing, or others cannot build your module at all.</p>
+<h2 id="workspaces-for-multi-module-development">Workspaces for multi-module development<a class="headerlink" href="#workspaces-for-multi-module-development" title="Permanent link">&para;</a></h2>
+<p>Go 1.18 added <code>go.work</code> for editing several modules at once without polluting
+any <code>go.mod</code> with <code>replace</code> lines:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>mkdir<span class="w"> </span>myproject<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>myproject
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>go<span class="w"> </span>work<span class="w"> </span>init<span class="w"> </span>./api<span class="w"> </span>./worker<span class="w"> </span>./shared
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>go<span class="w"> </span>work<span class="w"> </span>use<span class="w"> </span>./newservice<span class="w">   </span><span class="c1"># add another later</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>// go.work -- add this to .gitignore; it is a local development file
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>go 1.22
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>use (
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    ./api
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    ./worker
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    ./shared
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>)
+</code></pre></div>
+<p>Now <code>./api</code> builds against your local <code>./shared</code> automatically. Delete
+<code>go.work</code> (or set <code>GOWORK=off</code>) to build the way CI does.</p>
+<h2 id="vendoring">Vendoring<a class="headerlink" href="#vendoring" title="Permanent link">&para;</a></h2>
+<p><code>go mod vendor</code> copies every dependency's source into a <code>vendor/</code> directory in
+your repo:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>go<span class="w"> </span>mod<span class="w"> </span>vendor
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>go<span class="w"> </span>build<span class="w"> </span>-mod<span class="o">=</span>vendor<span class="w"> </span>./...<span class="w">   </span><span class="c1"># implied automatically when vendor/ exists</span>
+</code></pre></div>
+<p>This makes builds fully offline and immune to upstream deletion, at the cost
+of a much larger repository and noisy diffs. With the module proxy providing
+immutability, most projects no longer need it — reach for it only under an
+air-gapped or strict-audit requirement.</p>
+<h2 id="reproducible-build-checklist">Reproducible-build checklist<a class="headerlink" href="#reproducible-build-checklist" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Commit <code>go.mod</code> <strong>and</strong> <code>go.sum</code>.</li>
+<li>Run <code>go mod tidy</code> before committing; make CI fail if it produces a diff.</li>
+<li>Use <code>go build -mod=readonly</code> (the default) in CI so a build never silently
+  edits <code>go.mod</code>.</li>
+<li>Do not commit <code>go.work</code>.</li>
+<li>Set <code>GOPRIVATE</code> for internal modules.</li>
+<li>Audit dependencies with <code>go list -m all</code> and check known issues with
+  <code>govulncheck ./...</code>.</li>
+</ul>
+<h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Start a module</td>
+<td><code>go mod init github.com/you/proj</code></td>
+</tr>
+<tr>
+<td>Add / update a dependency</td>
+<td><code>go get github.com/x/y@v1.2.3</code></td>
+</tr>
+<tr>
+<td>Sync <code>go.mod</code> with imports</td>
+<td><code>go mod tidy</code></td>
+</tr>
+<tr>
+<td>Upgrade everything</td>
+<td><code>go get -u ./...</code></td>
+</tr>
+<tr>
+<td>Patch-only upgrades</td>
+<td><code>go get -u=patch ./...</code></td>
+</tr>
+<tr>
+<td>Remove a dependency</td>
+<td><code>go get github.com/x/y@none</code></td>
+</tr>
+<tr>
+<td>List the build's modules</td>
+<td><code>go list -m all</code></td>
+</tr>
+<tr>
+<td>Show available updates</td>
+<td><code>go list -m -u all</code></td>
+</tr>
+<tr>
+<td>Explain a dependency</td>
+<td><code>go mod why github.com/x/y</code></td>
+</tr>
+<tr>
+<td>Verify checksums</td>
+<td><code>go mod verify</code></td>
+</tr>
+<tr>
+<td>Vendor dependencies</td>
+<td><code>go mod vendor</code></td>
+</tr>
+<tr>
+<td>Local override</td>
+<td><code>replace github.com/x/y =&gt; ../y</code></td>
+</tr>
+<tr>
+<td>Multi-module workspace</td>
+<td><code>go work init ./a ./b</code></td>
+</tr>
+<tr>
+<td>Download without building</td>
+<td><code>go mod download</code></td>
+</tr>
+<tr>
+<td>Scan for vulnerabilities</td>
+<td><code>govulncheck ./...</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="related-lessons">Related lessons<a class="headerlink" href="#related-lessons" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Package structure, <code>internal/</code>, and exported identifiers:
+  <a href="../../level-1/09-packages-modules/">Level 1, Module 9</a>.</li>
+<li>The project in <a href="../10-project-weather-cli/">Module 10</a> keeps zero external
+  dependencies on purpose — the standard library covers it.</li>
+<li>Supply-chain hardening in production:
+  <a href="../../level-4/08-security-best-practices/">Level 4, Module 8</a>.</li>
+</ul>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Create a module <code>example.com/depdemo</code> and add <code>github.com/google/uuid</code> with
+<code>go get</code>. Write a <code>main.go</code> that prints three generated UUIDs. Then: run
+<code>go list -m all</code> and note the indirect dependencies; run <code>go mod why
+github.com/google/uuid</code>; delete the import from <code>main.go</code>, run <code>go mod tidy</code>,
+and confirm the <code>require</code> line disappears from <code>go.mod</code>. Finally, open
+<code>go.sum</code>, count how many lines exist per module version, and explain what the
+<code>/go.mod</code> suffixed hashes are for.</p>
 
 
 

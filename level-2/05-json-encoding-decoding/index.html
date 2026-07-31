@@ -1054,6 +1054,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · JSON Encoding/Decoding
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1070,6 +1088,146 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-encodingjson-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why encoding/json matters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#marshalling-go-to-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Marshalling: Go to JSON
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#struct-tags-controlling-the-json-shape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Struct tags: controlling the JSON shape
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unmarshalling-json-to-go" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unmarshalling: JSON to Go
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nested-structs-and-slices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nested structs and slices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynamic-json-with-maps-and-any" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dynamic JSON with maps and any
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streaming-with-encoder-and-decoder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Streaming with Encoder and Decoder
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-marshalling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom marshalling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-lessons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related lessons
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1991,6 +2149,135 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-encodingjson-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why encoding/json matters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#marshalling-go-to-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Marshalling: Go to JSON
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#struct-tags-controlling-the-json-shape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Struct tags: controlling the JSON shape
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unmarshalling-json-to-go" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unmarshalling: JSON to Go
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nested-structs-and-slices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nested structs and slices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynamic-json-with-maps-and-any" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dynamic JSON with maps and any
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streaming-with-encoder-and-decoder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Streaming with Encoder and Decoder
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-marshalling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom marshalling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-lessons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related lessons
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2010,12 +2297,448 @@
 
 
 <h1 id="05-json-encodingdecoding">05 · JSON Encoding/Decoding<a class="headerlink" href="#05-json-encodingdecoding" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and code snippets are being written next.
-encoding/json, struct tags, marshal/unmarshal.</p>
-</div>
-<p>More lessons are on the way — check back soon.</p>
+<h2 id="why-encodingjson-matters">Why <code>encoding/json</code> matters<a class="headerlink" href="#why-encodingjson-matters" title="Permanent link">&para;</a></h2>
+<p>JSON is the lingua franca of web APIs, config files and log pipelines. Go's
+<code>encoding/json</code> package converts between Go values and JSON text using
+reflection, driven by struct tags — no code generation, no schema files. Get
+comfortable here and you can consume any REST API (which is exactly what
+<a href="../08-net-http-client/">Module 8</a> and the
+<a href="../10-project-weather-cli/">Level 2 project</a> do).</p>
+<p>Two directions, two verbs:</p>
+<ul>
+<li><strong>Marshal</strong> — Go value → JSON bytes (also called encoding, serialising).</li>
+<li><strong>Unmarshal</strong> — JSON bytes → Go value (decoding, deserialising).</li>
+</ul>
+<h2 id="marshalling-go-to-json">Marshalling: Go to JSON<a class="headerlink" href="#marshalling-go-to-json" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="s">&quot;encoding/json&quot;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="kd">type</span><span class="w"> </span><span class="nx">User</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nx">Name</span><span class="w">  </span><span class="kt">string</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nx">Email</span><span class="w"> </span><span class="kt">string</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nx">Age</span><span class="w">   </span><span class="kt">int</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nx">admin</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="c1">// unexported -- INVISIBLE to encoding/json</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">}</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="nx">u</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">User</span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Ada&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">Email</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ada@example.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">Age</span><span class="p">:</span><span class="w"> </span><span class="mi">36</span><span class="p">,</span><span class="w"> </span><span class="nx">admin</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">}</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="nx">data</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">json</span><span class="p">.</span><span class="nx">Marshal</span><span class="p">(</span><span class="nx">u</span><span class="p">)</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;marshal error:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">        </span><span class="k">return</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nb">string</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">    </span><span class="c1">// {&quot;Name&quot;:&quot;Ada&quot;,&quot;Email&quot;:&quot;ada@example.com&quot;,&quot;Age&quot;:36}</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">    </span><span class="c1">// MarshalIndent for human-readable output.</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">    </span><span class="nx">pretty</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">json</span><span class="p">.</span><span class="nx">MarshalIndent</span><span class="p">(</span><span class="nx">u</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;  &quot;</span><span class="p">)</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nb">string</span><span class="p">(</span><span class="nx">pretty</span><span class="p">))</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">    </span><span class="c1">// {</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">    </span><span class="c1">//   &quot;Name&quot;: &quot;Ada&quot;,</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">    </span><span class="c1">//   &quot;Email&quot;: &quot;ada@example.com&quot;,</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">    </span><span class="c1">//   &quot;Age&quot;: 36</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">    </span><span class="c1">// }</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="p">}</span>
+</code></pre></div>
+<p>Two rules to lock in right now:</p>
+<ol>
+<li><strong>Only exported fields are encoded.</strong> <code>admin</code> is lowercase, so
+   <code>encoding/json</code> cannot see it — no error, it just silently disappears.
+   This is the single most common JSON bug in Go.</li>
+<li><code>Marshal</code> returns <code>[]byte</code>, so <code>string(data)</code> is needed to print it.</li>
+</ol>
+<h2 id="struct-tags-controlling-the-json-shape">Struct tags: controlling the JSON shape<a class="headerlink" href="#struct-tags-controlling-the-json-shape" title="Permanent link">&para;</a></h2>
+<p>Go field names are capitalised; JSON keys usually are not. Struct tags bridge
+the gap:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="s">&quot;encoding/json&quot;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">)</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="kd">type</span><span class="w"> </span><span class="nx">Product</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="nx">ID</span><span class="w">          </span><span class="kt">int</span><span class="w">      </span><span class="s">`json:&quot;id&quot;`</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nx">Name</span><span class="w">        </span><span class="kt">string</span><span class="w">   </span><span class="s">`json:&quot;name&quot;`</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="nx">Price</span><span class="w">       </span><span class="kt">float64</span><span class="w">  </span><span class="s">`json:&quot;price&quot;`</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="nx">Description</span><span class="w"> </span><span class="kt">string</span><span class="w">   </span><span class="s">`json:&quot;description,omitempty&quot;`</span><span class="w"> </span><span class="c1">// dropped when &quot;&quot;</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nx">Tags</span><span class="w">        </span><span class="p">[]</span><span class="kt">string</span><span class="w"> </span><span class="s">`json:&quot;tags,omitempty&quot;`</span><span class="w">        </span><span class="c1">// dropped when nil/empty</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="nx">Internal</span><span class="w">    </span><span class="kt">string</span><span class="w">   </span><span class="s">`json:&quot;-&quot;`</span><span class="w">                     </span><span class="c1">// never encoded or decoded</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="nx">StockCount</span><span class="w">  </span><span class="kt">int</span><span class="w">      </span><span class="s">`json:&quot;stock,string&quot;`</span><span class="w">          </span><span class="c1">// encoded as a JSON string</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="p">}</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="nx">p</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">Product</span><span class="p">{</span><span class="nx">ID</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nx">Name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Mug&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">Price</span><span class="p">:</span><span class="w"> </span><span class="mf">9.99</span><span class="p">,</span><span class="w"> </span><span class="nx">Internal</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;secret&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">StockCount</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">}</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">    </span><span class="nx">data</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">json</span><span class="p">.</span><span class="nx">MarshalIndent</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;  &quot;</span><span class="p">)</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nb">string</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">    </span><span class="c1">// {</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">    </span><span class="c1">//   &quot;id&quot;: 1,</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">    </span><span class="c1">//   &quot;name&quot;: &quot;Mug&quot;,</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">    </span><span class="c1">//   &quot;price&quot;: 9.99,</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">    </span><span class="c1">//   &quot;stock&quot;: &quot;42&quot;</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">    </span><span class="c1">// }</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="p">}</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>json:"name"</code></td>
+<td>use <code>name</code> as the JSON key</td>
+</tr>
+<tr>
+<td><code>json:"name,omitempty"</code></td>
+<td>omit when the field is the zero value</td>
+</tr>
+<tr>
+<td><code>json:"-"</code></td>
+<td>never encode or decode this field</td>
+</tr>
+<tr>
+<td><code>json:"-,"</code></td>
+<td>use the literal key <code>-</code></td>
+</tr>
+<tr>
+<td><code>json:",omitempty"</code></td>
+<td>keep the Go field name, but allow omission</td>
+</tr>
+<tr>
+<td><code>json:"n,string"</code></td>
+<td>encode a number/bool as a JSON string</td>
+</tr>
+</tbody>
+</table>
+<p>Watch out: <code>omitempty</code> treats <code>0</code>, <code>false</code> and <code>""</code> as empty. A <code>Quantity int</code>
+with <code>omitempty</code> will vanish when it is legitimately zero. Use <code>*int</code> when you
+need to distinguish "zero" from "absent".</p>
+<h2 id="unmarshalling-json-to-go">Unmarshalling: JSON to Go<a class="headerlink" href="#unmarshalling-json-to-go" title="Permanent link">&para;</a></h2>
+<p><code>Unmarshal</code> needs a <strong>pointer</strong> so it has something to write into:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="s">&quot;encoding/json&quot;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">)</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="kd">type</span><span class="w"> </span><span class="nx">Product</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="nx">ID</span><span class="w">    </span><span class="kt">int</span><span class="w">     </span><span class="s">`json:&quot;id&quot;`</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="nx">Name</span><span class="w">  </span><span class="kt">string</span><span class="w">  </span><span class="s">`json:&quot;name&quot;`</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="nx">Price</span><span class="w"> </span><span class="kt">float64</span><span class="w"> </span><span class="s">`json:&quot;price&quot;`</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="p">}</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="nx">input</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">`{&quot;id&quot;: 7, &quot;name&quot;: &quot;Notebook&quot;, &quot;price&quot;: 3.50, &quot;colour&quot;: &quot;blue&quot;}`</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">p</span><span class="w"> </span><span class="nx">Product</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">json</span><span class="p">.</span><span class="nx">Unmarshal</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">input</span><span class="p">),</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">p</span><span class="p">);</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// note the &amp;</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;unmarshal error:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">        </span><span class="k">return</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;%+v\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">p</span><span class="p">)</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">    </span><span class="c1">// {ID:7 Name:Notebook Price:3.5}</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="p">}</span>
+</code></pre></div>
+<p>Note what did <strong>not</strong> happen: the unknown key <code>colour</code> was silently ignored,
+and no error was raised. Field matching is case-insensitive, so <code>"NAME"</code>,
+<code>"name"</code> and <code>"Name"</code> all fill <code>Name</code> — the exact tag match wins if there is
+one.</p>
+<p>Missing JSON keys leave the Go field at its zero value, again with no error.
+If absence must be detectable, use a pointer:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">type</span><span class="w"> </span><span class="nx">Settings</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nx">Debug</span><span class="w"> </span><span class="o">*</span><span class="kt">bool</span><span class="w"> </span><span class="s">`json:&quot;debug&quot;`</span><span class="w"> </span><span class="c1">// nil = key absent, &amp;false = explicitly false</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="nested-structs-and-slices">Nested structs and slices<a class="headerlink" href="#nested-structs-and-slices" title="Permanent link">&para;</a></h2>
+<p>Real API payloads nest. Model them with nested types:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="s">&quot;encoding/json&quot;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="p">)</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="kd">type</span><span class="w"> </span><span class="nx">Address</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="nx">City</span><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="s">`json:&quot;city&quot;`</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="nx">Country</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="s">`json:&quot;country&quot;`</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="p">}</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="kd">type</span><span class="w"> </span><span class="nx">Employee</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="nx">Name</span><span class="w">    </span><span class="kt">string</span><span class="w">   </span><span class="s">`json:&quot;name&quot;`</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="nx">Address</span><span class="w"> </span><span class="nx">Address</span><span class="w">  </span><span class="s">`json:&quot;address&quot;`</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">    </span><span class="nx">Skills</span><span class="w">  </span><span class="p">[]</span><span class="kt">string</span><span class="w"> </span><span class="s">`json:&quot;skills&quot;`</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="p">}</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="kd">type</span><span class="w"> </span><span class="nx">Company</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">    </span><span class="nx">Name</span><span class="w">      </span><span class="kt">string</span><span class="w">     </span><span class="s">`json:&quot;name&quot;`</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">    </span><span class="nx">Employees</span><span class="w"> </span><span class="p">[]</span><span class="nx">Employee</span><span class="w"> </span><span class="s">`json:&quot;employees&quot;`</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="p">}</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">    </span><span class="nx">input</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">`{</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="s">      &quot;name&quot;: &quot;Acme&quot;,</span>
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="s">      &quot;employees&quot;: [</span>
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="s">        {&quot;name&quot;: &quot;Ada&quot;, &quot;address&quot;: {&quot;city&quot;: &quot;London&quot;, &quot;country&quot;: &quot;UK&quot;},</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="s">         &quot;skills&quot;: [&quot;go&quot;, &quot;math&quot;]},</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="s">        {&quot;name&quot;: &quot;Grace&quot;, &quot;address&quot;: {&quot;city&quot;: &quot;Boston&quot;, &quot;country&quot;: &quot;US&quot;},</span>
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="s">         &quot;skills&quot;: [&quot;compilers&quot;]}</span>
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="s">      ]</span>
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="s">    }`</span>
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>
+<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="nx">Company</span>
+<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">json</span><span class="p">.</span><span class="nx">Unmarshal</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">input</span><span class="p">),</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">c</span><span class="p">);</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;error:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a><span class="w">        </span><span class="k">return</span>
+<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a>
+<a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">e</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">Employees</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;%s (%s, %s) knows %v\n&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a><span class="w">            </span><span class="nx">e</span><span class="p">.</span><span class="nx">Name</span><span class="p">,</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">Address</span><span class="p">.</span><span class="nx">City</span><span class="p">,</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">Address</span><span class="p">.</span><span class="nx">Country</span><span class="p">,</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">Skills</span><span class="p">)</span>
+<a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a><span class="w">    </span><span class="c1">// Ada (London, UK) knows [go math]</span>
+<a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a><span class="w">    </span><span class="c1">// Grace (Boston, US) knows [compilers]</span>
+<a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a><span class="p">}</span>
+</code></pre></div>
+<p>You only need to declare the fields you actually care about — everything else
+in the payload is skipped. For a large API response, model the three fields
+you use, not all forty.</p>
+<h2 id="dynamic-json-with-maps-and-any">Dynamic JSON with maps and <code>any</code><a class="headerlink" href="#dynamic-json-with-maps-and-any" title="Permanent link">&para;</a></h2>
+<p>When the shape genuinely is not known ahead of time, decode into
+<code>map[string]any</code>. Values arrive as a small fixed set of Go types:</p>
+<table>
+<thead>
+<tr>
+<th>JSON</th>
+<th>Go type in <code>any</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>object</td>
+<td><code>map[string]any</code></td>
+</tr>
+<tr>
+<td>array</td>
+<td><code>[]any</code></td>
+</tr>
+<tr>
+<td>string</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>number</td>
+<td><code>float64</code> (<strong>always</strong> — even integers)</td>
+</tr>
+<tr>
+<td><code>true</code>/<code>false</code></td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td><code>null</code></td>
+<td><code>nil</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="s">&quot;encoding/json&quot;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">)</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="nx">input</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">`{&quot;name&quot;: &quot;Ada&quot;, &quot;age&quot;: 36, &quot;active&quot;: true, &quot;scores&quot;: [1, 2, 3]}`</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">m</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">json</span><span class="p">.</span><span class="nx">Unmarshal</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">input</span><span class="p">),</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">m</span><span class="p">);</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;error:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">        </span><span class="k">return</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">    </span><span class="c1">// Every value needs a type assertion (see Module 1).</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">    </span><span class="nx">name</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">m</span><span class="p">[</span><span class="s">&quot;name&quot;</span><span class="p">].(</span><span class="kt">string</span><span class="p">)</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">    </span><span class="nx">age</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">m</span><span class="p">[</span><span class="s">&quot;age&quot;</span><span class="p">].(</span><span class="kt">float64</span><span class="p">)</span><span class="w"> </span><span class="c1">// NOT int -- JSON numbers decode to float64</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;%s is %d\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nb">int</span><span class="p">(</span><span class="nx">age</span><span class="p">))</span><span class="w"> </span><span class="c1">// Ada is 36</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">k</span><span class="p">,</span><span class="w"> </span><span class="nx">v</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">m</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;%s: %v (%T)\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">k</span><span class="p">,</span><span class="w"> </span><span class="nx">v</span><span class="p">,</span><span class="w"> </span><span class="nx">v</span><span class="p">)</span>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="p">}</span>
+</code></pre></div>
+<p>The <code>float64</code> rule catches everyone: <code>m["age"].(int)</code> panics. Prefer a struct
+whenever you know the shape — you get real types and compile-time safety.</p>
+<h2 id="streaming-with-encoder-and-decoder">Streaming with Encoder and Decoder<a class="headerlink" href="#streaming-with-encoder-and-decoder" title="Permanent link">&para;</a></h2>
+<p><code>json.Marshal</code> builds the entire document in memory. For files, HTTP bodies
+and anything large, use the streaming API, which works on any <code>io.Reader</code> or
+<code>io.Writer</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="s">&quot;encoding/json&quot;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="s">&quot;os&quot;</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="s">&quot;strings&quot;</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="p">)</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="kd">type</span><span class="w"> </span><span class="nx">Event</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">    </span><span class="nx">Type</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="s">`json:&quot;type&quot;`</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">    </span><span class="nx">User</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="s">`json:&quot;user&quot;`</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="p">}</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">    </span><span class="c1">// Decoder: read a stream of JSON values.</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">    </span><span class="nx">stream</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">`{&quot;type&quot;:&quot;login&quot;,&quot;user&quot;:&quot;ada&quot;}</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="s">{&quot;type&quot;:&quot;logout&quot;,&quot;user&quot;:&quot;grace&quot;}`</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="w">    </span><span class="nx">dec</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">json</span><span class="p">.</span><span class="nx">NewDecoder</span><span class="p">(</span><span class="nx">strings</span><span class="p">.</span><span class="nx">NewReader</span><span class="p">(</span><span class="nx">stream</span><span class="p">))</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="w">    </span><span class="nx">dec</span><span class="p">.</span><span class="nx">DisallowUnknownFields</span><span class="p">()</span><span class="w"> </span><span class="c1">// strict mode: error on unexpected keys</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="nx">e</span><span class="w"> </span><span class="nx">Event</span>
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">dec</span><span class="p">.</span><span class="nx">Decode</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">e</span><span class="p">);</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="w">            </span><span class="k">break</span><span class="w"> </span><span class="c1">// io.EOF ends the loop</span>
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;%s by %s\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">Type</span><span class="p">,</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">User</span><span class="p">)</span>
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a><span class="w">    </span><span class="c1">// login by ada</span>
+<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a><span class="w">    </span><span class="c1">// logout by grace</span>
+<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>
+<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a><span class="w">    </span><span class="c1">// Encoder: write straight to a Writer (stdout, a file, an HTTP response).</span>
+<a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a><span class="w">    </span><span class="nx">enc</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">json</span><span class="p">.</span><span class="nx">NewEncoder</span><span class="p">(</span><span class="nx">os</span><span class="p">.</span><span class="nx">Stdout</span><span class="p">)</span>
+<a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a><span class="w">    </span><span class="nx">enc</span><span class="p">.</span><span class="nx">SetIndent</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;  &quot;</span><span class="p">)</span>
+<a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a><span class="w">    </span><span class="nx">_</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">enc</span><span class="p">.</span><span class="nx">Encode</span><span class="p">(</span><span class="nx">Event</span><span class="p">{</span><span class="nx">Type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ping&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">User</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;system&quot;</span><span class="p">})</span>
+<a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a><span class="p">}</span>
+</code></pre></div>
+<p><code>DisallowUnknownFields()</code> flips the default silence into a hard error — very
+useful for config files where a typo'd key should not be quietly ignored.</p>
+<h2 id="custom-marshalling">Custom marshalling<a class="headerlink" href="#custom-marshalling" title="Permanent link">&para;</a></h2>
+<p>Implement <code>json.Marshaler</code>/<code>json.Unmarshaler</code> when a type needs a
+non-default representation — a timestamp in a specific layout, for example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="s">&quot;encoding/json&quot;</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="s">&quot;strings&quot;</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="s">&quot;time&quot;</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="p">)</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="kd">type</span><span class="w"> </span><span class="nx">Date</span><span class="w"> </span><span class="kd">struct</span><span class="p">{</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="kd">const</span><span class="w"> </span><span class="nx">dateLayout</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;2006-01-02&quot;</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">d</span><span class="w"> </span><span class="nx">Date</span><span class="p">)</span><span class="w"> </span><span class="nx">MarshalJSON</span><span class="p">()</span><span class="w"> </span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="s">`&quot;`</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">d</span><span class="p">.</span><span class="nx">Format</span><span class="p">(</span><span class="nx">dateLayout</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">`&quot;`</span><span class="p">),</span><span class="w"> </span><span class="kc">nil</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="p">}</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">d</span><span class="w"> </span><span class="o">*</span><span class="nx">Date</span><span class="p">)</span><span class="w"> </span><span class="nx">UnmarshalJSON</span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="p">[]</span><span class="kt">byte</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">    </span><span class="nx">s</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">strings</span><span class="p">.</span><span class="nx">Trim</span><span class="p">(</span><span class="nb">string</span><span class="p">(</span><span class="nx">b</span><span class="p">),</span><span class="w"> </span><span class="s">`&quot;`</span><span class="p">)</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">    </span><span class="nx">t</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Parse</span><span class="p">(</span><span class="nx">dateLayout</span><span class="p">,</span><span class="w"> </span><span class="nx">s</span><span class="p">)</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Errorf</span><span class="p">(</span><span class="s">&quot;parsing date %q: %w&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">s</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="w">    </span><span class="nx">d</span><span class="p">.</span><span class="nx">Time</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">t</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">nil</span>
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="p">}</span>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a><span class="kd">type</span><span class="w"> </span><span class="nx">Task</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="w">    </span><span class="nx">Title</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="s">`json:&quot;title&quot;`</span>
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a><span class="w">    </span><span class="nx">Due</span><span class="w">   </span><span class="nx">Date</span><span class="w">   </span><span class="s">`json:&quot;due&quot;`</span>
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a><span class="p">}</span>
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a>
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">t</span><span class="w"> </span><span class="nx">Task</span>
+<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a><span class="w">    </span><span class="nx">_</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">json</span><span class="p">.</span><span class="nx">Unmarshal</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="s">`{&quot;title&quot;:&quot;Ship it&quot;,&quot;due&quot;:&quot;2026-03-15&quot;}`</span><span class="p">),</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">t</span><span class="p">)</span>
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">t</span><span class="p">.</span><span class="nx">Title</span><span class="p">,</span><span class="w"> </span><span class="nx">t</span><span class="p">.</span><span class="nx">Due</span><span class="p">.</span><span class="nx">Year</span><span class="p">())</span><span class="w"> </span><span class="c1">// Ship it 2026</span>
+<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a>
+<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a><span class="w">    </span><span class="nx">out</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">json</span><span class="p">.</span><span class="nx">Marshal</span><span class="p">(</span><span class="nx">t</span><span class="p">)</span>
+<a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nb">string</span><span class="p">(</span><span class="nx">out</span><span class="p">))</span><span class="w"> </span><span class="c1">// {&quot;title&quot;:&quot;Ship it&quot;,&quot;due&quot;:&quot;2026-03-15&quot;}</span>
+<a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a><span class="p">}</span>
+</code></pre></div>
+<p>Note the receivers: <code>MarshalJSON</code> on the value, <code>UnmarshalJSON</code> on the pointer
+(it must modify the receiver) — exactly the method-set rules from
+<a href="../03-methods-receivers/">Module 3</a>.</p>
+<h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Struct → JSON</td>
+<td><code>data, err := json.Marshal(v)</code></td>
+</tr>
+<tr>
+<td>Pretty JSON</td>
+<td><code>json.MarshalIndent(v, "", "  ")</code></td>
+</tr>
+<tr>
+<td>JSON → struct</td>
+<td><code>json.Unmarshal(data, &amp;v)</code></td>
+</tr>
+<tr>
+<td>Read from a stream</td>
+<td><code>json.NewDecoder(r).Decode(&amp;v)</code></td>
+</tr>
+<tr>
+<td>Write to a stream</td>
+<td><code>json.NewEncoder(w).Encode(v)</code></td>
+</tr>
+<tr>
+<td>Reject unknown keys</td>
+<td><code>dec.DisallowUnknownFields()</code></td>
+</tr>
+<tr>
+<td>Rename a key</td>
+<td><code>`json:"user_id"`</code></td>
+</tr>
+<tr>
+<td>Omit zero values</td>
+<td><code>`json:"bio,omitempty"`</code></td>
+</tr>
+<tr>
+<td>Skip a field</td>
+<td><code>`json:"-"`</code></td>
+</tr>
+<tr>
+<td>Unknown shape</td>
+<td><code>var m map[string]any</code></td>
+</tr>
+<tr>
+<td>Validate JSON text</td>
+<td><code>json.Valid(data)</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="related-lessons">Related lessons<a class="headerlink" href="#related-lessons" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Structs and tags: <a href="../../level-1/06-structs/">Level 1, Module 6</a>.</li>
+<li>Type assertions for <code>map[string]any</code>: <a href="../01-interfaces/">Module 1</a>.</li>
+<li>Reading and writing JSON files: <a href="../07-file-io/">Module 7</a>.</li>
+<li>Decoding API responses over the wire: <a href="../08-net-http-client/">Module 8</a>.</li>
+</ul>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Define a <code>Book</code> struct with <code>Title</code>, <code>Author</code>, <code>Year</code>, <code>ISBN</code> and
+<code>Tags []string</code>, tagged so it encodes as <code>title</code>, <code>author</code>, <code>year</code>, <code>isbn</code> and
+<code>tags</code>, with <code>isbn</code> and <code>tags</code> omitted when empty. Marshal a slice of three
+books to indented JSON and print it. Then unmarshal a JSON array string
+(including one book with an unknown extra key and one missing <code>year</code>) back into
+<code>[]Book</code> and print each one, confirming the unknown key is ignored and the
+missing year becomes <code>0</code>. Finally, re-decode the same input with a
+<code>json.Decoder</code> using <code>DisallowUnknownFields()</code> and print the resulting error.</p>
 
 
 

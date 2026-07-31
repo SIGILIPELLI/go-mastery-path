@@ -1110,6 +1110,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · File I/O
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1126,6 +1144,157 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reading-and-writing-files-in-go" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading and writing files in Go
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whole-file-reads-and-writes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Whole-file reads and writes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#line-by-line-with-bufioscanner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Line-by-line with bufio.Scanner
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-appending-and-buffered-writes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating, appending and buffered writes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-defer-fclose-discipline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The defer f.Close() discipline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checking-existence-size-and-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checking existence, size and type
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directories-and-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Directories and paths
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#temporary-files-and-atomic-writes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Temporary files and atomic writes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copying-with-iocopy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copying with io.Copy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-lessons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related lessons
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1991,6 +2160,146 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reading-and-writing-files-in-go" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading and writing files in Go
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whole-file-reads-and-writes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Whole-file reads and writes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#line-by-line-with-bufioscanner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Line-by-line with bufio.Scanner
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-appending-and-buffered-writes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating, appending and buffered writes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-defer-fclose-discipline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The defer f.Close() discipline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checking-existence-size-and-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checking existence, size and type
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directories-and-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Directories and paths
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#temporary-files-and-atomic-writes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Temporary files and atomic writes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copying-with-iocopy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copying with io.Copy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-lessons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related lessons
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2010,12 +2319,453 @@
 
 
 <h1 id="07-file-io">07 · File I/O<a class="headerlink" href="#07-file-io" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Coming soon</p>
-<p>This module's full lessons and code snippets are being written next.
-Reading and writing files with os and bufio.</p>
-</div>
-<p>More lessons are on the way — check back soon.</p>
+<h2 id="reading-and-writing-files-in-go">Reading and writing files in Go<a class="headerlink" href="#reading-and-writing-files-in-go" title="Permanent link">&para;</a></h2>
+<p>Almost every real program touches the filesystem: config files, logs, CSV
+exports, caches. Go's file APIs live mainly in the <code>os</code> package for opening
+and creating files, <code>bufio</code> for efficient line-by-line access, and <code>io</code> for
+the <code>Reader</code>/<code>Writer</code> interfaces that tie everything together.</p>
+<p>The key decision is always the same: <strong>can this file fit comfortably in
+memory?</strong> If yes, read it whole in one call. If not — or if you do not know —
+stream it.</p>
+<h2 id="whole-file-reads-and-writes">Whole-file reads and writes<a class="headerlink" href="#whole-file-reads-and-writes" title="Permanent link">&para;</a></h2>
+<p>For small files, <code>os.ReadFile</code> and <code>os.WriteFile</code> are a single line each.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="s">&quot;os&quot;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nx">content</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&quot;first line\nsecond line\nthird line\n&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="c1">// 0644 = owner read/write, everyone else read-only.</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">WriteFile</span><span class="p">(</span><span class="s">&quot;notes.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">content</span><span class="p">,</span><span class="w"> </span><span class="mo">0644</span><span class="p">);</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;write error:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="k">return</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="nx">data</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">ReadFile</span><span class="p">(</span><span class="s">&quot;notes.txt&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;read error:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">        </span><span class="k">return</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nb">string</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;bytes read:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span><span class="w"> </span><span class="c1">// bytes read: 34</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="p">}</span>
+</code></pre></div>
+<p><code>os.WriteFile</code> truncates an existing file. Both functions load everything into
+memory at once, so a 2 GB log file becomes a 2 GB allocation — that is when
+you switch to the streaming approach below.</p>
+<h2 id="line-by-line-with-bufioscanner">Line-by-line with <code>bufio.Scanner</code><a class="headerlink" href="#line-by-line-with-bufioscanner" title="Permanent link">&para;</a></h2>
+<p><code>bufio.Scanner</code> is the standard way to walk a file one line at a time using
+constant memory:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="s">&quot;bufio&quot;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="s">&quot;os&quot;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">)</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nx">file</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Open</span><span class="p">(</span><span class="s">&quot;notes.txt&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// read-only</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;open error:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">        </span><span class="k">return</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="k">defer</span><span class="w"> </span><span class="nx">file</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span><span class="w"> </span><span class="c1">// ALWAYS defer the close, right after the error check</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="nx">scanner</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">bufio</span><span class="p">.</span><span class="nx">NewScanner</span><span class="p">(</span><span class="nx">file</span><span class="p">)</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="nx">lineNum</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">scanner</span><span class="p">.</span><span class="nx">Scan</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">        </span><span class="nx">lineNum</span><span class="o">++</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;%d: %s\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">lineNum</span><span class="p">,</span><span class="w"> </span><span class="nx">scanner</span><span class="p">.</span><span class="nx">Text</span><span class="p">())</span><span class="w"> </span><span class="c1">// Text() excludes &quot;\n&quot;</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">    </span><span class="c1">// Scan() returning false means EOF *or* an error -- always check.</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">scanner</span><span class="p">.</span><span class="nx">Err</span><span class="p">();</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;scan error:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">    </span><span class="c1">// 1: first line</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">    </span><span class="c1">// 2: second line</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">    </span><span class="c1">// 3: third line</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="p">}</span>
+</code></pre></div>
+<p>Two traps here:</p>
+<ol>
+<li><strong>Forgetting <code>scanner.Err()</code>.</strong> The loop ends identically on EOF and on a
+   read error. Skipping the check silently truncates data.</li>
+<li><strong>The 64 KB line limit.</strong> A line longer than <code>bufio.MaxScanTokenSize</code> makes
+   <code>Scan</code> return false with <code>bufio.ErrTooLong</code>. Raise it explicitly:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">scanner</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">bufio</span><span class="p">.</span><span class="nx">NewScanner</span><span class="p">(</span><span class="nx">file</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nx">buf</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">make</span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">64</span><span class="o">*</span><span class="mi">1024</span><span class="p">)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nx">scanner</span><span class="p">.</span><span class="nx">Buffer</span><span class="p">(</span><span class="nx">buf</span><span class="p">,</span><span class="w"> </span><span class="mi">1024</span><span class="o">*</span><span class="mi">1024</span><span class="p">)</span><span class="w"> </span><span class="c1">// allow lines up to 1 MB</span>
+</code></pre></div>
+<p>You can also change what counts as a token — <code>scanner.Split(bufio.ScanWords)</code>
+iterates words, <code>bufio.ScanRunes</code> iterates characters.</p>
+<h2 id="creating-appending-and-buffered-writes">Creating, appending and buffered writes<a class="headerlink" href="#creating-appending-and-buffered-writes" title="Permanent link">&para;</a></h2>
+<p><code>os.Create</code> truncates or creates. <code>os.OpenFile</code> gives you full control via
+flags — appending to a log file is the common case:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="s">&quot;bufio&quot;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="s">&quot;os&quot;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="c1">// Append mode: create if missing, write-only, add to the end.</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="nx">f</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">OpenFile</span><span class="p">(</span><span class="s">&quot;app.log&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">O_APPEND</span><span class="o">|</span><span class="nx">os</span><span class="p">.</span><span class="nx">O_CREATE</span><span class="o">|</span><span class="nx">os</span><span class="p">.</span><span class="nx">O_WRONLY</span><span class="p">,</span><span class="w"> </span><span class="mo">0644</span><span class="p">)</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;open error:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">        </span><span class="k">return</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">    </span><span class="k">defer</span><span class="w"> </span><span class="nx">f</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">    </span><span class="c1">// bufio.Writer batches small writes into one syscall.</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">    </span><span class="nx">w</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">bufio</span><span class="p">.</span><span class="nx">NewWriter</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Fprintf</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;event %d occurred\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">i</span><span class="p">)</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">    </span><span class="c1">// Flush pushes the buffer to the file. WITHOUT THIS, DATA IS LOST.</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">w</span><span class="p">.</span><span class="nx">Flush</span><span class="p">();</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;flush error:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">        </span><span class="k">return</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;log written&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="p">}</span>
+</code></pre></div>
+<p>Forgetting <code>Flush()</code> is the most common <code>bufio.Writer</code> bug: the program exits
+successfully and the file is empty. <code>defer w.Flush()</code> works, but its error is
+discarded — flush explicitly when the data matters.</p>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>os.O_RDONLY</code></td>
+<td>read only</td>
+</tr>
+<tr>
+<td><code>os.O_WRONLY</code></td>
+<td>write only</td>
+</tr>
+<tr>
+<td><code>os.O_RDWR</code></td>
+<td>read and write</td>
+</tr>
+<tr>
+<td><code>os.O_CREATE</code></td>
+<td>create the file if it does not exist</td>
+</tr>
+<tr>
+<td><code>os.O_APPEND</code></td>
+<td>writes go to the end</td>
+</tr>
+<tr>
+<td><code>os.O_TRUNC</code></td>
+<td>truncate to zero length on open</td>
+</tr>
+<tr>
+<td><code>os.O_EXCL</code></td>
+<td>with <code>O_CREATE</code>, fail if the file already exists</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-defer-fclose-discipline">The <code>defer f.Close()</code> discipline<a class="headerlink" href="#the-defer-fclose-discipline" title="Permanent link">&para;</a></h2>
+<p><code>defer</code> schedules a call for when the surrounding <strong>function</strong> returns — not
+the end of the loop or the block. That distinction causes a real bug:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// BAD: every file stays open until processAll returns.</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kd">func</span><span class="w"> </span><span class="nx">processAll</span><span class="p">(</span><span class="nx">paths</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">p</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">paths</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">        </span><span class="nx">f</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Open</span><span class="p">(</span><span class="nx">p</span><span class="p">)</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nx">err</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">        </span><span class="k">defer</span><span class="w"> </span><span class="nx">f</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span><span class="w"> </span><span class="c1">// 10,000 paths = 10,000 open descriptors</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">        </span><span class="c1">// ... use f</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">nil</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="p">}</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="c1">// GOOD: give each file its own function scope.</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="kd">func</span><span class="w"> </span><span class="nx">processAll</span><span class="p">(</span><span class="nx">paths</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">p</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">paths</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">processOne</span><span class="p">(</span><span class="nx">p</span><span class="p">);</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nx">err</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">nil</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="p">}</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="kd">func</span><span class="w"> </span><span class="nx">processOne</span><span class="p">(</span><span class="nx">path</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">    </span><span class="nx">f</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Open</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Errorf</span><span class="p">(</span><span class="s">&quot;opening %s: %w&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">path</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="w">    </span><span class="k">defer</span><span class="w"> </span><span class="nx">f</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span><span class="w"> </span><span class="c1">// runs at the end of THIS function -- correct</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="w">    </span><span class="c1">// ... use f</span>
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">nil</span>
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="p">}</span>
+</code></pre></div>
+<p>Also worth knowing: deferred calls run <strong>last-in-first-out</strong>, and their
+arguments are evaluated at the moment <code>defer</code> is written, not when it runs.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">func</span><span class="w"> </span><span class="nx">demo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nx">x</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">1</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="k">defer</span><span class="w"> </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;deferred sees:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="c1">// captures 1 right now</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nx">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">99</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;current:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">x</span><span class="p">)</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="c1">// Output:</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="c1">// current: 99</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="c1">// deferred sees: 1</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="checking-existence-size-and-type">Checking existence, size and type<a class="headerlink" href="#checking-existence-size-and-type" title="Permanent link">&para;</a></h2>
+<p>Use <code>os.Stat</code> for metadata, and <code>errors.Is(err, os.ErrNotExist)</code> for the
+"missing file" case:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="s">&quot;errors&quot;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="s">&quot;os&quot;</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="p">)</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="nx">info</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Stat</span><span class="p">(</span><span class="s">&quot;notes.txt&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nx">errors</span><span class="p">.</span><span class="nx">Is</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">ErrNotExist</span><span class="p">):</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;file does not exist&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="p">:</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;stat error:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">    </span><span class="k">default</span><span class="p">:</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;%s: %d bytes, dir=%v, mode=%v, modified %s\n&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">            </span><span class="nx">info</span><span class="p">.</span><span class="nx">Name</span><span class="p">(),</span><span class="w"> </span><span class="nx">info</span><span class="p">.</span><span class="nx">Size</span><span class="p">(),</span><span class="w"> </span><span class="nx">info</span><span class="p">.</span><span class="nx">IsDir</span><span class="p">(),</span><span class="w"> </span><span class="nx">info</span><span class="p">.</span><span class="nx">Mode</span><span class="p">(),</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">            </span><span class="nx">info</span><span class="p">.</span><span class="nx">ModTime</span><span class="p">().</span><span class="nx">Format</span><span class="p">(</span><span class="s">&quot;2006-01-02 15:04&quot;</span><span class="p">))</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="p">}</span>
+</code></pre></div>
+<p>Do not use a "check then open" pattern to avoid errors — the file can vanish
+between the two calls. Just open it and handle the error, which is why the
+<code>errors.Is</code> chain from <a href="../04-custom-errors-wrapping/">Module 4</a> matters here.</p>
+<h2 id="directories-and-paths">Directories and paths<a class="headerlink" href="#directories-and-paths" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="s">&quot;os&quot;</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="s">&quot;path/filepath&quot;</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="p">)</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">    </span><span class="c1">// filepath joins with the correct separator for the OS.</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">    </span><span class="nx">dir</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">filepath</span><span class="p">.</span><span class="nx">Join</span><span class="p">(</span><span class="s">&quot;data&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2026&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;reports&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">MkdirAll</span><span class="p">(</span><span class="nx">dir</span><span class="p">,</span><span class="w"> </span><span class="mo">0755</span><span class="p">);</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// creates parents too</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;mkdir error:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">        </span><span class="k">return</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">    </span><span class="nx">entries</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">ReadDir</span><span class="p">(</span><span class="s">&quot;data&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;readdir error:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="w">        </span><span class="k">return</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">e</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">entries</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">Name</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;dir:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">IsDir</span><span class="p">())</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a><span class="w">    </span><span class="c1">// Walk an entire tree.</span>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a><span class="w">    </span><span class="nx">err</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">filepath</span><span class="p">.</span><span class="nx">WalkDir</span><span class="p">(</span><span class="s">&quot;data&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">path</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">DirEntry</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="c1">// propagate access errors</span>
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">!</span><span class="nx">d</span><span class="p">.</span><span class="nx">IsDir</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">filepath</span><span class="p">.</span><span class="nx">Ext</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;.txt&quot;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a><span class="w">            </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;found:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">path</span><span class="p">)</span>
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">nil</span>
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a><span class="w">    </span><span class="p">})</span>
+<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;walk error:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a><span class="p">}</span>
+</code></pre></div>
+<p>Always build paths with <code>filepath.Join</code>, never string concatenation with
+<code>"/"</code> — it keeps the code working on Windows and cleans up doubled separators.</p>
+<h2 id="temporary-files-and-atomic-writes">Temporary files and atomic writes<a class="headerlink" href="#temporary-files-and-atomic-writes" title="Permanent link">&para;</a></h2>
+<p>Writing a config or data file directly risks corruption if the program dies
+mid-write. The safe pattern is write-to-temp-then-rename, because rename
+within a filesystem is atomic:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="s">&quot;os&quot;</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="s">&quot;path/filepath&quot;</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="p">)</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="kd">func</span><span class="w"> </span><span class="nx">atomicWrite</span><span class="p">(</span><span class="nx">path</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="p">[]</span><span class="kt">byte</span><span class="p">)</span><span class="w"> </span><span class="kt">error</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">    </span><span class="nx">dir</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">filepath</span><span class="p">.</span><span class="nx">Dir</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">    </span><span class="nx">tmp</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">CreateTemp</span><span class="p">(</span><span class="nx">dir</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.tmp-*&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// same dir =&gt; same filesystem</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Errorf</span><span class="p">(</span><span class="s">&quot;creating temp file: %w&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">    </span><span class="nx">tmpName</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">tmp</span><span class="p">.</span><span class="nx">Name</span><span class="p">()</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">    </span><span class="k">defer</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Remove</span><span class="p">(</span><span class="nx">tmpName</span><span class="p">)</span><span class="w"> </span><span class="c1">// no-op once the rename succeeds</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">tmp</span><span class="p">.</span><span class="nx">Write</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="w">        </span><span class="nx">tmp</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Errorf</span><span class="p">(</span><span class="s">&quot;writing temp file: %w&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">tmp</span><span class="p">.</span><span class="nx">Close</span><span class="p">();</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Errorf</span><span class="p">(</span><span class="s">&quot;closing temp file: %w&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Rename</span><span class="p">(</span><span class="nx">tmpName</span><span class="p">,</span><span class="w"> </span><span class="nx">path</span><span class="p">);</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Errorf</span><span class="p">(</span><span class="s">&quot;renaming into place: %w&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">nil</span>
+<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a><span class="p">}</span>
+<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>
+<a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">atomicWrite</span><span class="p">(</span><span class="s">&quot;config.json&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="s">`{&quot;debug&quot;: true}`</span><span class="p">));</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;error:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a><span class="w">        </span><span class="k">return</span>
+<a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;config written safely&quot;</span><span class="p">)</span>
+<a id="__codelineno-8-38" name="__codelineno-8-38" href="#__codelineno-8-38"></a><span class="p">}</span>
+</code></pre></div>
+<p>Readers of <code>config.json</code> see either the complete old version or the complete
+new one — never a half-written file.</p>
+<h2 id="copying-with-iocopy">Copying with <code>io.Copy</code><a class="headerlink" href="#copying-with-iocopy" title="Permanent link">&para;</a></h2>
+<p>Because <code>*os.File</code> implements both <code>io.Reader</code> and <code>io.Writer</code>, copying is one
+call with constant memory use regardless of file size:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nx">src</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Open</span><span class="p">(</span><span class="s">&quot;large.bin&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">err</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">}</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="k">defer</span><span class="w"> </span><span class="nx">src</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="nx">dst</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Create</span><span class="p">(</span><span class="s">&quot;copy.bin&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">err</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="p">}</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="k">defer</span><span class="w"> </span><span class="nx">dst</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="nx">n</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">io</span><span class="p">.</span><span class="nx">Copy</span><span class="p">(</span><span class="nx">dst</span><span class="p">,</span><span class="w"> </span><span class="nx">src</span><span class="p">)</span><span class="w"> </span><span class="c1">// dst first, src second</span>
+</code></pre></div>
+<p>The same function copies an HTTP response body to a file
+(<a href="../08-net-http-client/">Module 8</a>) or a file to <code>os.Stdout</code>. That reuse is
+the payoff of small interfaces from <a href="../01-interfaces/">Module 1</a>.</p>
+<h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Read a whole file</td>
+<td><code>data, err := os.ReadFile(path)</code></td>
+</tr>
+<tr>
+<td>Write a whole file</td>
+<td><code>os.WriteFile(path, data, 0644)</code></td>
+</tr>
+<tr>
+<td>Open for reading</td>
+<td><code>f, err := os.Open(path)</code></td>
+</tr>
+<tr>
+<td>Create / truncate</td>
+<td><code>f, err := os.Create(path)</code></td>
+</tr>
+<tr>
+<td>Open for appending</td>
+<td><code>os.OpenFile(p, os.O_APPEND\|os.O_CREATE\|os.O_WRONLY, 0644)</code></td>
+</tr>
+<tr>
+<td>Close reliably</td>
+<td><code>defer f.Close()</code></td>
+</tr>
+<tr>
+<td>Read line by line</td>
+<td><code>sc := bufio.NewScanner(f); for sc.Scan() { sc.Text() }</code></td>
+</tr>
+<tr>
+<td>Check scanner errors</td>
+<td><code>if err := sc.Err(); err != nil</code></td>
+</tr>
+<tr>
+<td>Buffered writing</td>
+<td><code>w := bufio.NewWriter(f)</code> … <code>w.Flush()</code></td>
+</tr>
+<tr>
+<td>Formatted write</td>
+<td><code>fmt.Fprintf(w, "x = %d\n", x)</code></td>
+</tr>
+<tr>
+<td>File metadata</td>
+<td><code>info, err := os.Stat(path)</code></td>
+</tr>
+<tr>
+<td>Missing-file check</td>
+<td><code>errors.Is(err, os.ErrNotExist)</code></td>
+</tr>
+<tr>
+<td>Delete / rename</td>
+<td><code>os.Remove(p)</code> / <code>os.Rename(old, new)</code></td>
+</tr>
+<tr>
+<td>Make directories</td>
+<td><code>os.MkdirAll(dir, 0755)</code></td>
+</tr>
+<tr>
+<td>List a directory</td>
+<td><code>os.ReadDir(dir)</code></td>
+</tr>
+<tr>
+<td>Walk a tree</td>
+<td><code>filepath.WalkDir(root, fn)</code></td>
+</tr>
+<tr>
+<td>Join paths</td>
+<td><code>filepath.Join("a", "b")</code></td>
+</tr>
+<tr>
+<td>Stream copy</td>
+<td><code>io.Copy(dst, src)</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="related-lessons">Related lessons<a class="headerlink" href="#related-lessons" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>io.Reader</code>/<code>io.Writer</code> as interfaces: <a href="../01-interfaces/">Module 1</a>.</li>
+<li>Wrapping filesystem errors with context:
+  <a href="../04-custom-errors-wrapping/">Module 4</a>.</li>
+<li>Persisting structs as JSON files: <a href="../05-json-encoding-decoding/">Module 5</a>.</li>
+<li>Testing file code with <code>t.TempDir()</code>: <a href="../06-testing-package/">Module 6</a>.</li>
+</ul>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Write a <code>wordcount</code> program that takes a filename as <code>os.Args[1]</code> and prints
+the number of lines, words and characters, mimicking <code>wc</code>. Read the file with
+<code>bufio.Scanner</code>, use <code>scanner.Split(bufio.ScanWords)</code> for the word pass (or
+count with <code>strings.Fields</code> per line), and check <code>scanner.Err()</code>. Handle a
+missing argument and a missing file with clear messages using
+<code>errors.Is(err, os.ErrNotExist)</code>. Then extend it: if a second argument is
+given, write the report to that path using the <code>atomicWrite</code> helper above
+instead of printing.</p>
 
 
 
