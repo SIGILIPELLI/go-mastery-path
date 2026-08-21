@@ -2,98 +2,98 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://sigilipelli.github.io/go-mastery-path/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/go-mastery-path/privacy/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/go-mastery-path/level-1/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/go-mastery-path/level-1/01-setup/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/go-mastery-path/level-1/02-variables-types-operators/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/go-mastery-path/level-1/03-control-flow/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/go-mastery-path/level-1/04-functions-multiple-returns/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/go-mastery-path/level-1/05-arrays-slices-maps/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/go-mastery-path/level-1/06-structs/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/go-mastery-path/level-1/07-pointers/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/go-mastery-path/level-1/08-error-handling/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/go-mastery-path/level-1/09-packages-modules/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/go-mastery-path/level-1/10-project-todo-cli/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/go-mastery-path/level-2/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/go-mastery-path/level-2/01-interfaces/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/go-mastery-path/level-2/02-goroutines-channels/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/go-mastery-path/level-2/03-methods-receivers/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/go-mastery-path/level-2/04-custom-errors-wrapping/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/go-mastery-path/level-2/05-json-encoding-decoding/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/go-mastery-path/level-2/06-testing-package/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/go-mastery-path/level-2/07-file-io/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/go-mastery-path/level-2/08-net-http-client/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/go-mastery-path/level-2/09-dependency-management/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/go-mastery-path/level-2/10-project-weather-cli/</loc>
-         <lastmod>2026-07-31</lastmod>
+         <lastmod>2026-08-21</lastmod>
     </url>
 </urlset>
