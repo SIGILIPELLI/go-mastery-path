@@ -182,7 +182,7 @@ nothing to `add` and `-name` means nothing to `list` — no cross-talk, and
 ## Related lessons
 
 - Structuring larger programs into packages the way a multi-command CLI
-  needs: [Level 2, Module 6](../level-2/06-packages-modules.md).
+  needs: [Level 2, Module 6](../level-2/09-dependency-management.md).
 - Interfaces for swapping a real `os.Stdin` for a test `strings.Reader`:
   [Module 9](09-interfaces-generics.md).
 

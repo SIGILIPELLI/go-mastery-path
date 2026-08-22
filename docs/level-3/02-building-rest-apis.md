@@ -1,6 +1,6 @@
 # 02 · Building REST APIs
 
-[Level 2](../level-2/03-http-basics.md) touched `net/http` for simple servers.
+[Level 2](../level-2/08-net-http-client.md) touched `net/http` for simple servers.
 This module builds a small but real JSON API — routing by method, decoding
 request bodies, encoding responses, and the concurrency-safety concerns that
 show up the moment a handler touches shared state.
@@ -195,7 +195,7 @@ every request without either middleware knowing the other exists.
 
 ## Related lessons
 
-- HTTP fundamentals: [Level 2, Module 3](../level-2/03-http-basics.md).
+- HTTP fundamentals: [Level 2, Module 3](../level-2/08-net-http-client.md).
 - Cancelling slow handlers with request contexts:
   [Module 4](04-context-package.md).
 - The [Level 3 project](10-project-rest-api-sqlite.md) extends this exact
