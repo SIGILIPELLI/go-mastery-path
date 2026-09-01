@@ -1,8 +1,8 @@
 site_name: Go Mastery Path
 site_description: A structured, module-wise Go training program from entry level to master level.
-site_url: https://sigilipelli.github.io/go-skillmastery/
-repo_url: https://github.com/SIGILIPELLI/go-skillmastery
-repo_name: go-skillmastery
+site_url: https://sigilipelli.github.io/go-mastery-path/
+repo_url: https://github.com/SIGILIPELLI/go-mastery-path
+repo_name: go-mastery-path
 
 theme:
   name: material
