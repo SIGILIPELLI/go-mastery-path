@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sigilipelli.github.io/go-skillmastery/sitemap.xml
+Sitemap: https://sigilipelli.github.io/go-mastery-path/sitemap.xml
