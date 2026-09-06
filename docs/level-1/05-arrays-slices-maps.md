@@ -142,6 +142,24 @@ The comma-ok idiom (`value, ok := m[key]`) is essential: reading a missing
 key returns the zero value silently, so `ok` is the only reliable way to
 distinguish "key present with zero value" from "key absent."
 
+## How It Actually Works
+
+A slice isn't the data — it's a 3-word header: `{pointer, length, capacity}`, 24
+bytes on a 64-bit machine, passed by value everywhere. That's why appending inside a
+function you called doesn't affect your slice unless the function returns the new
+header: `append` only mutates the underlying array in place when there's spare
+capacity; once `len == cap`, Go allocates a new backing array (roughly doubling
+capacity below 256 elements, then growing ~1.25x for larger slices as of recent Go
+versions) and copies every element over, which is why appending in a loop without
+pre-sizing (`make([]T, 0, n)`) causes O(log n) reallocations and O(n) total copies —
+still amortized O(1) per append, but with real memory churn. Maps are hash tables
+implemented as an array of buckets (`runtime.hmap` / `bmap`), each bucket holding up
+to 8 key-value pairs plus overflow pointers; a lookup hashes the key, picks a bucket
+from the low bits of the hash, then linearly scans that bucket's 8 slots comparing
+the high bits first as a fast filter. Map iteration order is deliberately
+randomized by the runtime specifically to stop code from ever depending on it.
+
+
 ## Cheat sheet
 
 | Operation | Syntax |

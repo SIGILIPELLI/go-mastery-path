@@ -95,6 +95,23 @@ language server — for autocomplete, jump-to-definition, and inline errors) is
 the most common choice. **GoLand** (JetBrains) is a strong paid alternative
 with deeper refactoring tools. Either works well; pick one and move on.
 
+## How It Actually Works
+
+`go build` doesn't shell out to a linker toolchain the way C does by default — the Go
+toolchain ships its own assembler, compiler, and linker (`cmd/compile`, `cmd/link`),
+so a fresh install can compile and statically link a binary with zero external
+dependencies. `go run` is really `go build` into a temp directory under
+`$GOCACHE`/`os.TempDir()`, followed by exec of that binary — nothing magic, just a
+convenience wrapper. `GOPATH` used to be mandatory (every import path was a directory
+under `$GOPATH/src`); Go modules (`go.mod`) replaced that by recording a module path
+and dependency versions directly in the repo, and the module cache under
+`$GOPATH/pkg/mod` is now just a shared, content-addressed download cache, not the
+place your code has to live. `gofmt` isn't a linter opinion — it's an AST
+pretty-printer: it parses your file into a syntax tree with `go/parser` and
+re-emits it in one canonical layout, which is why two different Go files formatted
+by two different people always diff cleanly against each other.
+
+
 ## Exercise
 
 Write a program `greeter.go` with a `main` function that prints a greeting

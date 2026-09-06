@@ -317,6 +317,25 @@ Every blocking channel operation in a long-running goroutine should have a
 it was meant to do — a goroutine leak, as introduced in
 [Level 2, Module 2](../level-2/02-goroutines-channels.md).
 
+## How It Actually Works
+
+A `sync.WaitGroup` is a single 64-bit counter manipulated with atomic
+compare-and-swap instructions (no OS-level lock) — `Add` increments it, `Done` is
+`Add(-1)`, and `Wait` spins/parks on a runtime semaphore until the counter reaches
+zero, which is why calling `Add` after `Wait` has already observed zero is a race:
+there's no synchronization preventing the counter from being read as zero and then
+incremented again. A worker pool built from a shared channel works because a
+channel's internal goroutine wait-queues (see level-2/02) act as a fair-ish
+scheduler: multiple goroutines blocked on `<-jobs` are woken roughly in FIFO order
+as values arrive, so each `range jobs` pulls the next value with no explicit locking
+in your code — the channel's own internal mutex (a runtime-private lock, cheaper
+than `sync.Mutex`) serializes access. The "fan-in" pattern (merging N channels into
+one) needs its own goroutine per input channel precisely because a `select` can only
+multiplex a fixed, known set of channels at compile time — you can't `select` over a
+dynamically-sized slice of channels without a loop of goroutines forwarding into one
+shared channel.
+
+
 ## Cheat sheet
 
 | Pattern | Shape |

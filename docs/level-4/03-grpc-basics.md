@@ -178,6 +178,24 @@ a REST call in [Module 2](02-microservices-patterns.md).
   "you sent bad input" from "the server broke" instead of getting an opaque
   `Unknown` status.
 
+## How It Actually Works
+
+gRPC serializes messages with Protocol Buffers: the `.proto` compiler
+(`protoc`/`protoc-gen-go`) generates Go structs plus `Marshal`/`Unmarshal` methods
+that encode each field as a (field-number, wire-type) tag byte followed by the
+value in a compact binary form — varint encoding for integers (small values use
+fewer bytes), length-prefixed bytes for strings/submessages — which is why protobuf
+payloads are typically smaller and faster to parse than the equivalent JSON: there's
+no field-name text and no reflection-driven decode loop (contrast level-2/05).
+Underneath, gRPC runs over HTTP/2, which multiplexes many concurrent
+request/response streams over a single TCP connection using numbered stream frames
+interleaved on the wire — this is what lets a gRPC client keep one connection open
+and issue many simultaneous calls without them blocking each other, unlike HTTP/1.1
+where concurrent requests need separate connections (or strict head-of-line-blocked
+pipelining). A gRPC streaming call is just that same multiplexed stream kept open
+and fed multiple length-prefixed protobuf messages instead of exactly one.
+
+
 ## Cheat sheet
 
 | Task | Command / API |

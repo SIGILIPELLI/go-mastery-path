@@ -156,6 +156,23 @@ visible.
   toward the same threshold as a timeout or 500; production breakers often
   only count specific error classes.
 
+## How It Actually Works
+
+A circuit breaker's "open/closed/half-open" states are just a small state machine
+guarded by counters and a timer, evaluated on every call: closed state counts
+recent failures (often in a rolling window), trips to open once a threshold is
+crossed, open state short-circuits calls immediately (returning an error without
+even attempting the network call) until a cooldown timer expires, and half-open
+lets exactly one trial call through to decide whether to close again or reopen —
+none of this requires network cooperation from the downstream service, it's purely
+local bookkeeping around each outgoing call. Service-to-service calls over gRPC or
+HTTP inherit the same connection-pooling and context-cancellation mechanics covered
+in level-2/08 and level-3/04 — a microservice architecture doesn't introduce new
+low-level mechanisms, it just composes many independent processes each running
+their own instance of the same GMP scheduler, connection pools, and GC, coordinated
+over the network instead of over in-process channels.
+
+
 ## Cheat sheet
 
 | Concern | Pattern |

@@ -158,6 +158,26 @@ rate-limiting proxy.
   distributed system needs a shared store (Redis, etc.) for a rate limit
   that holds across instances.
 
+## How It Actually Works
+
+`crypto/subtle.ConstantTimeCompare` exists because a naive byte-by-byte `==`
+comparison of a secret (like an HMAC signature) returns as soon as it finds a
+mismatching byte — an attacker measuring response timing can use that early exit to
+guess a secret one byte at a time (a timing side channel). The constant-time
+version always compares every byte regardless of where a mismatch occurs, using
+bitwise OR-accumulation instead of early-return branching, so the execution time
+carries no information about *where* the strings differ. TLS termination works by
+the `crypto/tls` package performing a handshake (certificate verification via chain-
+of-trust to a root CA, then an ephemeral key exchange like ECDHE) before any
+application data is exchanged, after which all reads/writes on that `net.Conn` are
+transparently encrypted/decrypted by the TLS layer — your handler code never sees
+raw ciphertext, `net/http`'s `Server.ServeTLS` just swaps in a `tls.Listener`
+wrapping the ordinary TCP listener. Input validation matters at the boundary
+precisely because Go's memory safety only prevents memory-corruption bugs, not
+logic bugs like SQL injection or path traversal, which operate entirely within
+"valid" memory.
+
+
 ## Cheat sheet
 
 | Need | API |

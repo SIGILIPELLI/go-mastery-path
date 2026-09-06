@@ -135,6 +135,23 @@ shape disappears along with the slowdown.
   meaningful side effects that accumulate (e.g. appending to a package-level
   slice) without resetting them each iteration.
 
+## How It Actually Works
+
+`go test -bench` runs each benchmark function repeatedly, doubling the iteration
+count (`b.N`) each round until the total run time crosses a stable threshold
+(~1 second by default) — that's why `b.N` isn't something you choose; the framework
+picks it to get a statistically stable per-op timing, then reports `ns/op` as total
+time divided by the final `b.N`. `pprof` CPU profiling works by having the runtime
+install a signal handler (`SIGPROF` on Unix) that fires ~100 times per second; each
+firing captures the current goroutine's call stack and records it, so the resulting
+profile is a statistical sample of "what was on the stack when the timer fired," not
+a full trace — which is why very short-lived functions can be under-sampled. Memory
+profiling instead hooks the allocator itself, sampling roughly 1 in every 512KB of
+allocation (`runtime.MemProfileRate`) and recording the call stack at that
+allocation site, which is how `pprof -alloc_objects` can point at exact lines
+responsible for allocation pressure without instrumenting every single allocation.
+
+
 ## Cheat sheet
 
 | Task | Command |

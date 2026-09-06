@@ -160,6 +160,24 @@ certificates and `/etc/passwd`) or a small real distro (`alpine`):
   `:nonroot` variant tags exist for exactly this reason when `scratch`'s
   total bareness is too limiting anyway.
 
+## How It Actually Works
+
+A statically-linked Go binary (the default for pure-Go code with `CGO_ENABLED=0`)
+has no dynamic library dependencies at all — the linker embeds everything, including
+the Go runtime and GC, directly into one executable, which is exactly what makes
+`FROM scratch` Docker images possible: there's no libc, no shared objects, nothing
+for the container's minimal filesystem to be missing. The moment CGO is enabled
+(any `import "C"`, often pulled in transitively by SQLite drivers or similar), the
+binary dynamically links against libc and whatever C library it wraps, and a
+`scratch` or `distroless` image will fail at runtime with a missing-library error
+that only appears at container-start, not at Go build time — this is the actual
+mechanism behind "works with `go build` locally, breaks in the minimal container."
+Multi-stage Dockerfiles exploit Docker's layer cache keyed by each instruction's
+inputs: a `COPY go.mod go.sum` + `RUN go mod download` step before `COPY . .`
+means the dependency-download layer is reused across builds as long as go.mod/
+go.sum are unchanged, even when your source code changes on every commit.
+
+
 ## Cheat sheet
 
 | Task | Command / directive |

@@ -175,6 +175,24 @@ func main() {
 
 Multiple `defer` calls run in **LIFO** order (last deferred, first executed).
 
+## How It Actually Works
+
+Go doesn't fake multiple return values with a tuple object the way Python does —
+the ABI (calling convention) reserves stack slots (or, on newer Go versions using
+the register-based ABI, specific registers) for each return value, and the caller
+reads them directly with no allocation or packing step. That's why returning `(int,
+error)` costs nothing extra over returning just `int`: the second value is just
+another slot filled in before `ret`. `defer` doesn't run "later" in some vague
+sense — the compiler maintains a per-goroutine linked list of deferred calls
+attached to the current stack frame, and `RET` is compiled to first pop and execute
+every entry on that list (LIFO) before actually returning to the caller. A deferred
+function can still read and modify named return values because those return values
+are addressable stack slots that stay alive until the real return, which is the
+mechanism behind the classic "recover and set an error in a deferred func" pattern.
+Named vs. unnamed returns compile to identical code otherwise — naming just gives
+you a variable to write to from a defer.
+
+
 ## Cheat sheet
 
 | Feature | Syntax |

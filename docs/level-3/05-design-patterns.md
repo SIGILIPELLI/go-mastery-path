@@ -146,6 +146,24 @@ about what's underneath it.
   `&PercentOff{...}`, not `PercentOff{...}`, would satisfy `Discount` —
   worth checking when an assignment mysteriously fails to compile.
 
+## How It Actually Works
+
+Go's approach to these patterns leans on the language's structural typing rather
+than class hierarchies: a "Strategy" pattern is just a function value or a
+one-method interface — no `implements` declaration needed, any type with the right
+method set satisfies the interface automatically, checked structurally at compile
+time by comparing method sets, not by any explicit relationship in the source.
+"Decorator" (middleware wrapping) works because `http.Handler`/any interface is a
+two-word itab+data pair (level-2/01) — wrapping one implementation in another is
+just constructing a new struct whose method forwards to the wrapped interface value
+it holds, resolved through an extra itab indirection at call time. The "functional
+options" pattern (`NewServer(WithTimeout(5*time.Second))`) exists specifically
+because Go has no constructor overloading or default parameters — each option is a
+closure of type `func(*Server)` that mutates the server struct being built, applied
+in a loop inside the constructor, which is a runtime substitute for what other
+languages solve with named/default parameters at the call site.
+
+
 ## Cheat sheet
 
 | GoF-flavored need | Go idiom |

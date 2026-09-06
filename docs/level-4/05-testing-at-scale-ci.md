@@ -181,6 +181,25 @@ on unrelated unit-test problems being fixed first.
   a cache key that also captures build output as if it were still valid
   after a source change.
 
+## How It Actually Works
+
+`go test`'s build cache (`$GOCACHE`) keys every compiled package and, separately,
+every test result by a hash of the package's source files, its dependencies'
+hashes, and the build flags used — this is why re-running `go test ./...` with
+nothing changed reports "(cached)" instantly instead of recompiling: the hash
+matches a previous run's recorded pass/fail outcome, and Go trusts it deterministically.
+CI parallelism across matrix jobs (different Go versions, different OSes) works
+because each job is a genuinely separate process/container with its own `$GOCACHE`
+and `$GOPATH` — there's no shared mutable state to race on, unlike parallel tests
+*within* one process, which rely on `t.Parallel()`'s scheduler-level pausing
+(level-3/06) rather than separate processes. Code coverage instrumentation
+(`-cover`) works by rewriting the AST at compile time to insert a counter increment
+at the start of every basic block, then dumping those counters to a profile file at
+program exit — coverage percentage is just "blocks with a nonzero counter" divided
+by "total blocks," which is why coverage can be 100% while still missing entire
+logical branches inside a single block.
+
+
 ## Cheat sheet
 
 | Task | Command |

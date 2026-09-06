@@ -359,6 +359,25 @@ Note the receivers: `MarshalJSON` on the value, `UnmarshalJSON` on the pointer
 (it must modify the receiver) — exactly the method-set rules from
 [Module 3](03-methods-receivers.md).
 
+## How It Actually Works
+
+`encoding/json` builds its behavior at runtime through reflection: the first time it
+marshals a given type, it inspects the type's fields with `reflect.Type`, reads
+struct tags via `StructTag.Get("json")`, and caches a slice of field-encoder
+functions keyed by that type so repeat calls skip the inspection step — this cache
+(`sync.Map` internally) is why marshaling the same struct type repeatedly is faster
+after the first call. Unmarshaling into a struct walks the JSON token stream with a
+hand-written recursive-descent-style scanner and, for each JSON object key, does a
+case-insensitive field-name match against the cached field list — which is exactly
+why Go silently ignores JSON fields with no matching struct field, and why struct
+tags exist at all: they let you decouple your Go field names from the wire format's
+key names without either side reflecting on the other's naming convention. Because
+this is all reflection-driven rather than compiled-in, `encoding/json` is
+meaningfully slower than a code-generated marshaler (like `easyjson` or the newer
+`encoding/json/v2` proposal) that emits direct field-access code the compiler can
+inline.
+
+
 ## Cheat sheet
 
 | Task | Syntax |

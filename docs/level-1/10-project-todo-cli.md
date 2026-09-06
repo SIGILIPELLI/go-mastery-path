@@ -284,6 +284,26 @@ Each invocation reloads `tasks.json` from disk, so tasks persist across
 separate runs of the program. Build a standalone binary with `go build -o
 todocli .` and `./todocli list` works the same way, no `go run` needed.
 
+## How It Actually Works
+
+The CLI parses `os.Args` directly rather than through a framework, which means
+`os.Args[0]` is the invoked binary path (platform-dependent — it can be relative,
+absolute, or just the binary name depending on how it was launched) and everything
+from `os.Args[1]` on is the tokens the shell handed to `exec` after doing its own
+quoting/globbing — Go never re-parses shell syntax, it just receives the already-
+split argv array from the OS. Reading and writing the todo file with
+`os.ReadFile`/`os.WriteFile` each does a single `open`/`read-all`/`close` (or
+`open`/`write`/`close`) syscall sequence with no partial-write protection — a crash
+mid-`WriteFile` on some filesystems can leave a truncated file, which is why
+production tools instead write to a temp file and `os.Rename` it into place (rename
+is atomic on POSIX filesystems because it only swaps a directory entry, not file
+contents). JSON marshaling walks the struct via reflection at runtime — `encoding/
+json` inspects field tags and types through the `reflect` package for every call,
+which is measurably slower than the escape-analysis-driven direct field access used
+elsewhere in the codebase, and is exactly why high-throughput services often
+generate marshal code instead (see level-2/05).
+
+
 ## Stretch goals
 
 - Add a `priority` field (`low`/`medium`/`high`) and sort `list` output by

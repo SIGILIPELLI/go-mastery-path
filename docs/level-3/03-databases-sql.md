@@ -153,6 +153,24 @@ early return.
   connection — so there is no need to wrap it in your own mutex the way the
   hand-rolled `store` in [Module 2](02-building-rest-apis.md) needed one.
 
+## How It Actually Works
+
+`database/sql` doesn't talk to your database directly — it's a generic interface
+layer that dispatches every call to a driver you registered via
+`sql.Register`/blank-import (`_ "github.com/lib/pq"` etc.), which implements the
+actual wire protocol for that specific database. `sql.DB` isn't one connection —
+it's a pool: `db.Query`/`db.Exec` borrow an idle `*driver.Conn` from the pool (or the
+driver opens a new one, up to `SetMaxOpenConns`), use it, and return it to the pool
+afterward, which is exactly why forgetting to close a `*sql.Rows` leaks a connection
+out of the pool rather than leaking memory in the usual sense — the pool thinks
+that connection is still busy. Prepared statements (`db.Prepare`) send the SQL text
+to the database once, which parses and plans it and returns a handle; subsequent
+`Exec`/`Query` calls on that handle send only the parameter values over the wire,
+skipping re-parsing — this is also the actual mechanism that prevents SQL injection:
+parameters are sent as data in a separate protocol field, never concatenated into
+the SQL text the parser sees.
+
+
 ## Cheat sheet
 
 | Task | API |

@@ -169,6 +169,24 @@ keep in sync.
   slices) panics at runtime**, not compile time — `==` on two `any` compiles
   fine regardless of what's inside them.
 
+## How It Actually Works
+
+Go generics don't use C++-style full monomorphization for every instantiation by
+default — the compiler uses GC shape stenciling: types with the same underlying
+memory layout and pointer-ness (e.g. all pointer types, or all same-size integer
+types) share one compiled version of a generic function ("GCShape stenciling"),
+passed a runtime dictionary describing the concrete type's specific operations,
+while genuinely different shapes each get their own compiled copy. This is a
+middle ground between C++ templates (fully separate compiled code per instantiation,
+larger binaries, faster calls) and Java-style type erasure (one compiled version,
+runtime casts, slower). A type constraint like `Ordered` isn't checked at runtime —
+the compiler verifies at the generic function's call site that the concrete type
+argument's method set (or, for `~int | ~string`-style unions, its underlying kind)
+satisfies the constraint interface, using the exact same itab-compatible structural
+checking as ordinary interfaces (level-2/01), just applied one level earlier, at
+compile time.
+
+
 ## Cheat sheet
 
 | Need | Syntax |

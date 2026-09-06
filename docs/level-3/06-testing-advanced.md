@@ -171,6 +171,24 @@ when comparing runs across machines.
   results — use `b.ResetTimer()` after one-time setup, or `b.StopTimer()` /
   `b.StartTimer()` to bracket the part you don't want measured.
 
+## How It Actually Works
+
+`go test -race` compiles your code with instrumented memory accesses: every read
+and write to shared memory is wrapped with a call into the race detector's runtime
+(based on Google's ThreadSanitizer/ftsan algorithm), which maintains a vector clock
+per goroutine and a shadow memory region recording which goroutine last
+touched each byte and when (in happens-before order). A race is reported when two
+accesses (at least one a write) touch the same memory location from different
+goroutines with no happens-before edge between them — a channel send/receive, a
+mutex lock/unlock, or a WaitGroup Wait/Done all establish such edges; their absence
+is exactly what a race is. This instrumentation roughly doubles memory use and
+slows execution 2-20x, which is why `-race` is a testing/CI flag, not a production
+build flag. Table-driven tests with `t.Run` create genuinely separate `*testing.T`
+values per case (not just a loop), which is what lets `go test -run
+TestName/subtest_name` target one row and what makes each subtest's `t.Parallel()`
+independent of the others.
+
+
 ## Cheat sheet
 
 | Task | Command / API |

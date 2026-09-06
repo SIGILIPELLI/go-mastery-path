@@ -161,6 +161,24 @@ documented or converted explicitly before logging (e.g.
   Prometheus — using the raw integer status code as the label avoids the
   ambiguity, at the cost of a slightly less readable metric line.
 
+## How It Actually Works
+
+OpenTelemetry's distributed tracing threads a `context.Context` through every call
+in the request path (level-3/04), attaching a `Span` to it at each hop; a span
+records a trace ID and span ID pair, and child spans (produced by a downstream
+service or function) carry the parent span ID, which is what lets a tracing backend
+reconstruct the whole call tree afterward purely from these ID relationships, with no
+central coordinator needed at request time. Propagating trace context across a
+network call (e.g. gRPC or HTTP) means serializing the trace/span IDs into request
+headers (`traceparent` in the W3C standard) so the receiving service's SDK can pick
+up the same trace ID and start its own child span. Metrics like histograms
+(`prometheus.Histogram`) work by maintaining a fixed set of bucket counters
+in-process, incrementing the counter for every bucket whose upper bound is at or
+above the observed value on each `Observe` call — that's an O(number of buckets)
+operation per observation, which is why bucket boundaries are chosen deliberately,
+not sampled/computed post hoc the way percentiles from raw data would be.
+
+
 ## Cheat sheet
 
 | Need | API |

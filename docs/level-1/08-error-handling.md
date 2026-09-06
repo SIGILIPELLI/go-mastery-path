@@ -151,6 +151,23 @@ func main() {
 }
 ```
 
+## How It Actually Works
+
+A Go `error` is just an interface value — two words under the hood: a pointer to a
+*type descriptor* (which concrete type implements `Error()`) and a pointer to the
+actual data. That two-word representation is exactly why `var err error = (*MyErr)(nil)`
+is *not* equal to plain `nil`: the interface's type word is set to `*MyErr` even
+though the data word is nil, and `err == nil` compares both words, so it's false —
+the single most common surprising-error-comparison bug in Go. `panic` doesn't just
+throw — it unwinds the goroutine's deferred-call stack (see level-1/04) frame by
+frame, running each `defer` in LIFO order, and if any deferred function calls
+`recover()` while a panic is actively unwinding through it, the runtime stops the
+unwind and resumes normal execution from just after that deferred call. That's the
+entire mechanism `recover` relies on — it only does anything when called directly
+inside a deferred function during an active panic; calling it any other time is a
+no-op that returns nil.
+
+
 ## Cheat sheet
 
 | Task | Syntax |

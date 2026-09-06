@@ -308,6 +308,24 @@ The "bound at bind time" behaviour of method values on *value* receivers
 surprises people; with a pointer receiver the method value sees later changes,
 because it captured the pointer.
 
+## How It Actually Works
+
+A method is really just a function with an implicit first parameter — `func (s
+Server) Handle()` compiles to something shaped like `func Handle(s Server)` under
+the hood, and `s.Handle()` is sugar for calling that function with `s` as the first
+argument. This is exactly why you can take a method value (`f := s.Handle`) and get
+a real function value with `s` already bound into it — the compiler generates a
+small closure that captures the receiver. Value vs. pointer receivers differ in what
+gets bound: a value receiver copies the entire struct into that hidden first
+parameter (cheap for small structs, real cost for large ones), while a pointer
+receiver copies just the 8-byte address, and lets the method mutate the original.
+The compiler also auto-generates the address-of or dereference when you call a
+pointer-receiver method on an addressable value (`s.Handle()` becomes
+`(&s).Handle()`) — but it can't do that for a value stored in a map, which is why
+`map[k].Method()` fails to compile when `Method` has a pointer receiver: a map
+element isn't addressable.
+
+
 ## Cheat sheet
 
 | Task | Syntax |

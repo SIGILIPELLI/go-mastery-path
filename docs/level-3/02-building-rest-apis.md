@@ -181,6 +181,23 @@ every request without either middleware knowing the other exists.
 - **Not closing `r.Body`** on the client side of a `net/http` request leaks
   the underlying connection; `defer resp.Body.Close()` is not optional.
 
+## How It Actually Works
+
+`net/http`'s `ServeMux` (or a third-party router) matches incoming requests by
+building a lookup structure — the standard mux historically does longest-prefix
+matching over a sorted pattern list, while pattern-based routers (`mux.HandleFunc("GET
+/users/{id}", ...)` in Go 1.22+) compile each registered pattern into a small
+matcher that captures path segments in a single pass. Every accepted TCP connection
+gets its own goroutine (`http.Server` calls `go c.serve(ctx)` per connection in
+`net/http`'s internal accept loop), which is why a slow handler on one connection
+doesn't block other clients — the GMP scheduler (level-2/02) just treats each as an
+independent blocked/runnable goroutine. Middleware chaining (`Logging(Auth(handler))`)
+works because `http.Handler` is just an interface with one method — wrapping a
+handler in another function that calls it is ordinary function composition, not a
+framework feature; the "chain" is really nested closures, each one running before
+and/or after calling the handler it wraps.
+
+
 ## Cheat sheet
 
 | Task | API |

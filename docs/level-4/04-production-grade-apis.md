@@ -166,6 +166,24 @@ it down on purpose" from a genuine startup/runtime failure that deserves
   ([Level 3, Module 4](../level-3/04-context-package.md)) — small in a
   process about to exit, but still worth the habit.
 
+## How It Actually Works
+
+Graceful shutdown (`server.Shutdown(ctx)`) works by first closing the listener so no
+new connections are accepted, then waiting for in-flight requests to finish by
+polling/blocking on the server's internal count of active connections, only forcing
+closed connections still open once the passed context's deadline expires — this is
+the same context-cancellation deadline mechanism from level-3/04, just applied to
+shutdown instead of a request. Rate limiting with a token bucket is a counter plus a
+timestamp: each request checks whether enough time has passed to have "refilled"
+tokens (computed from elapsed time × refill rate, not a background goroutine
+ticking down a real counter, which would be wasteful) and either decrements and
+proceeds or rejects — Go's own `golang.org/x/time/rate` limiter implements exactly
+this lazy-refill math. Structured health checks and readiness probes hook into the
+same idle-connection accounting used by graceful shutdown — "ready" typically means
+"listener is open and dependency connections in the pool are alive," checked
+on-demand rather than continuously.
+
+
 ## Cheat sheet
 
 | Concern | Setting / pattern |

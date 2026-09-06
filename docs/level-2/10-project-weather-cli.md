@@ -664,6 +664,23 @@ go test -v -run TestDescribe ./weather
 - **stdout vs stderr.** Data goes to stdout so `./weather -city X -json | jq`
   works; diagnostics go to stderr.
 
+## How It Actually Works
+
+This CLI's request/parse/render pipeline chains together every mechanism from this
+level: `http.Client`'s connection pool and context-driven cancellation handle the
+network call (level-2/08), `encoding/json`'s reflection-based decoder builds the
+response struct from the API's JSON body by caching a field-encoder plan the first
+time it sees that struct type (level-2/05), and any transport or parse failure is
+wrapped with `fmt.Errorf("...: %w", err)` so the caller can `errors.Is`/`errors.As`
+its way back to the root cause without losing context (level-2/04). The CLI's own
+concurrency, if it fans out multiple requests, relies on the GMP scheduler
+detaching each goroutine's blocked network syscall from its OS thread so other
+goroutines keep running while the HTTP round trip is in flight (level-2/02) — that's
+what makes concurrent API calls actually overlap in wall-clock time instead of
+serializing. None of these are separate frameworks bolted together; they're the same
+runtime and standard-library mechanisms already covered, composed.
+
+
 ## Stretch goals
 
 - Add `-units=imperial` and convert to °F and mph (use a method on `Report`).

@@ -168,6 +168,24 @@ func main() {
 }
 ```
 
+## How It Actually Works
+
+Go's `switch` doesn't fall through by default because the compiler generates a jump
+table (or a chain of compares for small/sparse cases) that jumps straight to the
+matching case and then to the end of the switch — falling through would require an
+explicit extra jump instruction, which is exactly what the `fallthrough` keyword
+inserts when you ask for it. A `for` loop with no clauses (`for { }`) compiles to an
+unconditional backward jump — there's no hidden condition check, which is why it's
+the idiomatic infinite loop instead of `for true {}` (both compile the same way, but
+the former reads as "obviously infinite" to the compiler's dead-code and unreachable
+code analysis too). The classic Go 1.21-and-earlier loop-variable-capture bug
+(closures inside a `for range` all seeing the last value) happened because the loop
+variable was one stack slot reused every iteration; each closure captured a pointer
+to that slot, not a copy of the value at capture time. Go 1.22 changed the spec so
+each iteration gets its own variable instance, which is why the fix is "upgrade Go,"
+not "learn a workaround."
+
+
 ## Cheat sheet
 
 | Construct | Example |

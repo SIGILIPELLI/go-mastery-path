@@ -310,6 +310,23 @@ var _ Shape = (*Rectangle)(nil) // fails to compile if Rectangle drops a method
 
 It costs nothing at runtime and documents the intent.
 
+## How It Actually Works
+
+An interface value is two machine words: an *itab* pointer and a *data* pointer. The
+itab (interface table) is a runtime-built structure caching the concrete type's
+identity plus a method table — pointers to the actual function implementations for
+every method the interface requires — computed once per (concrete-type, interface-
+type) pair and cached, not rebuilt on every assignment. The data word holds either a
+direct pointer to the concrete value (if it's already pointer-sized or was heap-
+allocated) or a pointer to a boxed copy on the heap. This is why storing a large
+struct in an interface costs an allocation — the concrete value has to be copied
+somewhere the data pointer can reference — while storing a `*T` costs nothing extra
+beyond the pointer itself. Calling a method through an interface is an indirect call
+through the itab's method table (like a C++ vtable call), not a direct call, which
+is one reason interface-heavy hot paths are slower than calling concrete methods
+directly — the CPU can't always predict/inline through that indirection.
+
+
 ## Cheat sheet
 
 | Task | Syntax |

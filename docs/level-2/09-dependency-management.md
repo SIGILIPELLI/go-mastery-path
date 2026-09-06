@@ -243,6 +243,24 @@ air-gapped or strict-audit requirement.
 - Audit dependencies with `go list -m all` and check known issues with
   `govulncheck ./...`.
 
+## How It Actually Works
+
+Minimal Version Selection (MVS) works by building a directed graph of every module's
+declared requirements (from each dependency's own `go.mod`, fetched transitively)
+and then, for each module name that appears anywhere in that graph, selecting the
+single highest version requested by any node — not the latest version that exists.
+This is the opposite of npm's typical "get the newest compatible" resolution and is
+what makes Go builds reproducible from `go.mod` alone without needing a separate
+lockfile format. `go mod tidy` recomputes this graph from your source's actual
+imports (via `go/packages` loading, not just static text-scanning) and adds or
+removes `require` lines to match exactly what's imported — reachable-but-unused
+requirements get pruned, unlisted-but-needed ones get added with their MVS-selected
+version. The module cache under `$GOPATH/pkg/mod` stores each downloaded version
+read-only and content-addressed by module path + version, so two projects
+requiring the same version of a dependency share one on-disk copy rather than each
+vendoring their own.
+
+
 ## Cheat sheet
 
 | Task | Command |

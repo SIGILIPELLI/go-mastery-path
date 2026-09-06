@@ -132,6 +132,24 @@ func main() {
 }
 ```
 
+## How It Actually Works
+
+`go.mod` and `go.sum` aren't just metadata — they drive Minimal Version Selection
+(MVS), Go's dependency resolution algorithm: for every module in your build's
+dependency graph, Go picks the *minimum* version that satisfies every requirement
+anywhere in the graph (not the newest available), which makes builds reproducible
+without a separate lockfile-vs-manifest distinction like npm's package.json/
+package-lock.json split. `go.sum` records cryptographic hashes (SHA-256, via the
+module checksum database `sum.golang.org` by default) of every module version's
+source tree and go.mod, and `go build`/`go get` verify a fresh download against that
+hash before compiling it — a mismatch fails the build outright, which is what
+protects you from a compromised or tampered module registry. The compiler processes
+packages in dependency order, compiling each into an object file cached in
+`$GOCACHE` keyed by a hash of the source plus build flags — this is why an unchanged
+package rebuilds instantly (cache hit) while touching a leaf package invalidates
+every package that (transitively) imports it.
+
+
 ## Cheat sheet
 
 | Task | Command / syntax |

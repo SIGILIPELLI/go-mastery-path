@@ -318,6 +318,24 @@ func ExampleAdd() {
 
 If `Add` ever stops returning 5, the documentation fails the build.
 
+## How It Actually Works
+
+`go test` doesn't run your package in place — it generates a temporary `_test`
+binary that links your package code together with a small generated `main()` that
+enumerates every `func TestXxx(*testing.T)` (found by scanning the AST for functions
+matching that exact signature and name pattern, not by any annotation) and calls
+them in file order. Each `t.Run("name", fn)` spawns the subtest as a new goroutine
+so `t.Parallel()` can actually run subtests concurrently — calling `t.Parallel()`
+signals the test runner to pause that subtest until all non-parallel siblings finish,
+then resume it alongside other parallel subtests, up to `-parallel N` at a time.
+`t.Fatal`/`t.FailNow` don't just set a flag and return — they call `runtime.
+Goexit()`, which unwinds the calling goroutine's deferred calls and then terminates
+that goroutine without terminating the process, which is why `t.Fatal` inside a
+non-test goroutine (started with `go func(){...}()` inside a test) silently kills
+that goroutine without failing the test — a classic testing.T gotcha the mechanism
+directly explains.
+
+
 ## Cheat sheet
 
 | Task | Syntax |

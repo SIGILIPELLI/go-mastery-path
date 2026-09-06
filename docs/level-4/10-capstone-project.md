@@ -299,6 +299,24 @@ mocked behavior.
 - **`sync.Map` for per-IP limiters** ([Module 1](01-advanced-concurrency.md))
   avoids a global mutex becoming a bottleneck as distinct IPs accumulate.
 
+## How It Actually Works
+
+The capstone's rate limiter is the same lazy-refill token-bucket math from
+level-4/04 — no background goroutine ticking down a counter, just elapsed-time
+arithmetic evaluated on each request. Its concurrent request handling rests on the
+GMP scheduler detaching blocked goroutines' OS threads during I/O waits
+(level-2/02), its graceful shutdown uses the same listener-close-then-drain
+mechanism as level-4/04, and any GC pause visible under load is the concurrent
+tricolor collector's brief stop-the-world phases for stack scanning and enabling/
+disabling the write barrier (level-4/01) — not a full stop-the-world mark, which
+is what makes Go's GC pause times largely independent of heap size in practice.
+Wiring a fake store into the rate limiter for tests works because the limiter
+depends on a small interface, not a concrete store type — swapping implementations
+at the call site costs nothing beyond constructing a different itab+data pair
+(level-2/01) at composition time; nothing about the limiter's own logic needs to
+know or care which concrete store backs it.
+
+
 ## Stretch goals
 
 - Add a `DELETE /links/{code}` endpoint restricted to the link's creator —

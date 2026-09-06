@@ -149,6 +149,23 @@ func main() {
 }
 ```
 
+## How It Actually Works
+
+A struct is laid out in memory as its fields, in declaration order, each padded so
+it starts at an address that's a multiple of its own alignment requirement — that's
+why reordering fields from `bool, int64, bool` to `int64, bool, bool` shrinks a
+struct from 24 bytes to 16: the compiler has to pad each `bool` up to 8 bytes in the
+first layout to keep `int64` aligned, but can pack both bools into one 8-byte slot
+in the second. There's no struct "boxing" — a struct value embedded in another
+struct is inlined byte-for-byte into the parent's memory, not stored as a pointer,
+which is why `unsafe.Sizeof` on a struct is roughly the sum (with padding) of its
+fields' sizes, not one pointer-width. Comparing structs with `==` compiles to a
+field-by-field (or block memcmp when possible) comparison done entirely at compile
+time by generating the comparison code — there's no runtime reflection involved
+unless you explicitly use `reflect.DeepEqual`, which is far slower because it walks
+types dynamically.
+
+
 ## Cheat sheet
 
 | Feature | Syntax |

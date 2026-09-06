@@ -149,6 +149,23 @@ func main() {
 }
 ```
 
+## How It Actually Works
+
+Every Go value carries a *static type* known at compile time — the compiler uses it
+to pick the machine instructions for `+`, decide how many bytes to allocate, and
+reject mismatched operations before the binary is even built. This is different from
+Python or JS, where a value carries its type at runtime and the interpreter checks it
+on every operation. `var x int` allocates 8 bytes (on a 64-bit target) on the stack
+if escape analysis proves `x` never outlives the function, or on the heap otherwise —
+the compiler decides this, not you (see level-1/07 for more). Numeric conversions
+like `float64(i)` are never implicit in Go specifically because implicit widening
+conversions are a classic source of silent precision-loss bugs in C; the language
+designers traded convenience for a compiler error you see immediately. Untyped
+constants (`const x = 5`) are a special case: they live in the compiler's constant
+table with arbitrary precision until they're assigned to a typed variable, which is
+why `const x = 1 << 100` compiles fine but `var x int64 = 1 << 100` doesn't.
+
+
 ## Cheat sheet
 
 | Concept | Syntax |

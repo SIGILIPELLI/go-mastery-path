@@ -152,6 +152,25 @@ access pattern `sync.Map` is optimized for.
   the first error appears," it's "stop *launching new work*, still wait for
   in-flight work to unwind."
 
+## How It Actually Works
+
+Go's garbage collector is a concurrent, tricolor mark-and-sweep collector: every
+object starts white, the GC greys the roots (globals, goroutine stacks) and then
+repeatedly picks a grey object, scans its pointers, blackens it, and greys whatever
+it points to that's still white, until no grey objects remain — anything still
+white at that point is garbage. This runs concurrently with your goroutines (not
+stop-the-world for the whole cycle), which is only safe because of a *write
+barrier*: every pointer write during the mark phase is intercepted by
+compiler-inserted code that greys the new target, preventing the classic
+concurrent-GC bug where a mutator hides a white object from the collector by moving
+the only pointer to it into an already-scanned (black) location. `sync.Mutex` itself
+has two modes: normal mode (a waiter that fails to acquire the lock quickly queues
+and is woken FIFO-ish) and starvation mode, which the runtime switches to
+automatically once a waiter has been waiting over 1ms, handing the lock directly to
+the longest-waiting goroutine to guarantee forward progress instead of new arrivals
+repeatedly winning the race for it.
+
+
 ## Cheat sheet
 
 | Need | Tool |

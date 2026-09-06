@@ -322,6 +322,23 @@ test suite runs in milliseconds and never leaves a stray `tasks.db` behind.
   is what keeps `errors.Is` chains from silently swallowing unrelated
   failures as 404s.
 
+## How It Actually Works
+
+This project's request lifecycle chains the level's mechanisms end to end: each
+accepted connection gets its own goroutine from `net/http`'s accept loop
+(level-3/02), a `context.Context` derived per-request carries cancellation down
+through the handler and into any database call (level-3/04), and `database/sql`
+borrows a pooled connection to execute the query, returning it to the pool once the
+`*sql.Rows` is closed (level-3/03) — an unclosed `Rows` here specifically leaks a
+SQLite connection out of that pool, not just memory, since SQLite's driver holds a
+real OS file handle and lock state per connection. SQLite itself is not a
+client-server database — the driver links directly against the SQLite C library (or
+a pure-Go reimplementation) and reads/writes the database file directly, using
+OS-level file locks (or, in WAL mode, a separate write-ahead log file plus a shared
+memory index) to arbitrate between connections, which is why SQLite has a single
+effective writer at a time even though the pool holds multiple open connections.
+
+
 ## Cheat sheet
 
 | Piece | Where |

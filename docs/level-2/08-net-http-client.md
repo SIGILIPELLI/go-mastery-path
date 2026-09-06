@@ -361,6 +361,25 @@ _, err = io.Copy(out, resp.Body) // streams in fixed-size chunks
 Because `resp.Body` is an `io.Reader` and `*os.File` is an `io.Writer`, the
 same `io.Copy` from [Module 7](07-file-io.md) works unchanged.
 
+## How It Actually Works
+
+`http.Client` isn't a single connection — its default `Transport` maintains a pool
+of persistent TCP connections keyed by (scheme, host, port), reusing an idle
+connection for a new request when one's available (HTTP keep-alive) rather than
+paying a fresh TCP handshake (and TLS handshake, for https) every time. This
+connection pool is exactly why reusing one `http.Client` across many requests is
+dramatically faster than constructing a new one per request — a fresh client with a
+fresh Transport starts with an empty pool. Each outgoing request runs on its own
+goroutine-blocking read/write over that connection's `net.Conn`, which under the
+hood is a wrapped OS socket file descriptor; `context.Context` cancellation on a
+request works by having the Transport register the context's `Done()` channel and,
+when it fires, forcibly closing the underlying connection to unblock the pending
+read — that's the actual mechanism behind request timeouts, not a polling check.
+Response bodies must be closed because the underlying connection can't be returned
+to the pool for reuse until its body is fully read and closed — an unclosed body
+leaks a live TCP connection, not just memory.
+
+
 ## Cheat sheet
 
 | Task | Syntax |

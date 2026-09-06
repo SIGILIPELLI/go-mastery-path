@@ -138,6 +138,23 @@ func main() {
 }
 ```
 
+## How It Actually Works
+
+Go decides stack vs. heap allocation through *escape analysis*, a compile-time pass
+over the function's data-flow graph: if the compiler can prove a value's address
+never leaves the function (no pointer to it is returned, stored in a global, sent on
+a channel, or captured by an escaping closure), it stays on the stack and gets freed
+for free when the function returns — no GC involvement at all. The moment you return
+`&localVar` from a function, the compiler marks it as escaping and allocates it on
+the heap instead, because the stack frame it would have lived in is gone once the
+function returns. You can see this decision directly with `go build -gcflags="-m"`,
+which prints "escapes to heap" or "does not escape" for every allocation. This is
+why Go pointers are safe to return from functions (unlike a raw pointer to a local
+in C) — the compiler silently promotes the allocation to the heap rather than let it
+dangle, and it's why minimizing accidental escapes (e.g. passing an interface where
+a concrete type would do) is a real, measurable performance lever.
+
+
 ## Cheat sheet
 
 | Concept | Syntax |

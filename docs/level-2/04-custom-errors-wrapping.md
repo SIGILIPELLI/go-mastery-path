@@ -286,6 +286,23 @@ func main() {
 - Sentinels and exported error types are part of your public API. Changing
   them breaks callers.
 
+## How It Actually Works
+
+`fmt.Errorf("...: %w", err)` doesn't concatenate strings and forget the original —
+the `%w` verb makes `fmt` construct a `*fmt.wrapError`, a small struct holding the
+formatted message plus a reference to the original error, and implementing an
+`Unwrap() error` method that returns it. `errors.Is` and `errors.As` walk that chain
+by repeatedly calling `Unwrap()` (or, since Go 1.20, also handling `Unwrap() []error`
+for errors joined by `errors.Join`) until they find a match or run out of chain —
+it's a plain linked-list traversal, not any kind of magic matching. `errors.Is`
+compares with `==` (or a custom `Is(error) bool` method) at each link, while
+`errors.As` uses `reflect` to check whether each link's concrete type is assignable
+to the target pointer's type. This is why comparing wrapped errors with `==`
+directly fails silently (you're comparing the wrapper to the sentinel, not unwrapping
+first) but `errors.Is` succeeds — the traversal it does is exactly the manual
+`for { ... err = errors.Unwrap(err) }` loop you'd otherwise have to write yourself.
+
+
 ## Cheat sheet
 
 | Task | Syntax |

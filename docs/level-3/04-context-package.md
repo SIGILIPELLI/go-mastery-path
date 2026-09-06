@@ -146,6 +146,25 @@ untyped.
   discarded entirely), but not the case where you call it conditionally on
   only some code paths.
 
+## How It Actually Works
+
+A `context.Context` is an immutable, linked tree of small wrapper values — calling
+`context.WithCancel(parent)` doesn't mutate the parent, it allocates a new
+`cancelCtx` struct holding a pointer back to the parent plus its own `done` channel
+and a slice of registered child contexts. Calling the returned `cancel()` function
+closes that `done` channel (closing, not sending, because closing wakes every
+goroutine `select`ing on it simultaneously) and then recursively cancels every
+registered child — that recursive propagation is literal tree traversal over
+pointers, not some broadcast mechanism. `context.WithTimeout` is `WithCancel` plus a
+`time.AfterFunc` that calls `cancel()` when the timer fires, so a context timeout
+and manual cancellation are the exact same code path underneath. `context.
+WithValue` doesn't use a map — each call wraps the parent in a tiny struct holding
+one key-value pair, so looking up a value walks up the linked list of these wrapper
+structs comparing keys one at a time, which is why deeply nested `WithValue` chains
+have O(depth) lookup cost and why the standard library warns against using context
+values for anything beyond a few request-scoped items.
+
+
 ## Cheat sheet
 
 | Need | API |

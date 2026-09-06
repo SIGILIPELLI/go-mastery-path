@@ -166,6 +166,23 @@ nothing to `add` and `-name` means nothing to `list` — no cross-talk, and
   `bufio.ErrTooLong` from `scanner.Err()`; call `scanner.Buffer(buf,
   maxSize)` to raise the limit if that's expected input.
 
+## How It Actually Works
+
+A CLI framework like `cobra` builds a tree of `Command` structs at program
+initialization (each `init()` or explicit `AddCommand` call links a subcommand into
+its parent's slice), then at runtime walks `os.Args` against that tree, consuming
+tokens until it finds the deepest matching command and handing the remaining
+tokens to that command's flag parser. `flag`/`pflag` parsing works by iterating
+`os.Args` once, recognizing `-x`/`--x=y`/`--x y` forms via string prefix checks, and
+writing the parsed value directly into the pointer you registered
+(`flag.StringVar(&out, "name", ...)` stores the address, so parsing writes straight
+into your variable with no intermediate map lookup at use-time). Exit codes are
+communicated to the shell via the `_exit` syscall parameter passed to `os.Exit`,
+which — unlike a normal `return` from `main` — skips all pending deferred calls,
+which is why cleanup logic in CLIs needs to run before calling `os.Exit`, not after
+registering it with `defer`.
+
+
 ## Cheat sheet
 
 | Task | API |

@@ -365,6 +365,24 @@ The same function copies an HTTP response body to a file
 ([Module 8](08-net-http-client.md)) or a file to `os.Stdout`. That reuse is
 the payoff of small interfaces from [Module 1](01-interfaces.md).
 
+## How It Actually Works
+
+`os.Open` is a thin wrapper over the `openat` syscall — it returns an `*os.File`
+holding just the OS file descriptor (an integer) plus bookkeeping, and every
+`Read`/`Write` call is a direct syscall, which is why reading a file byte-by-byte in
+a loop is catastrophically slow: each call crosses into kernel mode. `bufio.Reader`
+fixes this by wrapping the file descriptor with a fixed-size internal byte slice (4KB
+by default); it fills that buffer with one syscall-sized `Read` and then serves your
+small reads out of memory until the buffer is drained, at which point it refills.
+`io.Copy` similarly batches through an internal buffer (or uses `io.ReaderFrom`/
+`WriterTo` fast paths — e.g. `sendfile(2)` on Linux for certain file-to-socket
+copies — when both ends support it, skipping userspace entirely). Closing a file
+(`Close`) releases the OS file descriptor back to the process's descriptor table;
+forgetting to close files in a long-running program exhausts that table (a fixed-size
+OS-level limit, `ulimit -n`), which is the actual mechanism behind "too many open
+files" errors, not a Go-specific limit.
+
+
 ## Cheat sheet
 
 | Task | Syntax |

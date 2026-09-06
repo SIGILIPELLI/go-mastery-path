@@ -317,6 +317,26 @@ below 1000. Run any concurrent program with `go run -race .` — the race
 detector finds these bugs reliably and is the most valuable tool in Go
 concurrency work.
 
+## How It Actually Works
+
+A goroutine starts with a tiny 2KB stack (as of recent Go versions) that the runtime
+grows by copying to a larger allocation when it detects (via a guard-page check
+inserted at function entry) that the current frame doesn't fit — this is what makes
+spawning thousands of goroutines cheap compared to OS threads, which typically
+reserve megabytes of stack up front. The scheduler is the "GMP" model: **G**
+(goroutine), **M** (OS thread, "machine"), and **P** (processor, a scheduling
+context — there are `GOMAXPROCS` of these). Only a goroutine holding a P can run;
+when a goroutine blocks on a syscall, its M detaches from the P so another M can pick
+that P up and keep running other goroutines, which is why blocking syscalls don't
+stall your whole program. A channel (`hchan` in runtime source) is a struct holding
+a circular ring buffer (for buffered channels), a lock (a runtime-internal mutex,
+cheaper than `sync.Mutex`), and two wait queues of goroutines parked on send and on
+receive. An unbuffered channel send doesn't touch the ring buffer at all — the
+runtime directly hands the value from the sender's stack to a waiting receiver's
+stack and wakes it, which is the actual mechanism behind "unbuffered channels
+synchronize" beyond just blocking.
+
+
 ## Cheat sheet
 
 | Task | Syntax |

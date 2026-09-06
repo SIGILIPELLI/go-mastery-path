@@ -154,6 +154,26 @@ references, not by default.
   ([Level 3, Module 7](../level-3/07-profiling-benchmarking.md)), not a
   final answer.
 
+## How It Actually Works
+
+`sync.Pool` reduces GC pressure by keeping a per-P (recall the GMP model, level-2/02)
+free list of previously-used objects that a goroutine can `Get()` without touching
+the shared heap allocator at all, and `Put()` back after use; because each P has its
+own local pool, Get/Put usually need no locking, only falling back to a
+cross-P steal when the local pool is empty. Objects sitting in a `sync.Pool` are not
+protected from GC, though — the runtime clears pools at the start of most GC cycles
+specifically so pooled memory doesn't become a permanent, invisible leak. Reducing
+allocations matters because every heap allocation both costs allocator time and adds
+one more object the GC's mark phase has to visit — cutting allocations in a hot loop
+shrinks both the allocation-time cost and the GC's per-cycle mark work
+simultaneously, which is why `-gcflags="-m"` escape-analysis output (level-1/07) is
+the actual profiling tool for this class of optimization, not just wall-clock
+benchmarking. CPU cache-line effects (false sharing between fields two goroutines
+each write to) can dominate over algorithmic complexity at high concurrency, which
+is why padding hot struct fields to separate 64-byte cache lines is a real, if
+rarely needed, optimization in Go same as in C.
+
+
 ## Cheat sheet
 
 | Optimization | How |
