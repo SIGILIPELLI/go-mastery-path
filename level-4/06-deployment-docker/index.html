@@ -2041,6 +2041,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2283,6 +2294,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2474,6 +2496,21 @@ certificates and <code>/etc/passwd</code>) or a small real distro (<code>alpine<
   <code>:nonroot</code> variant tags exist for exactly this reason when <code>scratch</code>'s
   total bareness is too limiting anyway.</li>
 </ul>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>A statically-linked Go binary (the default for pure-Go code with <code>CGO_ENABLED=0</code>)
+has no dynamic library dependencies at all — the linker embeds everything, including
+the Go runtime and GC, directly into one executable, which is exactly what makes
+<code>FROM scratch</code> Docker images possible: there's no libc, no shared objects, nothing
+for the container's minimal filesystem to be missing. The moment CGO is enabled
+(any <code>import "C"</code>, often pulled in transitively by SQLite drivers or similar), the
+binary dynamically links against libc and whatever C library it wraps, and a
+<code>scratch</code> or <code>distroless</code> image will fail at runtime with a missing-library error
+that only appears at container-start, not at Go build time — this is the actual
+mechanism behind "works with <code>go build</code> locally, breaks in the minimal container."
+Multi-stage Dockerfiles exploit Docker's layer cache keyed by each instruction's
+inputs: a <code>COPY go.mod go.sum</code> + <code>RUN go mod download</code> step before <code>COPY . .</code>
+means the dependency-download layer is reused across builds as long as go.mod/
+go.sum are unchanged, even when your source code changes on every commit.</p>
 <h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

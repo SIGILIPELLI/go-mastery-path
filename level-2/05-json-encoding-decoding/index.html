@@ -1294,6 +1294,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2349,6 +2360,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2773,6 +2795,22 @@ non-default representation — a timestamp in a specific layout, for example:</p
 <p>Note the receivers: <code>MarshalJSON</code> on the value, <code>UnmarshalJSON</code> on the pointer
 (it must modify the receiver) — exactly the method-set rules from
 <a href="../03-methods-receivers/">Module 3</a>.</p>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p><code>encoding/json</code> builds its behavior at runtime through reflection: the first time it
+marshals a given type, it inspects the type's fields with <code>reflect.Type</code>, reads
+struct tags via <code>StructTag.Get("json")</code>, and caches a slice of field-encoder
+functions keyed by that type so repeat calls skip the inspection step — this cache
+(<code>sync.Map</code> internally) is why marshaling the same struct type repeatedly is faster
+after the first call. Unmarshaling into a struct walks the JSON token stream with a
+hand-written recursive-descent-style scanner and, for each JSON object key, does a
+case-insensitive field-name match against the cached field list — which is exactly
+why Go silently ignores JSON fields with no matching struct field, and why struct
+tags exist at all: they let you decouple your Go field names from the wire format's
+key names without either side reflecting on the other's naming convention. Because
+this is all reflection-driven rather than compiled-in, <code>encoding/json</code> is
+meaningfully slower than a code-generated marshaler (like <code>easyjson</code> or the newer
+<code>encoding/json/v2</code> proposal) that emits direct field-access code the compiler can
+inline.</p>
 <h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

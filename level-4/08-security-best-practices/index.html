@@ -2097,6 +2097,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2276,6 +2287,17 @@
     <span class="md-ellipsis">
       
         Go-specific traps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
       
     </span>
   </a>
@@ -2468,6 +2490,23 @@ rate-limiting proxy.</p>
   distributed system needs a shared store (Redis, etc.) for a rate limit
   that holds across instances.</li>
 </ul>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p><code>crypto/subtle.ConstantTimeCompare</code> exists because a naive byte-by-byte <code>==</code>
+comparison of a secret (like an HMAC signature) returns as soon as it finds a
+mismatching byte — an attacker measuring response timing can use that early exit to
+guess a secret one byte at a time (a timing side channel). The constant-time
+version always compares every byte regardless of where a mismatch occurs, using
+bitwise OR-accumulation instead of early-return branching, so the execution time
+carries no information about <em>where</em> the strings differ. TLS termination works by
+the <code>crypto/tls</code> package performing a handshake (certificate verification via chain-
+of-trust to a root CA, then an ephemeral key exchange like ECDHE) before any
+application data is exchanged, after which all reads/writes on that <code>net.Conn</code> are
+transparently encrypted/decrypted by the TLS layer — your handler code never sees
+raw ciphertext, <code>net/http</code>'s <code>Server.ServeTLS</code> just swaps in a <code>tls.Listener</code>
+wrapping the ordinary TCP listener. Input validation matters at the boundary
+precisely because Go's memory safety only prevents memory-corruption bugs, not
+logic bugs like SQL injection or path traversal, which operate entirely within
+"valid" memory.</p>
 <h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

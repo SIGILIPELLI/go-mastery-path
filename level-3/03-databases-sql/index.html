@@ -1559,6 +1559,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2239,6 +2250,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2428,6 +2450,21 @@ early return.</p>
   connection — so there is no need to wrap it in your own mutex the way the
   hand-rolled <code>store</code> in <a href="../02-building-rest-apis/">Module 2</a> needed one.</li>
 </ul>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p><code>database/sql</code> doesn't talk to your database directly — it's a generic interface
+layer that dispatches every call to a driver you registered via
+<code>sql.Register</code>/blank-import (<code>_ "github.com/lib/pq"</code> etc.), which implements the
+actual wire protocol for that specific database. <code>sql.DB</code> isn't one connection —
+it's a pool: <code>db.Query</code>/<code>db.Exec</code> borrow an idle <code>*driver.Conn</code> from the pool (or the
+driver opens a new one, up to <code>SetMaxOpenConns</code>), use it, and return it to the pool
+afterward, which is exactly why forgetting to close a <code>*sql.Rows</code> leaks a connection
+out of the pool rather than leaking memory in the usual sense — the pool thinks
+that connection is still busy. Prepared statements (<code>db.Prepare</code>) send the SQL text
+to the database once, which parses and plans it and returns a handle; subsequent
+<code>Exec</code>/<code>Query</code> calls on that handle send only the parameter values over the wire,
+skipping re-parsing — this is also the actual mechanism that prevents SQL injection:
+parameters are sent as data in a separate protocol field, never concatenated into
+the SQL text the parser sees.</p>
 <h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

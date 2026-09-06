@@ -2114,6 +2114,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2254,6 +2265,17 @@
     <span class="md-ellipsis">
       
         Go-specific traps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
       
     </span>
   </a>
@@ -2448,6 +2470,23 @@ references, not by default.</p>
   (<a href="../../level-3/07-profiling-benchmarking/">Level 3, Module 7</a>), not a
   final answer.</li>
 </ul>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p><code>sync.Pool</code> reduces GC pressure by keeping a per-P (recall the GMP model, level-2/02)
+free list of previously-used objects that a goroutine can <code>Get()</code> without touching
+the shared heap allocator at all, and <code>Put()</code> back after use; because each P has its
+own local pool, Get/Put usually need no locking, only falling back to a
+cross-P steal when the local pool is empty. Objects sitting in a <code>sync.Pool</code> are not
+protected from GC, though — the runtime clears pools at the start of most GC cycles
+specifically so pooled memory doesn't become a permanent, invisible leak. Reducing
+allocations matters because every heap allocation both costs allocator time and adds
+one more object the GC's mark phase has to visit — cutting allocations in a hot loop
+shrinks both the allocation-time cost and the GC's per-cycle mark work
+simultaneously, which is why <code>-gcflags="-m"</code> escape-analysis output (level-1/07) is
+the actual profiling tool for this class of optimization, not just wall-clock
+benchmarking. CPU cache-line effects (false sharing between fields two goroutines
+each write to) can dominate over algorithmic complexity at high concurrency, which
+is why padding hot struct fields to separate 64-byte cache lines is a real, if
+rarely needed, optimization in Go same as in C.</p>
 <h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

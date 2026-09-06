@@ -1238,6 +1238,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2349,6 +2360,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2685,6 +2707,21 @@ crash by itself; it only panics if the method dereferences the nil. Handling
 <p>The "bound at bind time" behaviour of method values on <em>value</em> receivers
 surprises people; with a pointer receiver the method value sees later changes,
 because it captured the pointer.</p>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>A method is really just a function with an implicit first parameter — <code>func (s
+Server) Handle()</code> compiles to something shaped like <code>func Handle(s Server)</code> under
+the hood, and <code>s.Handle()</code> is sugar for calling that function with <code>s</code> as the first
+argument. This is exactly why you can take a method value (<code>f := s.Handle</code>) and get
+a real function value with <code>s</code> already bound into it — the compiler generates a
+small closure that captures the receiver. Value vs. pointer receivers differ in what
+gets bound: a value receiver copies the entire struct into that hidden first
+parameter (cheap for small structs, real cost for large ones), while a pointer
+receiver copies just the 8-byte address, and lets the method mutate the original.
+The compiler also auto-generates the address-of or dereference when you call a
+pointer-receiver method on an addressable value (<code>s.Handle()</code> becomes
+<code>(&amp;s).Handle()</code>) — but it can't do that for a value stored in a map, which is why
+<code>map[k].Method()</code> fails to compile when <code>Method</code> has a pointer receiver: a map
+element isn't addressable.</p>
 <h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

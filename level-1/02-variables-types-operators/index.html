@@ -812,6 +812,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2294,6 +2305,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2483,6 +2505,20 @@ an expression is a compile error — you must convert explicitly:</p>
 <a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="c1">// 18 4</span>
 <a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="p">}</span>
 </code></pre></div>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Every Go value carries a <em>static type</em> known at compile time — the compiler uses it
+to pick the machine instructions for <code>+</code>, decide how many bytes to allocate, and
+reject mismatched operations before the binary is even built. This is different from
+Python or JS, where a value carries its type at runtime and the interpreter checks it
+on every operation. <code>var x int</code> allocates 8 bytes (on a 64-bit target) on the stack
+if escape analysis proves <code>x</code> never outlives the function, or on the heap otherwise —
+the compiler decides this, not you (see level-1/07 for more). Numeric conversions
+like <code>float64(i)</code> are never implicit in Go specifically because implicit widening
+conversions are a classic source of silent precision-loss bugs in C; the language
+designers traded convenience for a compiler error you see immediately. Untyped
+constants (<code>const x = 5</code>) are a special case: they live in the compiler's constant
+table with arbitrary precision until they're assigned to a typed variable, which is
+why <code>const x = 1 &lt;&lt; 100</code> compiles fine but <code>var x int64 = 1 &lt;&lt; 100</code> doesn't.</p>
 <h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

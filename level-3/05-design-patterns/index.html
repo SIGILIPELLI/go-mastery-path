@@ -1626,6 +1626,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2261,6 +2272,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2438,6 +2460,21 @@ about what's underneath it.</p>
   <code>&amp;PercentOff{...}</code>, not <code>PercentOff{...}</code>, would satisfy <code>Discount</code> —
   worth checking when an assignment mysteriously fails to compile.</li>
 </ul>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Go's approach to these patterns leans on the language's structural typing rather
+than class hierarchies: a "Strategy" pattern is just a function value or a
+one-method interface — no <code>implements</code> declaration needed, any type with the right
+method set satisfies the interface automatically, checked structurally at compile
+time by comparing method sets, not by any explicit relationship in the source.
+"Decorator" (middleware wrapping) works because <code>http.Handler</code>/any interface is a
+two-word itab+data pair (level-2/01) — wrapping one implementation in another is
+just constructing a new struct whose method forwards to the wrapped interface value
+it holds, resolved through an extra itab indirection at call time. The "functional
+options" pattern (<code>NewServer(WithTimeout(5*time.Second))</code>) exists specifically
+because Go has no constructor overloading or default parameters — each option is a
+closure of type <code>func(*Server)</code> that mutates the server struct being built, applied
+in a loop inside the constructor, which is a runtime substitute for what other
+languages solve with named/default parameters at the call site.</p>
 <h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

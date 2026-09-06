@@ -1710,6 +1710,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2261,6 +2272,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2461,6 +2483,20 @@ nothing to <code>add</code> and <code>-name</code> means nothing to <code>list</
   <code>bufio.ErrTooLong</code> from <code>scanner.Err()</code>; call <code>scanner.Buffer(buf,
   maxSize)</code> to raise the limit if that's expected input.</li>
 </ul>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>A CLI framework like <code>cobra</code> builds a tree of <code>Command</code> structs at program
+initialization (each <code>init()</code> or explicit <code>AddCommand</code> call links a subcommand into
+its parent's slice), then at runtime walks <code>os.Args</code> against that tree, consuming
+tokens until it finds the deepest matching command and handing the remaining
+tokens to that command's flag parser. <code>flag</code>/<code>pflag</code> parsing works by iterating
+<code>os.Args</code> once, recognizing <code>-x</code>/<code>--x=y</code>/<code>--x y</code> forms via string prefix checks, and
+writing the parsed value directly into the pointer you registered
+(<code>flag.StringVar(&amp;out, "name", ...)</code> stores the address, so parsing writes straight
+into your variable with no intermediate map lookup at use-time). Exit codes are
+communicated to the shell via the <code>_exit</code> syscall parameter passed to <code>os.Exit</code>,
+which — unlike a normal <code>return</code> from <code>main</code> — skips all pending deferred calls,
+which is why cleanup logic in CLIs needs to run before calling <code>os.Exit</code>, not after
+registering it with <code>defer</code>.</p>
 <h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

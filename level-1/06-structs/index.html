@@ -913,6 +913,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2272,6 +2283,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2444,6 +2466,20 @@ covered in depth in <a href="../../level-2/03-methods-receivers/">Level 2</a>.</
 <a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="c1">// true -- compares field by field</span>
 <a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="p">}</span>
 </code></pre></div>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>A struct is laid out in memory as its fields, in declaration order, each padded so
+it starts at an address that's a multiple of its own alignment requirement — that's
+why reordering fields from <code>bool, int64, bool</code> to <code>int64, bool, bool</code> shrinks a
+struct from 24 bytes to 16: the compiler has to pad each <code>bool</code> up to 8 bytes in the
+first layout to keep <code>int64</code> aligned, but can pack both bools into one 8-byte slot
+in the second. There's no struct "boxing" — a struct value embedded in another
+struct is inlined byte-for-byte into the parent's memory, not stored as a pointer,
+which is why <code>unsafe.Sizeof</code> on a struct is roughly the sum (with padding) of its
+fields' sizes, not one pointer-width. Comparing structs with <code>==</code> compiles to a
+field-by-field (or block memcmp when possible) comparison done entirely at compile
+time by generating the comparison code — there's no runtime reflection involved
+unless you explicitly use <code>reflect.DeepEqual</code>, which is far slower because it walks
+types dynamically.</p>
 <h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

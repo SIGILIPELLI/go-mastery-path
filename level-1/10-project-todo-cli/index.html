@@ -1047,6 +1047,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#stretch-goals" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2305,6 +2316,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#stretch-goals" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2598,6 +2620,23 @@ in <a href="../../level-2/04-custom-errors-wrapping/">Level 2, Module 4</a>.</p>
 <p>Each invocation reloads <code>tasks.json</code> from disk, so tasks persist across
 separate runs of the program. Build a standalone binary with <code>go build -o
 todocli .</code> and <code>./todocli list</code> works the same way, no <code>go run</code> needed.</p>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>The CLI parses <code>os.Args</code> directly rather than through a framework, which means
+<code>os.Args[0]</code> is the invoked binary path (platform-dependent — it can be relative,
+absolute, or just the binary name depending on how it was launched) and everything
+from <code>os.Args[1]</code> on is the tokens the shell handed to <code>exec</code> after doing its own
+quoting/globbing — Go never re-parses shell syntax, it just receives the already-
+split argv array from the OS. Reading and writing the todo file with
+<code>os.ReadFile</code>/<code>os.WriteFile</code> each does a single <code>open</code>/<code>read-all</code>/<code>close</code> (or
+<code>open</code>/<code>write</code>/<code>close</code>) syscall sequence with no partial-write protection — a crash
+mid-<code>WriteFile</code> on some filesystems can leave a truncated file, which is why
+production tools instead write to a temp file and <code>os.Rename</code> it into place (rename
+is atomic on POSIX filesystems because it only swaps a directory entry, not file
+contents). JSON marshaling walks the struct via reflection at runtime — <code>encoding/
+json</code> inspects field tags and types through the <code>reflect</code> package for every call,
+which is measurably slower than the escape-analysis-driven direct field access used
+elsewhere in the codebase, and is exactly why high-throughput services often
+generate marshal code instead (see level-2/05).</p>
 <h2 id="stretch-goals">Stretch goals<a class="headerlink" href="#stretch-goals" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Add a <code>priority</code> field (<code>low</code>/<code>medium</code>/<code>high</code>) and sort <code>list</code> output by

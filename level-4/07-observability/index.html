@@ -2058,6 +2058,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2261,6 +2272,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2452,6 +2474,21 @@ documented or converted explicitly before logging (e.g.
   Prometheus — using the raw integer status code as the label avoids the
   ambiguity, at the cost of a slightly less readable metric line.</li>
 </ul>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>OpenTelemetry's distributed tracing threads a <code>context.Context</code> through every call
+in the request path (level-3/04), attaching a <code>Span</code> to it at each hop; a span
+records a trace ID and span ID pair, and child spans (produced by a downstream
+service or function) carry the parent span ID, which is what lets a tracing backend
+reconstruct the whole call tree afterward purely from these ID relationships, with no
+central coordinator needed at request time. Propagating trace context across a
+network call (e.g. gRPC or HTTP) means serializing the trace/span IDs into request
+headers (<code>traceparent</code> in the W3C standard) so the receiving service's SDK can pick
+up the same trace ID and start its own child span. Metrics like histograms
+(<code>prometheus.Histogram</code>) work by maintaining a fixed set of bucket counters
+in-process, incrementing the counter for every bucket whose upper bound is at or
+above the observed value on each <code>Observe</code> call — that's an O(number of buckets)
+operation per observation, which is why bucket boundaries are chosen deliberately,
+not sampled/computed post hoc the way percentiles from raw data would be.</p>
 <h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

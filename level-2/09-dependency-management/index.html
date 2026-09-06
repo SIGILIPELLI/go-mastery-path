@@ -1456,6 +1456,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2449,6 +2460,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2736,6 +2758,21 @@ air-gapped or strict-audit requirement.</p>
 <li>Audit dependencies with <code>go list -m all</code> and check known issues with
   <code>govulncheck ./...</code>.</li>
 </ul>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Minimal Version Selection (MVS) works by building a directed graph of every module's
+declared requirements (from each dependency's own <code>go.mod</code>, fetched transitively)
+and then, for each module name that appears anywhere in that graph, selecting the
+single highest version requested by any node — not the latest version that exists.
+This is the opposite of npm's typical "get the newest compatible" resolution and is
+what makes Go builds reproducible from <code>go.mod</code> alone without needing a separate
+lockfile format. <code>go mod tidy</code> recomputes this graph from your source's actual
+imports (via <code>go/packages</code> loading, not just static text-scanning) and adds or
+removes <code>require</code> lines to match exactly what's imported — reachable-but-unused
+requirements get pruned, unlisted-but-needed ones get added with their MVS-selected
+version. The module cache under <code>$GOPATH/pkg/mod</code> stores each downloaded version
+read-only and content-addressed by module path + version, so two projects
+requiring the same version of a dependency share one on-disk copy rather than each
+vendoring their own.</p>
 <h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

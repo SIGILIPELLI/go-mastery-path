@@ -1255,6 +1255,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2327,6 +2338,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2636,6 +2658,20 @@ all problems at once instead of stopping at the first.</p>
 <li>Sentinels and exported error types are part of your public API. Changing
   them breaks callers.</li>
 </ul>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p><code>fmt.Errorf("...: %w", err)</code> doesn't concatenate strings and forget the original —
+the <code>%w</code> verb makes <code>fmt</code> construct a <code>*fmt.wrapError</code>, a small struct holding the
+formatted message plus a reference to the original error, and implementing an
+<code>Unwrap() error</code> method that returns it. <code>errors.Is</code> and <code>errors.As</code> walk that chain
+by repeatedly calling <code>Unwrap()</code> (or, since Go 1.20, also handling <code>Unwrap() []error</code>
+for errors joined by <code>errors.Join</code>) until they find a match or run out of chain —
+it's a plain linked-list traversal, not any kind of magic matching. <code>errors.Is</code>
+compares with <code>==</code> (or a custom <code>Is(error) bool</code> method) at each link, while
+<code>errors.As</code> uses <code>reflect</code> to check whether each link's concrete type is assignable
+to the target pointer's type. This is why comparing wrapped errors with <code>==</code>
+directly fails silently (you're comparing the wrapper to the sentinel, not unwrapping
+first) but <code>errors.Is</code> succeeds — the traversal it does is exactly the manual
+<code>for { ... err = errors.Unwrap(err) }</code> loop you'd otherwise have to write yourself.</p>
 <h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

@@ -1536,6 +1536,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2305,6 +2316,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2643,6 +2665,22 @@ covers <code>context.Context</code> in depth, but the shape to recognize now:</p
 <code>ctx.Done()</code> escape hatch next to it, or that goroutine can outlive the work
 it was meant to do — a goroutine leak, as introduced in
 <a href="../../level-2/02-goroutines-channels/">Level 2, Module 2</a>.</p>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>A <code>sync.WaitGroup</code> is a single 64-bit counter manipulated with atomic
+compare-and-swap instructions (no OS-level lock) — <code>Add</code> increments it, <code>Done</code> is
+<code>Add(-1)</code>, and <code>Wait</code> spins/parks on a runtime semaphore until the counter reaches
+zero, which is why calling <code>Add</code> after <code>Wait</code> has already observed zero is a race:
+there's no synchronization preventing the counter from being read as zero and then
+incremented again. A worker pool built from a shared channel works because a
+channel's internal goroutine wait-queues (see level-2/02) act as a fair-ish
+scheduler: multiple goroutines blocked on <code>&lt;-jobs</code> are woken roughly in FIFO order
+as values arrive, so each <code>range jobs</code> pulls the next value with no explicit locking
+in your code — the channel's own internal mutex (a runtime-private lock, cheaper
+than <code>sync.Mutex</code>) serializes access. The "fan-in" pattern (merging N channels into
+one) needs its own goroutine per input channel precisely because a <code>select</code> can only
+multiplex a fixed, known set of channels at compile time — you can't <code>select</code> over a
+dynamically-sized slice of channels without a loop of goroutines forwarding into one
+shared channel.</p>
 <h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

@@ -2002,6 +2002,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2261,6 +2272,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2475,6 +2497,22 @@ on unrelated unit-test problems being fixed first.</p>
   a cache key that also captures build output as if it were still valid
   after a source change.</li>
 </ul>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p><code>go test</code>'s build cache (<code>$GOCACHE</code>) keys every compiled package and, separately,
+every test result by a hash of the package's source files, its dependencies'
+hashes, and the build flags used — this is why re-running <code>go test ./...</code> with
+nothing changed reports "(cached)" instantly instead of recompiling: the hash
+matches a previous run's recorded pass/fail outcome, and Go trusts it deterministically.
+CI parallelism across matrix jobs (different Go versions, different OSes) works
+because each job is a genuinely separate process/container with its own <code>$GOCACHE</code>
+and <code>$GOPATH</code> — there's no shared mutable state to race on, unlike parallel tests
+<em>within</em> one process, which rely on <code>t.Parallel()</code>'s scheduler-level pausing
+(level-3/06) rather than separate processes. Code coverage instrumentation
+(<code>-cover</code>) works by rewriting the AST at compile time to insert a counter increment
+at the start of every basic block, then dumping those counters to a profile file at
+program exit — coverage percentage is just "blocks with a nonzero counter" divided
+by "total blocks," which is why coverage can be 100% while still missing entire
+logical branches inside a single block.</p>
 <h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

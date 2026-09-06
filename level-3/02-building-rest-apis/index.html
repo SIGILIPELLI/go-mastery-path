@@ -1542,6 +1542,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2261,6 +2272,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2474,6 +2496,20 @@ every request without either middleware knowing the other exists.</p>
 <li><strong>Not closing <code>r.Body</code></strong> on the client side of a <code>net/http</code> request leaks
   the underlying connection; <code>defer resp.Body.Close()</code> is not optional.</li>
 </ul>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p><code>net/http</code>'s <code>ServeMux</code> (or a third-party router) matches incoming requests by
+building a lookup structure — the standard mux historically does longest-prefix
+matching over a sorted pattern list, while pattern-based routers (<code>mux.HandleFunc("GET
+/users/{id}", ...)</code> in Go 1.22+) compile each registered pattern into a small
+matcher that captures path segments in a single pass. Every accepted TCP connection
+gets its own goroutine (<code>http.Server</code> calls <code>go c.serve(ctx)</code> per connection in
+<code>net/http</code>'s internal accept loop), which is why a slow handler on one connection
+doesn't block other clients — the GMP scheduler (level-2/02) just treats each as an
+independent blocked/runnable goroutine. Middleware chaining (<code>Logging(Auth(handler))</code>)
+works because <code>http.Handler</code> is just an interface with one method — wrapping a
+handler in another function that calls it is ordinary function composition, not a
+framework feature; the "chain" is really nested closures, each one running before
+and/or after calling the handler it wraps.</p>
 <h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

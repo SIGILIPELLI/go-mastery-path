@@ -784,6 +784,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2283,6 +2294,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2404,6 +2426,20 @@ automatically) and every Go codebase looks the same:</p>
 language server — for autocomplete, jump-to-definition, and inline errors) is
 the most common choice. <strong>GoLand</strong> (JetBrains) is a strong paid alternative
 with deeper refactoring tools. Either works well; pick one and move on.</p>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p><code>go build</code> doesn't shell out to a linker toolchain the way C does by default — the Go
+toolchain ships its own assembler, compiler, and linker (<code>cmd/compile</code>, <code>cmd/link</code>),
+so a fresh install can compile and statically link a binary with zero external
+dependencies. <code>go run</code> is really <code>go build</code> into a temp directory under
+<code>$GOCACHE</code>/<code>os.TempDir()</code>, followed by exec of that binary — nothing magic, just a
+convenience wrapper. <code>GOPATH</code> used to be mandatory (every import path was a directory
+under <code>$GOPATH/src</code>); Go modules (<code>go.mod</code>) replaced that by recording a module path
+and dependency versions directly in the repo, and the module cache under
+<code>$GOPATH/pkg/mod</code> is now just a shared, content-addressed download cache, not the
+place your code has to live. <code>gofmt</code> isn't a linter opinion — it's an AST
+pretty-printer: it parses your file into a syntax tree with <code>go/parser</code> and
+re-emits it in one canonical layout, which is why two different Go files formatted
+by two different people always diff cleanly against each other.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Write a program <code>greeter.go</code> with a <code>main</code> function that prints a greeting
 for three different names, one per line, using <code>fmt.Println</code>. Run it with

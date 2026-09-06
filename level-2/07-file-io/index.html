@@ -1361,6 +1361,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2371,6 +2382,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2771,6 +2793,21 @@ call with constant memory use regardless of file size:</p>
 <p>The same function copies an HTTP response body to a file
 (<a href="../08-net-http-client/">Module 8</a>) or a file to <code>os.Stdout</code>. That reuse is
 the payoff of small interfaces from <a href="../01-interfaces/">Module 1</a>.</p>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p><code>os.Open</code> is a thin wrapper over the <code>openat</code> syscall — it returns an <code>*os.File</code>
+holding just the OS file descriptor (an integer) plus bookkeeping, and every
+<code>Read</code>/<code>Write</code> call is a direct syscall, which is why reading a file byte-by-byte in
+a loop is catastrophically slow: each call crosses into kernel mode. <code>bufio.Reader</code>
+fixes this by wrapping the file descriptor with a fixed-size internal byte slice (4KB
+by default); it fills that buffer with one syscall-sized <code>Read</code> and then serves your
+small reads out of memory until the buffer is drained, at which point it refills.
+<code>io.Copy</code> similarly batches through an internal buffer (or uses <code>io.ReaderFrom</code>/
+<code>WriterTo</code> fast paths — e.g. <code>sendfile(2)</code> on Linux for certain file-to-socket
+copies — when both ends support it, skipping userspace entirely). Closing a file
+(<code>Close</code>) releases the OS file descriptor back to the process's descriptor table;
+forgetting to close files in a long-running program exhausts that table (a fixed-size
+OS-level limit, <code>ulimit -n</code>), which is the actual mechanism behind "too many open
+files" errors, not a Go-specific limit.</p>
 <h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

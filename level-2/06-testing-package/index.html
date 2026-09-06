@@ -1333,6 +1333,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2371,6 +2382,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2728,6 +2750,21 @@ cannot drift from reality:</p>
 <a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="p">}</span>
 </code></pre></div>
 <p>If <code>Add</code> ever stops returning 5, the documentation fails the build.</p>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p><code>go test</code> doesn't run your package in place — it generates a temporary <code>_test</code>
+binary that links your package code together with a small generated <code>main()</code> that
+enumerates every <code>func TestXxx(*testing.T)</code> (found by scanning the AST for functions
+matching that exact signature and name pattern, not by any annotation) and calls
+them in file order. Each <code>t.Run("name", fn)</code> spawns the subtest as a new goroutine
+so <code>t.Parallel()</code> can actually run subtests concurrently — calling <code>t.Parallel()</code>
+signals the test runner to pause that subtest until all non-parallel siblings finish,
+then resume it alongside other parallel subtests, up to <code>-parallel N</code> at a time.
+<code>t.Fatal</code>/<code>t.FailNow</code> don't just set a flag and return — they call <code>runtime.
+Goexit()</code>, which unwinds the calling goroutine's deferred calls and then terminates
+that goroutine without terminating the process, which is why <code>t.Fatal</code> inside a
+non-test goroutine (started with <code>go func(){...}()</code> inside a test) silently kills
+that goroutine without failing the test — a classic testing.T gotcha the mechanism
+directly explains.</p>
 <h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

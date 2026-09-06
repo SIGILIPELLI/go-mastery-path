@@ -958,6 +958,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2250,6 +2261,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2422,6 +2444,20 @@ should be impossible) — never as a substitute for returning an <code>error</co
 <a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span>
 <a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="p">}</span>
 </code></pre></div>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>A Go <code>error</code> is just an interface value — two words under the hood: a pointer to a
+<em>type descriptor</em> (which concrete type implements <code>Error()</code>) and a pointer to the
+actual data. That two-word representation is exactly why <code>var err error = (*MyErr)(nil)</code>
+is <em>not</em> equal to plain <code>nil</code>: the interface's type word is set to <code>*MyErr</code> even
+though the data word is nil, and <code>err == nil</code> compares both words, so it's false —
+the single most common surprising-error-comparison bug in Go. <code>panic</code> doesn't just
+throw — it unwinds the goroutine's deferred-call stack (see level-1/04) frame by
+frame, running each <code>defer</code> in LIFO order, and if any deferred function calls
+<code>recover()</code> while a panic is actively unwinding through it, the runtime stops the
+unwind and resumes normal execution from just after that deferred call. That's the
+entire mechanism <code>recover</code> relies on — it only does anything when called directly
+inside a deferred function during an active panic; calling it any other time is a
+no-op that returns nil.</p>
 <h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

@@ -1489,6 +1489,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#stretch-goals" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2437,6 +2448,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#stretch-goals" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3082,6 +3104,20 @@ cache in <code>~/Library/Caches/weathercli</code> (macOS) or <code>~/.cache/weat
 <li><strong>stdout vs stderr.</strong> Data goes to stdout so <code>./weather -city X -json | jq</code>
   works; diagnostics go to stderr.</li>
 </ul>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>This CLI's request/parse/render pipeline chains together every mechanism from this
+level: <code>http.Client</code>'s connection pool and context-driven cancellation handle the
+network call (level-2/08), <code>encoding/json</code>'s reflection-based decoder builds the
+response struct from the API's JSON body by caching a field-encoder plan the first
+time it sees that struct type (level-2/05), and any transport or parse failure is
+wrapped with <code>fmt.Errorf("...: %w", err)</code> so the caller can <code>errors.Is</code>/<code>errors.As</code>
+its way back to the root cause without losing context (level-2/04). The CLI's own
+concurrency, if it fans out multiple requests, relies on the GMP scheduler
+detaching each goroutine's blocked network syscall from its OS thread so other
+goroutines keep running while the HTTP round trip is in flight (level-2/02) — that's
+what makes concurrent API calls actually overlap in wall-clock time instead of
+serializing. None of these are separate frameworks bolted together; they're the same
+runtime and standard-library mechanisms already covered, composed.</p>
 <h2 id="stretch-goals">Stretch goals<a class="headerlink" href="#stretch-goals" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Add <code>-units=imperial</code> and convert to °F and mph (use a method on <code>Report</code>).</li>

@@ -2173,6 +2173,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#stretch-goals" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2296,6 +2307,17 @@
     <span class="md-ellipsis">
       
         Design notes tying the levels together
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
       
     </span>
   </a>
@@ -2602,6 +2624,21 @@ mocked behavior.</p>
 <li><strong><code>sync.Map</code> for per-IP limiters</strong> (<a href="../01-advanced-concurrency/">Module 1</a>)
   avoids a global mutex becoming a bottleneck as distinct IPs accumulate.</li>
 </ul>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>The capstone's rate limiter is the same lazy-refill token-bucket math from
+level-4/04 — no background goroutine ticking down a counter, just elapsed-time
+arithmetic evaluated on each request. Its concurrent request handling rests on the
+GMP scheduler detaching blocked goroutines' OS threads during I/O waits
+(level-2/02), its graceful shutdown uses the same listener-close-then-drain
+mechanism as level-4/04, and any GC pause visible under load is the concurrent
+tricolor collector's brief stop-the-world phases for stack scanning and enabling/
+disabling the write barrier (level-4/01) — not a full stop-the-world mark, which
+is what makes Go's GC pause times largely independent of heap size in practice.
+Wiring a fake store into the rate limiter for tests works because the limiter
+depends on a small interface, not a concrete store type — swapping implementations
+at the call site costs nothing beyond constructing a different itab+data pair
+(level-2/01) at composition time; nothing about the limiter's own logic needs to
+know or care which concrete store backs it.</p>
 <h2 id="stretch-goals">Stretch goals<a class="headerlink" href="#stretch-goals" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Add a <code>DELETE /links/{code}</code> endpoint restricted to the link's creator —

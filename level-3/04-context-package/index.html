@@ -1587,6 +1587,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2239,6 +2250,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2423,6 +2445,22 @@ untyped.</p>
   discarded entirely), but not the case where you call it conditionally on
   only some code paths.</li>
 </ul>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>A <code>context.Context</code> is an immutable, linked tree of small wrapper values — calling
+<code>context.WithCancel(parent)</code> doesn't mutate the parent, it allocates a new
+<code>cancelCtx</code> struct holding a pointer back to the parent plus its own <code>done</code> channel
+and a slice of registered child contexts. Calling the returned <code>cancel()</code> function
+closes that <code>done</code> channel (closing, not sending, because closing wakes every
+goroutine <code>select</code>ing on it simultaneously) and then recursively cancels every
+registered child — that recursive propagation is literal tree traversal over
+pointers, not some broadcast mechanism. <code>context.WithTimeout</code> is <code>WithCancel</code> plus a
+<code>time.AfterFunc</code> that calls <code>cancel()</code> when the timer fires, so a context timeout
+and manual cancellation are the exact same code path underneath. <code>context.
+WithValue</code> doesn't use a map — each call wraps the parent in a tiny struct holding
+one key-value pair, so looking up a value walks up the linked list of these wrapper
+structs comparing keys one at a time, which is why deeply nested <code>WithValue</code> chains
+have O(depth) lookup cost and why the standard library warns against using context
+values for anything beyond a few request-scoped items.</p>
 <h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

@@ -1665,6 +1665,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2283,6 +2294,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2484,6 +2506,21 @@ when comparing runs across machines.</p>
   results — use <code>b.ResetTimer()</code> after one-time setup, or <code>b.StopTimer()</code> /
   <code>b.StartTimer()</code> to bracket the part you don't want measured.</li>
 </ul>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p><code>go test -race</code> compiles your code with instrumented memory accesses: every read
+and write to shared memory is wrapped with a call into the race detector's runtime
+(based on Google's ThreadSanitizer/ftsan algorithm), which maintains a vector clock
+per goroutine and a shadow memory region recording which goroutine last
+touched each byte and when (in happens-before order). A race is reported when two
+accesses (at least one a write) touch the same memory location from different
+goroutines with no happens-before edge between them — a channel send/receive, a
+mutex lock/unlock, or a WaitGroup Wait/Done all establish such edges; their absence
+is exactly what a race is. This instrumentation roughly doubles memory use and
+slows execution 2-20x, which is why <code>-race</code> is a testing/CI flag, not a production
+build flag. Table-driven tests with <code>t.Run</code> create genuinely separate <code>*testing.T</code>
+values per case (not just a loop), which is what lets <code>go test -run
+TestName/subtest_name</code> target one row and what makes each subtest's <code>t.Parallel()</code>
+independent of the others.</p>
 <h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

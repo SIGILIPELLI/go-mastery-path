@@ -941,6 +941,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2272,6 +2283,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2448,6 +2470,20 @@ contents (append is the one exception — it can return a new slice header):</p>
 <a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">values</span><span class="p">)</span><span class="w"> </span><span class="c1">// [2 4 6] -- no pointer needed</span>
 <a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="p">}</span>
 </code></pre></div>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Go decides stack vs. heap allocation through <em>escape analysis</em>, a compile-time pass
+over the function's data-flow graph: if the compiler can prove a value's address
+never leaves the function (no pointer to it is returned, stored in a global, sent on
+a channel, or captured by an escaping closure), it stays on the stack and gets freed
+for free when the function returns — no GC involvement at all. The moment you return
+<code>&amp;localVar</code> from a function, the compiler marks it as escaping and allocates it on
+the heap instead, because the stack frame it would have lived in is gone once the
+function returns. You can see this decision directly with <code>go build -gcflags="-m"</code>,
+which prints "escapes to heap" or "does not escape" for every allocation. This is
+why Go pointers are safe to return from functions (unlike a raw pointer to a local
+in C) — the compiler silently promotes the allocation to the heap rather than let it
+dangle, and it's why minimizing accidental escapes (e.g. passing an interface where
+a concrete type would do) is a real, measurable performance lever.</p>
 <h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

@@ -1946,6 +1946,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2261,6 +2272,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2472,6 +2494,21 @@ a REST call in <a href="../02-microservices-patterns/">Module 2</a>.</p>
   "you sent bad input" from "the server broke" instead of getting an opaque
   <code>Unknown</code> status.</li>
 </ul>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>gRPC serializes messages with Protocol Buffers: the <code>.proto</code> compiler
+(<code>protoc</code>/<code>protoc-gen-go</code>) generates Go structs plus <code>Marshal</code>/<code>Unmarshal</code> methods
+that encode each field as a (field-number, wire-type) tag byte followed by the
+value in a compact binary form — varint encoding for integers (small values use
+fewer bytes), length-prefixed bytes for strings/submessages — which is why protobuf
+payloads are typically smaller and faster to parse than the equivalent JSON: there's
+no field-name text and no reflection-driven decode loop (contrast level-2/05).
+Underneath, gRPC runs over HTTP/2, which multiplexes many concurrent
+request/response streams over a single TCP connection using numbered stream frames
+interleaved on the wire — this is what lets a gRPC client keep one connection open
+and issue many simultaneous calls without them blocking each other, unlike HTTP/1.1
+where concurrent requests need separate connections (or strict head-of-line-blocked
+pipelining). A gRPC streaming call is just that same multiplexed stream kept open
+and fed multiple length-prefixed protobuf messages instead of exactly one.</p>
 <h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
