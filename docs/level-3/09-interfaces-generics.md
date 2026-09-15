@@ -1,3 +1,7 @@
+---
+description: "Interfaces & Generics — Level 1/2 covered basic interfaces. This module goes deeper into how interfaces are satisfied and combined, then covers generics…"
+---
+
 # 09 · Interfaces & Generics
 
 Level 1/2 covered basic interfaces. This module goes deeper into how

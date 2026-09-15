@@ -1,3 +1,7 @@
+---
+description: "Arrays, Slices & Maps — An array's length is part of its type — [3]int and [5]int are different types entirely. Because of this rigidity, arrays are…"
+---
+
 # 05 · Arrays, Slices & Maps
 
 ## 🎥 Video walkthrough
@@ -179,6 +183,12 @@ randomized by the runtime specifically to stop code from ever depending on it.
 | Read + existence check | `v, ok := m[key]` |
 | Delete a key | `delete(m, key)` |
 | Length (slice or map) | `len(s)` |
+
+## 🔀 See this in another language
+
+- [Rust — Structs & Enums](https://sigilipelli.github.io/rust-mastery-path/level-1/05-structs-enums/)
+- [Dart — Collections (List, Map, Set)](https://sigilipelli.github.io/dart-mastery-path/level-1/05-collections/)
+- [Python — Core Data Structures](https://sigilipelli.github.io/python-mastery-path/level-1/05-data-structures/)
 
 ## Exercise
 

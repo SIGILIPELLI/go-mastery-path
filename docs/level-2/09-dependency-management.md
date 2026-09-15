@@ -1,3 +1,7 @@
+---
+description: "Dependency Management — Since Go 1.11 (and mandatory since 1.16), every Go project is a module: a directory tree with a go.mod file at its root declaring…"
+---
+
 # 09 · Dependency Management
 
 ## Modules are Go's package manager

@@ -1,3 +1,7 @@
+---
+description: "Working with net/http — io.LimitReader guards against a hostile or broken server streaming gigabytes into your error message."
+---
+
 # 08 · Working with net/http
 
 ## Talking to the web from Go

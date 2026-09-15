@@ -1,3 +1,7 @@
+---
+description: "Advanced Concurrency — Level 3, Module 1 covered worker pools, pipelines, and fan-in/fan-out. This module goes further into production-grade concurrency…"
+---
+
 # 01 · Advanced Concurrency
 
 [Level 3, Module 1](../level-3/01-concurrency-patterns.md) covered worker

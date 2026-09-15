@@ -1,3 +1,7 @@
+---
+description: "Capstone: A Production-Shaped URL Shortener — This capstone combines every Level 4 module into one small real service: a URL shortener with a…"
+---
+
 # 10 · Capstone: A Production-Shaped URL Shortener
 
 This capstone combines every Level 4 module into one small real service: a

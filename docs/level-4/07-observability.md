@@ -1,3 +1,7 @@
+---
+description: "Observability — A service that's hard to debug in production is a service that costs sleep. This module wires structured logging (log/slog, standard…"
+---
+
 # 07 · Observability
 
 A service that's hard to debug in production is a service that costs

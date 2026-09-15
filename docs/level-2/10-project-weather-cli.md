@@ -1,3 +1,7 @@
+---
+description: "Project — Weather CLI — A complete command-line weather client that pulls live data from a public API. It exercises everything from Level 2: interfaces…"
+---
+
 # 10 · Project — Weather CLI
 
 A complete command-line weather client that pulls live data from a public API.

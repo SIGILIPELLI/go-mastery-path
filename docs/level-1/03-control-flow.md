@@ -1,3 +1,7 @@
+---
+description: "Control Flow — Braces {} are mandatory in Go, even for single-statement bodies — there is no one-line if without braces."
+---
+
 # 03 · Control Flow
 
 ## 🎥 Video walkthrough
@@ -204,6 +208,12 @@ not "learn a workaround."
 | Range (value only) | `for _, v := range slice { ... }` |
 | Switch | `switch x { case 1: ...; default: ... }` |
 | Switch, no expression | `switch { case cond: ... }` |
+
+## 🔀 See this in another language
+
+- [Rust — Control Flow](https://sigilipelli.github.io/rust-mastery-path/level-1/03-control-flow/)
+- [Dart — Control Flow](https://sigilipelli.github.io/dart-mastery-path/level-1/03-control-flow/)
+- [Python — Control Flow](https://sigilipelli.github.io/python-mastery-path/level-1/03-control-flow/)
 
 ## Exercise
 

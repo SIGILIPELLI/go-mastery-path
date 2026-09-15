@@ -1,3 +1,7 @@
+---
+description: "Performance Optimization — Level 3, Module 7 introduced benchmarking and pprof. This module applies them to two real Go performance decisions …"
+---
+
 # 09 · Performance Optimization
 
 [Level 3, Module 7](../level-3/07-profiling-benchmarking.md) introduced

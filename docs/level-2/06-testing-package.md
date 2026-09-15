@@ -1,3 +1,7 @@
+---
+description: "Testing with the testing Package — Go ships with a test runner and a testing package in the standard library. There is no framework to choose, no…"
+---
+
 # 06 · Testing with the testing Package
 
 ## Testing is built in

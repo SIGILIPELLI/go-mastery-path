@@ -1,3 +1,7 @@
+---
+description: "Concurrency Patterns — Level 2 covered goroutines, channels and select in isolation. Real programs combine them into a handful of recurring shapes …"
+---
+
 # 01 · Concurrency Patterns
 
 [Level 2](../level-2/02-goroutines-channels.md) covered goroutines, channels

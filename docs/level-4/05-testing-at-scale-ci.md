@@ -1,3 +1,7 @@
+---
+description: "Testing at Scale & CI — Level 3, Module 6 covered fuzzing and benchmarks for a single package. Scaling that to a real codebase means tracking coverage…"
+---
+
 # 05 · Testing at Scale & CI
 
 [Level 3, Module 6](../level-3/06-testing-advanced.md) covered fuzzing and

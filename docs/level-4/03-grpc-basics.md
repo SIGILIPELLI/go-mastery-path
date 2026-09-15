@@ -1,3 +1,7 @@
+---
+description: "gRPC Basics — REST and JSON (Level 3, Module 2) are the right default for public APIs. gRPC trades human-readable JSON for a compact binary format…"
+---
+
 # 03 · gRPC Basics
 
 REST and JSON ([Level 3, Module 2](../level-3/02-building-rest-apis.md))

@@ -1,3 +1,7 @@
+---
+description: "Project: REST API with SQLite — This project pulls together every Level 3 module into one small, real service: a task-tracking REST API backed by SQLite…"
+---
+
 # 10 · Project: REST API with SQLite
 
 This project pulls together every Level 3 module into one small, real

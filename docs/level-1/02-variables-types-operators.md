@@ -1,3 +1,7 @@
+---
+description: "Variables, Types & Operators — := is the idiomatic choice inside functions. var is required at package level, when you want a zero value with no…"
+---
+
 # 02 · Variables, Types & Operators
 
 ## 🎥 Video walkthrough
@@ -181,6 +185,12 @@ why `const x = 1 << 100` compiles fine but `var x int64 = 1 << 100` doesn't.
 | Enum-like constants | `const ( A = iota; B; C )` |
 | Convert types | `float64(x)`, `int(y)` |
 | Multiple assignment | `a, b := 1, 2` |
+
+## 🔀 See this in another language
+
+- [Rust — Variables, Types & Ownership Basics](https://sigilipelli.github.io/rust-mastery-path/level-1/02-variables-types-ownership/)
+- [Dart — Variables & Types](https://sigilipelli.github.io/dart-mastery-path/level-1/02-variables-types/)
+- [Python — Variables, Data Types & Operators](https://sigilipelli.github.io/python-mastery-path/level-1/02-variables-data-types/)
 
 ## Exercise
 

@@ -1,3 +1,7 @@
+---
+description: "Building CLIs — Go compiles to a single static binary, which makes it a natural fit for command-line tools — no runtime to install on the target machine.…"
+---
+
 # 08 · Building CLIs
 
 Go compiles to a single static binary, which makes it a natural fit for

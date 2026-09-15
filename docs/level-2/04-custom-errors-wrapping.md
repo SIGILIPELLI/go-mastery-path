@@ -1,3 +1,7 @@
+---
+description: "Custom Errors & Error Wrapping — Level 1, Module 8 established that errors are ordinary values returned as the last result. That works fine until a caller…"
+---
+
 # 04 · Custom Errors & Error Wrapping
 
 ## Beyond `errors.New`

@@ -1,3 +1,7 @@
+---
+description: "Functions & Multiple Returns — The blank identifier _ discards a return value you don't need — Go forces you to either use every declared variable or…"
+---
+
 # 04 · Functions & Multiple Returns
 
 ## 🎥 Video walkthrough
@@ -210,6 +214,12 @@ you a variable to write to from a defer.
 | Function value | `var f func(int) int = double` |
 | Closure | `func() func() int { ... }` |
 | Deferred cleanup | `defer file.Close()` |
+
+## 🔀 See this in another language
+
+- [Rust — Functions](https://sigilipelli.github.io/rust-mastery-path/level-1/04-functions/)
+- [Dart — Functions](https://sigilipelli.github.io/dart-mastery-path/level-1/04-functions/)
+- [Python — Functions & Scope](https://sigilipelli.github.io/python-mastery-path/level-1/04-functions-scope/)
 
 ## Exercise
 

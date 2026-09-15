@@ -1,3 +1,7 @@
+---
+description: "Deployment with Docker — Go's compile-to-a-single-binary model makes it unusually well suited to minimal containers — there's no runtime, package manager…"
+---
+
 # 06 · Deployment with Docker
 
 Go's compile-to-a-single-binary model makes it unusually well suited to

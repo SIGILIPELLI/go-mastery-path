@@ -1,3 +1,7 @@
+---
+description: "Project — CLI To-Do App — A small end-to-end project combining everything from Level 1: structs, slices, pointers, error handling, and packages/modules…"
+---
+
 # 10 · Project — CLI To-Do App
 
 A small end-to-end project combining everything from Level 1: structs,
@@ -317,3 +321,9 @@ generate marshal code instead (see level-2/05).
 - Switch from a full-file rewrite on every save to an append-only log file.
 
 Completing this project means you're ready for **Level 2 · Intermediate**.
+
+## 🔀 See this in another language
+
+- [Rust — Project — CLI To-Do App](https://sigilipelli.github.io/rust-mastery-path/level-1/10-project-todo-cli/)
+- [Dart — Project — CLI To-Do App](https://sigilipelli.github.io/dart-mastery-path/level-1/10-project-todo-cli/)
+- [Python — Project — CLI To-Do App](https://sigilipelli.github.io/python-mastery-path/level-1/10-project-todo-app/)

@@ -1,3 +1,7 @@
+---
+description: "File I/O — Almost every real program touches the filesystem: config files, logs, CSV exports, caches. Go's file APIs live mainly in the os package for…"
+---
+
 # 07 · File I/O
 
 ## Reading and writing files in Go

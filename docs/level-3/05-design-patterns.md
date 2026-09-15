@@ -1,3 +1,7 @@
+---
+description: "Design Patterns, the Go Way — Go deliberately lacks classes, inheritance, and constructors — so classic Gang-of-Four patterns show up in different…"
+---
+
 # 05 · Design Patterns, the Go Way
 
 Go deliberately lacks classes, inheritance, and constructors — so classic

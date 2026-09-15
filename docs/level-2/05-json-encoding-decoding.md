@@ -1,3 +1,7 @@
+---
+description: "JSON Encoding/Decoding — JSON is the lingua franca of web APIs, config files and log pipelines. Go's encoding/json package converts between Go values and…"
+---
+
 # 05 · JSON Encoding/Decoding
 
 ## Why `encoding/json` matters

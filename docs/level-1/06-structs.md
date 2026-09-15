@@ -1,3 +1,7 @@
+---
+description: "Structs — A struct groups related fields into a single named type — Go's equivalent of a lightweight class body without inheritance."
+---
+
 # 06 · Structs
 
 ## Defining and creating a struct
@@ -179,6 +183,12 @@ types dynamically.
 | Embedding | `type Dog struct { Animal; Breed string }` |
 | Compare (comparable fields) | `a == b` |
 | Struct tag | `` `json:"host"` `` |
+
+## 🔀 See this in another language
+
+- [Rust — Collections (Vec, String, HashMap)](https://sigilipelli.github.io/rust-mastery-path/level-1/06-collections/)
+- [Dart — Classes & Objects Basics](https://sigilipelli.github.io/dart-mastery-path/level-1/06-classes-objects/)
+- [Python — Strings & Formatting](https://sigilipelli.github.io/python-mastery-path/level-1/06-strings-formatting/)
 
 ## Exercise
 

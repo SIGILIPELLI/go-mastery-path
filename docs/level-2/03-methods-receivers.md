@@ -1,3 +1,7 @@
+---
+description: "Methods & Receivers — Go has no classes. Instead you attach behaviour to a type by declaring a function with an extra parameter — the receiver — written…"
+---
+
 # 03 · Methods & Receivers
 
 ## A method is a function with a receiver

@@ -1,3 +1,7 @@
+---
+description: "The `context` Package — Module 1 ended with a bare select against ctx.Done() and promised details later. This module covers context.Context properly…"
+---
+
 # 04 · The `context` Package
 
 [Module 1](01-concurrency-patterns.md) ended with a bare `select` against

@@ -1,3 +1,7 @@
+---
+description: "Building REST APIs — Level 2 touched net/http for simple servers. This module builds a small but real JSON API — routing by method, decoding request…"
+---
+
 # 02 · Building REST APIs
 
 [Level 2](../level-2/08-net-http-client.md) touched `net/http` for simple servers.

@@ -1,3 +1,7 @@
+---
+description: "Security Best Practices — Security bugs in Go services tend to cluster around a handful of concrete mistakes: unsalted or fast password hashes…"
+---
+
 # 08 · Security Best Practices
 
 Security bugs in Go services tend to cluster around a handful of concrete

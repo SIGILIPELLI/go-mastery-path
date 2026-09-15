@@ -1,3 +1,7 @@
+---
+description: "Production-Grade APIs — Level 3, Module 2 built a working REST API. This module hardens it for production: server timeouts that protect against slow…"
+---
+
 # 04 · Production-Grade APIs
 
 [Level 3, Module 2](../level-3/02-building-rest-apis.md) built a working

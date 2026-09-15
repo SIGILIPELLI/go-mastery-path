@@ -1,3 +1,7 @@
+---
+description: "Profiling & Benchmarking — Module 6 introduced testing.B benchmarks. This module uses them to actually find a real performance bug — string concatenation…"
+---
+
 # 07 · Profiling & Benchmarking
 
 [Module 6](06-testing-advanced.md) introduced `testing.B` benchmarks. This

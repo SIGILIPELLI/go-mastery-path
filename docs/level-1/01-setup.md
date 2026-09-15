@@ -1,3 +1,7 @@
+---
+description: "Setup & First Program — GOPATH and workspace conventions used to matter a lot; modern Go (1.16+) works fine anywhere on disk once you're inside a module …"
+---
+
 # 01 · Setup & First Program
 
 ## 🎥 Video walkthrough
@@ -115,6 +119,12 @@ pretty-printer: it parses your file into a syntax tree with `go/parser` and
 re-emits it in one canonical layout, which is why two different Go files formatted
 by two different people always diff cleanly against each other.
 
+
+## 🔀 See this in another language
+
+- [Rust — Setup & First Program](https://sigilipelli.github.io/rust-mastery-path/level-1/01-setup/)
+- [Dart — Setup & First Program](https://sigilipelli.github.io/dart-mastery-path/level-1/01-setup/)
+- [Python — Setup & First Program](https://sigilipelli.github.io/python-mastery-path/level-1/01-setup/)
 
 ## Exercise
 

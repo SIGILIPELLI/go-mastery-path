@@ -1,3 +1,7 @@
+---
+description: "Goroutines & Channels Basics — A goroutine is a function running independently alongside others, scheduled by the Go runtime rather than the operating…"
+---
+
 # 02 · Goroutines & Channels Basics
 
 ## Goroutines: concurrency that costs almost nothing

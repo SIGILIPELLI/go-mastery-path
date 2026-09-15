@@ -1,3 +1,7 @@
+---
+description: "Error Handling — Go has no try/catch. Instead, any function that can fail returns an error as its last return value — nil means success, non-nil means…"
+---
+
 # 08 · Error Handling
 
 ## Errors are values, not exceptions
@@ -178,6 +182,12 @@ no-op that returns nil.
 | Custom error type | `type X struct{}; func (X) Error() string { ... }` |
 | Stop execution | `panic("message")` |
 | Catch a panic | `defer func() { recover() }()` |
+
+## 🔀 See this in another language
+
+- [Rust — Pattern Matching](https://sigilipelli.github.io/rust-mastery-path/level-1/08-pattern-matching/)
+- [Dart — Async Basics](https://sigilipelli.github.io/dart-mastery-path/level-1/08-async-basics/)
+- [Python — Error Handling Basics](https://sigilipelli.github.io/python-mastery-path/level-1/08-error-handling/)
 
 ## Exercise
 

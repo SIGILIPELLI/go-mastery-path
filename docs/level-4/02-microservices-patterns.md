@@ -1,3 +1,7 @@
+---
+description: "Microservices Patterns — A service that calls other services over the network needs defenses a single-process program doesn't: timeouts on every outbound…"
+---
+
 # 02 · Microservices Patterns
 
 A service that calls other services over the network needs defenses a

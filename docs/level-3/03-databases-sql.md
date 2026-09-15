@@ -1,3 +1,7 @@
+---
+description: "Databases & SQL — Go's standard library ships database/sql — a driver-agnostic API for talking to relational databases. It never talks to a database…"
+---
+
 # 03 · Databases & SQL
 
 Go's standard library ships `database/sql` — a driver-agnostic API for

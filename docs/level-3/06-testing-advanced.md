@@ -1,3 +1,7 @@
+---
+description: "Testing, Advanced — Level 1/2 covered t.Run table tests and basic assertions. This module adds the three tools that separate 'tests exist' from 'tests…"
+---
+
 # 06 · Testing, Advanced
 
 Level 1/2 covered `t.Run` table tests and basic assertions. This module adds

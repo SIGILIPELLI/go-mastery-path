@@ -1,3 +1,7 @@
+---
+description: "Interfaces — An interface in Go is a named set of method signatures. Any type that has those methods automatically satisfies the interface — there is no…"
+---
+
 # 01 · Interfaces
 
 ## What an interface actually is

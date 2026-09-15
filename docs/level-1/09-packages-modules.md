@@ -1,3 +1,7 @@
+---
+description: "Packages & Modules — Every Go file belongs to a package, declared at the top with package name. Files in the same directory must share the same package…"
+---
+
 # 09 · Packages & Modules
 
 ## Packages: Go's unit of code organization
@@ -162,6 +166,12 @@ every package that (transitively) imports it.
 | Import with alias | `import f "fmt"` |
 | Exported identifier | Starts with an uppercase letter |
 | Unexported identifier | Starts with a lowercase letter |
+
+## 🔀 See this in another language
+
+- [Rust — Modules & Cargo Project Structure](https://sigilipelli.github.io/rust-mastery-path/level-1/09-modules-cargo/)
+- [Dart — Packages (pub, pubspec.yaml)](https://sigilipelli.github.io/dart-mastery-path/level-1/09-packages/)
+- [Python — Modules, Packages & pip](https://sigilipelli.github.io/python-mastery-path/level-1/09-modules-packages/)
 
 ## Exercise
 
