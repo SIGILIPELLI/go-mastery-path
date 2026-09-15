@@ -209,6 +209,10 @@ on-demand rather than continuously.
 - Observability (structured logging, metrics) to pair with this hardening:
   [Module 7](07-observability.md).
 
+## 🔀 See this in another language
+
+- [Python — 04 · Production-Grade APIs](https://sigilipelli.github.io/python-mastery-path/level-4/04-production-apis/)
+
 ## Exercise
 
 Add a request ID middleware that generates a random ID per request (a

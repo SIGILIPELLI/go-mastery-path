@@ -294,6 +294,10 @@ vendoring their own.
 - Supply-chain hardening in production:
   [Level 4, Module 8](../level-4/08-security-best-practices.md).
 
+## 🔀 See this in another language
+
+- [Rust — 09 · Crates & Dependency Management](https://sigilipelli.github.io/rust-mastery-path/level-2/09-crates-dependencies/)
+
 ## Exercise
 
 Create a module `example.com/depdemo` and add `github.com/google/uuid` with

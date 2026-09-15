@@ -203,6 +203,12 @@ go.sum are unchanged, even when your source code changes on every commit.
 - Health checks and metrics endpoints a container orchestrator polls:
   [Module 7](07-observability.md).
 
+## 🔀 See this in another language
+
+- [TypeScript — 06 · Deployment with Docker](https://sigilipelli.github.io/typescript-mastery-path/level-4/06-deployment-docker/)
+- [C# — 07 · Deployment (Docker for .NET)](https://sigilipelli.github.io/csharp-mastery-path/level-4/07-deployment-docker/)
+- [Rust — 07 · Deployment with Docker](https://sigilipelli.github.io/rust-mastery-path/level-4/07-deployment-docker/)
+
 ## Exercise
 
 Extend the `Dockerfile` with a `HEALTHCHECK` instruction that curls

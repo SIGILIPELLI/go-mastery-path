@@ -341,3 +341,7 @@ know or care which concrete store backs it.
   [Module 5](05-testing-at-scale-ci.md): `go vet`, `go test -race
   -coverprofile`, a coverage floor, and `golangci-lint`, all running on
   every push.
+
+## 🔀 See this in another language
+
+- [Rust — 10 · Capstone: URL Shortener Service](https://sigilipelli.github.io/rust-mastery-path/level-4/10-capstone-project/)

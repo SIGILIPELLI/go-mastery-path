@@ -367,3 +367,9 @@ effective writer at a time even though the pool holds multiple open connections.
 - Replace the hand-rolled `sqliteStore` with one built on `database/sql`
   transactions for a new `POST /tasks/batch` endpoint that inserts many
   tasks atomically, rolling back entirely if any single insert fails.
+
+## 🔀 See this in another language
+
+- [Rust — 10 · Project: REST API with SQLite](https://sigilipelli.github.io/rust-mastery-path/level-3/10-project-rest-api-sqlite/)
+- [Python — 11 · Project — REST API + Database](https://sigilipelli.github.io/python-mastery-path/level-3/11-project-rest-api-db/)
+- [Java — 11 · Project — REST API + Database CRUD Service](https://sigilipelli.github.io/java-mastery-path/level-3/11-project-rest-api-db/)

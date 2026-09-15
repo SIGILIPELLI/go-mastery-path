@@ -195,6 +195,12 @@ rarely needed, optimization in Go same as in C.
 - The `strings.Builder` allocation-count case study from the same module —
   the identical "count allocations, don't guess" method applied here.
 
+## 🔀 See this in another language
+
+- [TypeScript — 07 · Performance Optimization](https://sigilipelli.github.io/typescript-mastery-path/level-4/07-performance-optimization/)
+- [C — 03 · Performance Optimization & Profiling](https://sigilipelli.github.io/c-mastery-path/level-4/03-performance-profiling/)
+- [C# — 05 · Performance Profiling & Optimization](https://sigilipelli.github.io/csharp-mastery-path/level-4/05-performance-profiling/)
+
 ## Exercise
 
 Add a fourth variant, `sumPreallocPointers`, that preallocates

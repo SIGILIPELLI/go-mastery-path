@@ -222,6 +222,10 @@ and/or after calling the handler it wraps.
 - The [Level 3 project](10-project-rest-api-sqlite.md) extends this exact
   handler shape onto a real SQLite-backed store.
 
+## 🔀 See this in another language
+
+- [Java — 04 · Building REST APIs with Spring Boot](https://sigilipelli.github.io/java-mastery-path/level-3/04-rest-apis-spring-boot/)
+
 ## Exercise
 
 Extend the `Task` API with `PATCH /tasks/{id}` that flips `Done` to `true`

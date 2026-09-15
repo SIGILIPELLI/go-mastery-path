@@ -369,6 +369,10 @@ directly explains.
 - Packages and module layout:
   [Level 1, Module 9](../level-1/09-packages-modules.md).
 
+## 🔀 See this in another language
+
+- [Dart — 04 · Testing with the test package](https://sigilipelli.github.io/dart-mastery-path/level-2/04-testing/)
+
 ## Exercise
 
 Take the `NextID` function from the
