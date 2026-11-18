@@ -211,7 +211,7 @@ on-demand rather than continuously.
 
 ## 🔀 See this in another language
 
-- [Python — 04 · Production-Grade APIs](https://sigilipelli.github.io/python-mastery-path/level-4/04-production-apis/)
+- [Python — 04 · Production-Grade APIs](https://learnmasterypath.com/python-mastery-path/level-4/04-production-apis/)
 
 ## Exercise
 

@@ -211,9 +211,9 @@ not "learn a workaround."
 
 ## 🔀 See this in another language
 
-- [Rust — Control Flow](https://sigilipelli.github.io/rust-mastery-path/level-1/03-control-flow/)
-- [Dart — Control Flow](https://sigilipelli.github.io/dart-mastery-path/level-1/03-control-flow/)
-- [Python — Control Flow](https://sigilipelli.github.io/python-mastery-path/level-1/03-control-flow/)
+- [Rust — Control Flow](https://learnmasterypath.com/rust-mastery-path/level-1/03-control-flow/)
+- [Dart — Control Flow](https://learnmasterypath.com/dart-mastery-path/level-1/03-control-flow/)
+- [Python — Control Flow](https://learnmasterypath.com/python-mastery-path/level-1/03-control-flow/)
 
 ## Exercise
 

@@ -173,9 +173,9 @@ a concrete type would do) is a real, measurable performance lever.
 
 ## 🔀 See this in another language
 
-- [Rust — Error Handling Basics (Option, Result)](https://sigilipelli.github.io/rust-mastery-path/level-1/07-error-handling-basics/)
-- [Dart — Null Safety Basics](https://sigilipelli.github.io/dart-mastery-path/level-1/07-null-safety-basics/)
-- [Python — File I/O Basics](https://sigilipelli.github.io/python-mastery-path/level-1/07-file-io/)
+- [Rust — Error Handling Basics (Option, Result)](https://learnmasterypath.com/rust-mastery-path/level-1/07-error-handling-basics/)
+- [Dart — Null Safety Basics](https://learnmasterypath.com/dart-mastery-path/level-1/07-null-safety-basics/)
+- [Python — File I/O Basics](https://learnmasterypath.com/python-mastery-path/level-1/07-file-io/)
 
 ## Exercise
 

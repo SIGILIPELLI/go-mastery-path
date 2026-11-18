@@ -188,9 +188,9 @@ why `const x = 1 << 100` compiles fine but `var x int64 = 1 << 100` doesn't.
 
 ## 🔀 See this in another language
 
-- [Rust — Variables, Types & Ownership Basics](https://sigilipelli.github.io/rust-mastery-path/level-1/02-variables-types-ownership/)
-- [Dart — Variables & Types](https://sigilipelli.github.io/dart-mastery-path/level-1/02-variables-types/)
-- [Python — Variables, Data Types & Operators](https://sigilipelli.github.io/python-mastery-path/level-1/02-variables-data-types/)
+- [Rust — Variables, Types & Ownership Basics](https://learnmasterypath.com/rust-mastery-path/level-1/02-variables-types-ownership/)
+- [Dart — Variables & Types](https://learnmasterypath.com/dart-mastery-path/level-1/02-variables-types/)
+- [Python — Variables, Data Types & Operators](https://learnmasterypath.com/python-mastery-path/level-1/02-variables-data-types/)
 
 ## Exercise
 

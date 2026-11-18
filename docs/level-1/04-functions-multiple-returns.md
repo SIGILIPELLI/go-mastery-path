@@ -217,9 +217,9 @@ you a variable to write to from a defer.
 
 ## 🔀 See this in another language
 
-- [Rust — Functions](https://sigilipelli.github.io/rust-mastery-path/level-1/04-functions/)
-- [Dart — Functions](https://sigilipelli.github.io/dart-mastery-path/level-1/04-functions/)
-- [Python — Functions & Scope](https://sigilipelli.github.io/python-mastery-path/level-1/04-functions-scope/)
+- [Rust — Functions](https://learnmasterypath.com/rust-mastery-path/level-1/04-functions/)
+- [Dart — Functions](https://learnmasterypath.com/dart-mastery-path/level-1/04-functions/)
+- [Python — Functions & Scope](https://learnmasterypath.com/python-mastery-path/level-1/04-functions-scope/)
 
 ## Exercise
 

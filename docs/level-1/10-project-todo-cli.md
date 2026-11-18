@@ -324,6 +324,6 @@ Completing this project means you're ready for **Level 2 · Intermediate**.
 
 ## 🔀 See this in another language
 
-- [Rust — Project — CLI To-Do App](https://sigilipelli.github.io/rust-mastery-path/level-1/10-project-todo-cli/)
-- [Dart — Project — CLI To-Do App](https://sigilipelli.github.io/dart-mastery-path/level-1/10-project-todo-cli/)
-- [Python — Project — CLI To-Do App](https://sigilipelli.github.io/python-mastery-path/level-1/10-project-todo-app/)
+- [Rust — Project — CLI To-Do App](https://learnmasterypath.com/rust-mastery-path/level-1/10-project-todo-cli/)
+- [Dart — Project — CLI To-Do App](https://learnmasterypath.com/dart-mastery-path/level-1/10-project-todo-cli/)
+- [Python — Project — CLI To-Do App](https://learnmasterypath.com/python-mastery-path/level-1/10-project-todo-app/)

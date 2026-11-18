@@ -186,9 +186,9 @@ types dynamically.
 
 ## 🔀 See this in another language
 
-- [Rust — Collections (Vec, String, HashMap)](https://sigilipelli.github.io/rust-mastery-path/level-1/06-collections/)
-- [Dart — Classes & Objects Basics](https://sigilipelli.github.io/dart-mastery-path/level-1/06-classes-objects/)
-- [Python — Strings & Formatting](https://sigilipelli.github.io/python-mastery-path/level-1/06-strings-formatting/)
+- [Rust — Collections (Vec, String, HashMap)](https://learnmasterypath.com/rust-mastery-path/level-1/06-collections/)
+- [Dart — Classes & Objects Basics](https://learnmasterypath.com/dart-mastery-path/level-1/06-classes-objects/)
+- [Python — Strings & Formatting](https://learnmasterypath.com/python-mastery-path/level-1/06-strings-formatting/)
 
 ## Exercise
 

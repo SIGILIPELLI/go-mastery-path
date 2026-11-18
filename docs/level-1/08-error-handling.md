@@ -185,9 +185,9 @@ no-op that returns nil.
 
 ## 🔀 See this in another language
 
-- [Rust — Pattern Matching](https://sigilipelli.github.io/rust-mastery-path/level-1/08-pattern-matching/)
-- [Dart — Async Basics](https://sigilipelli.github.io/dart-mastery-path/level-1/08-async-basics/)
-- [Python — Error Handling Basics](https://sigilipelli.github.io/python-mastery-path/level-1/08-error-handling/)
+- [Rust — Pattern Matching](https://learnmasterypath.com/rust-mastery-path/level-1/08-pattern-matching/)
+- [Dart — Async Basics](https://learnmasterypath.com/dart-mastery-path/level-1/08-async-basics/)
+- [Python — Error Handling Basics](https://learnmasterypath.com/python-mastery-path/level-1/08-error-handling/)
 
 ## Exercise
 

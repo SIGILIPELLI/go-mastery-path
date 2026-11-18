@@ -169,9 +169,9 @@ every package that (transitively) imports it.
 
 ## 🔀 See this in another language
 
-- [Rust — Modules & Cargo Project Structure](https://sigilipelli.github.io/rust-mastery-path/level-1/09-modules-cargo/)
-- [Dart — Packages (pub, pubspec.yaml)](https://sigilipelli.github.io/dart-mastery-path/level-1/09-packages/)
-- [Python — Modules, Packages & pip](https://sigilipelli.github.io/python-mastery-path/level-1/09-modules-packages/)
+- [Rust — Modules & Cargo Project Structure](https://learnmasterypath.com/rust-mastery-path/level-1/09-modules-cargo/)
+- [Dart — Packages (pub, pubspec.yaml)](https://learnmasterypath.com/dart-mastery-path/level-1/09-packages/)
+- [Python — Modules, Packages & pip](https://learnmasterypath.com/python-mastery-path/level-1/09-modules-packages/)
 
 ## Exercise
 

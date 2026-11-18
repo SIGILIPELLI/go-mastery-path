@@ -371,7 +371,7 @@ directly explains.
 
 ## 🔀 See this in another language
 
-- [Dart — 04 · Testing with the test package](https://sigilipelli.github.io/dart-mastery-path/level-2/04-testing/)
+- [Dart — 04 · Testing with the test package](https://learnmasterypath.com/dart-mastery-path/level-2/04-testing/)
 
 ## Exercise
 

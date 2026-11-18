@@ -186,9 +186,9 @@ randomized by the runtime specifically to stop code from ever depending on it.
 
 ## 🔀 See this in another language
 
-- [Rust — Structs & Enums](https://sigilipelli.github.io/rust-mastery-path/level-1/05-structs-enums/)
-- [Dart — Collections (List, Map, Set)](https://sigilipelli.github.io/dart-mastery-path/level-1/05-collections/)
-- [Python — Core Data Structures](https://sigilipelli.github.io/python-mastery-path/level-1/05-data-structures/)
+- [Rust — Structs & Enums](https://learnmasterypath.com/rust-mastery-path/level-1/05-structs-enums/)
+- [Dart — Collections (List, Map, Set)](https://learnmasterypath.com/dart-mastery-path/level-1/05-collections/)
+- [Python — Core Data Structures](https://learnmasterypath.com/python-mastery-path/level-1/05-data-structures/)
 
 ## Exercise
 

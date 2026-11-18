@@ -224,7 +224,7 @@ and/or after calling the handler it wraps.
 
 ## 🔀 See this in another language
 
-- [Java — 04 · Building REST APIs with Spring Boot](https://sigilipelli.github.io/java-mastery-path/level-3/04-rest-apis-spring-boot/)
+- [Java — 04 · Building REST APIs with Spring Boot](https://learnmasterypath.com/java-mastery-path/level-3/04-rest-apis-spring-boot/)
 
 ## Exercise
 

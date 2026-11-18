@@ -122,9 +122,9 @@ by two different people always diff cleanly against each other.
 
 ## 🔀 See this in another language
 
-- [Rust — Setup & First Program](https://sigilipelli.github.io/rust-mastery-path/level-1/01-setup/)
-- [Dart — Setup & First Program](https://sigilipelli.github.io/dart-mastery-path/level-1/01-setup/)
-- [Python — Setup & First Program](https://sigilipelli.github.io/python-mastery-path/level-1/01-setup/)
+- [Rust — Setup & First Program](https://learnmasterypath.com/rust-mastery-path/level-1/01-setup/)
+- [Dart — Setup & First Program](https://learnmasterypath.com/dart-mastery-path/level-1/01-setup/)
+- [Python — Setup & First Program](https://learnmasterypath.com/python-mastery-path/level-1/01-setup/)
 
 ## Exercise
 

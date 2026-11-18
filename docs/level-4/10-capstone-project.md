@@ -344,4 +344,4 @@ know or care which concrete store backs it.
 
 ## 🔀 See this in another language
 
-- [Rust — 10 · Capstone: URL Shortener Service](https://sigilipelli.github.io/rust-mastery-path/level-4/10-capstone-project/)
+- [Rust — 10 · Capstone: URL Shortener Service](https://learnmasterypath.com/rust-mastery-path/level-4/10-capstone-project/)

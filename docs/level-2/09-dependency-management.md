@@ -296,7 +296,7 @@ vendoring their own.
 
 ## 🔀 See this in another language
 
-- [Rust — 09 · Crates & Dependency Management](https://sigilipelli.github.io/rust-mastery-path/level-2/09-crates-dependencies/)
+- [Rust — 09 · Crates & Dependency Management](https://learnmasterypath.com/rust-mastery-path/level-2/09-crates-dependencies/)
 
 ## Exercise
 
