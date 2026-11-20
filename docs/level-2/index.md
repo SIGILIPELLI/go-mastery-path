@@ -1,3 +1,7 @@
+---
+description: "Level 2 (Intermediate) of the free Go Mastery Path: Interfaces, Goroutines & Channels Basics, Methods & Receivers, Custom Errors & Error Wrapping, JSON…"
+---
+
 # Level 2 · Intermediate <span class="level-badge">Idiomatic Go</span>
 
 ## Modules

@@ -1,3 +1,7 @@
+---
+description: "Level 4 (Master) of the free Go Mastery Path: Advanced Concurrency, Microservices Patterns in Go, gRPC Basics, Production-Grade APIs, Testing at Scale & CI…"
+---
+
 # Level 4 · Master <span class="level-badge">Production systems</span>
 
 ## Modules

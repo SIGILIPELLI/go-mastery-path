@@ -1,3 +1,7 @@
+---
+description: "Level 3 (Advanced) of the free Go Mastery Path: Concurrency Patterns, Building REST APIs, Databases with database/sql, The Context Package, Design Patterns…"
+---
+
 # Level 3 · Advanced <span class="level-badge">Production-ready</span>
 
 ## Modules
