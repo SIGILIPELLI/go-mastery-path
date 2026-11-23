@@ -371,5 +371,5 @@ effective writer at a time even though the pool holds multiple open connections.
 ## 🔀 See this in another language
 
 - [Rust — 10 · Project: REST API with SQLite](https://learnmasterypath.com/rust-mastery-path/level-3/10-project-rest-api-sqlite/)
-- [Python — 11 · Project — REST API + Database](https://learnmasterypath.com/python-mastery-path/level-3/11-project-rest-api-db/)
-- [Java — 11 · Project — REST API + Database CRUD Service](https://learnmasterypath.com/java-mastery-path/level-3/11-project-rest-api-db/)
+- [Python — 11 · Project — REST API + Database](https://learnmasterypath.com/python-mastery-path/level-3/10-project-rest-api-db/)
+- [Java — 11 · Project — REST API + Database CRUD Service](https://learnmasterypath.com/java-mastery-path/level-3/10-project-rest-api-db/)
