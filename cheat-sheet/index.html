@@ -1,0 +1,4946 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A free Go cheat sheet: 36 quick-reference tables from every level of the Go Mastery Path, each linked to its full lesson.">
+      
+      
+      
+        <link rel="canonical" href="https://learnmasterypath.com/go-mastery-path/cheat-sheet/">
+      
+      
+        <link rel="prev" href="../interview-questions/">
+      
+      
+        <link rel="next" href="../level-1/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+  
+  <title>Go Cheat Sheet: Quick Reference, Beginner to Advanced – Go Course</title>
+
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../stylesheets/progress-tracker.css">
+    
+      <link rel="stylesheet" href="../stylesheets/final-quiz.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-05VBGCXN12"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-05VBGCXN12');
+  </script>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mastery Path">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Go Cheat Sheet: Quick Reference, Beginner to Advanced – Go Course">
+  <meta property="og:description" content="A free Go cheat sheet: 36 quick-reference tables from every level of the Go Mastery Path, each linked to its full lesson.">
+  <meta property="og:url" content="https://learnmasterypath.com/go-mastery-path/cheat-sheet/">
+  <meta property="og:image" content="https://learnmasterypath.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mastery Path: free structured courses, beginner to master">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Go Cheat Sheet: Quick Reference, Beginner to Advanced – Go Course">
+  <meta name="twitter:description" content="A free Go cheat sheet: 36 quick-reference tables from every level of the Go Mastery Path, each linked to its full lesson.">
+  <meta name="twitter:image" content="https://learnmasterypath.com/og-image.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9440969811959397"
+     crossorigin="anonymous"></script><script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Mastery Path", "item": "https://learnmasterypath.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Go Mastery Path", "item": "https://learnmasterypath.com/go-mastery-path/"},
+      {"@type": "ListItem", "position": 3, "name": "Cheat Sheet", "item": "https://learnmasterypath.com/go-mastery-path/cheat-sheet/"}
+    ]
+  }
+  </script>
+  <style>
+    .md-banner a:hover { text-decoration: underline !important; }
+    .mp-related { margin-top: 2.4rem; padding-top: 1rem; border-top: 1px solid var(--md-default-fg-color--lightest); font-size: .78rem; }
+    .mp-related h2 { font-size: .9rem; margin: 0 0 .5rem; }
+    .mp-related ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .4rem .9rem; }
+    .mp-related li { margin: 0 !important; }
+  </style>
+  <script type="application/json" id="mp-course-meta">{"home": false, "id": "go-mastery-path", "name": "Go Mastery Path", "repo": "https://github.com/SIGILIPELLI/go-mastery-path", "src": "cheat-sheet.md", "url": "https://learnmasterypath.com/go-mastery-path/"}</script>
+  <link rel="stylesheet" href="https://learnmasterypath.com/assets/learn.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://learnmasterypath.com/assets/course.css?v=1">
+  <script src="https://learnmasterypath.com/assets/learn.js" defer></script>
+  <script src="https://learnmasterypath.com/assets/signup.js" defer></script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#go-cheat-sheet" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  <a href="https://learnmasterypath.com/" style="color: inherit; text-decoration: none;">
+    &larr; Mastery Path &middot; all 100+ free courses
+  </a>
+  <span style="opacity: .6; margin: 0 .6em;">|</span>
+  <a href="https://learnmasterypath.com/search/" style="color: inherit; text-decoration: none;">Search all courses</a>
+  <span style="opacity: .6; margin: 0 .6em;">|</span>
+  <a href="https://learnmasterypath.com/resume/" style="color: inherit; font-weight: 700; text-decoration: none;">
+    Got the skills? Free resume ATS check &rarr;
+  </a>
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Go Mastery Path" class="md-header__button md-logo" aria-label="Go Mastery Path" data-md-component="logo">
+      <svg class="mp-mark" viewBox="0 0 160 160" role="img" aria-label="Mastery Path logo">
+  <circle cx="80" cy="80" r="74" fill="#FAF7EF" stroke="#2FA98D" stroke-width="5"/>
+  <rect class="mp-bar mp-bar-1" x="36" y="90" width="17" height="24" rx="5" fill="#2FA98D"/>
+  <rect class="mp-bar mp-bar-2" x="59" y="74" width="17" height="40" rx="5" fill="#7FC9B7"/>
+  <rect class="mp-bar mp-bar-3" x="82" y="56" width="17" height="58" rx="5" fill="#E0B457"/>
+  <rect class="mp-bar mp-bar-4" x="105" y="38" width="17" height="76" rx="5" fill="#C97B4A"/>
+  <circle class="mp-dot" cx="44.5" cy="82" r="7" fill="#22261f"/>
+</svg>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Go Mastery Path
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Go Cheat Sheet: Quick Reference, Beginner to Advanced
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/SIGILIPELLI/go-mastery-path" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    go-mastery-path
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../interview-questions/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Interview Questions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Cheat Sheet
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../level-1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Level 1 · Entry
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../level-2/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Level 2 · Intermediate
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../level-3/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Level 3 · Advanced
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../level-4/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Level 4 · Master
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../quiz/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Final Quiz
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Go Mastery Path" class="md-nav__button md-logo" aria-label="Go Mastery Path" data-md-component="logo">
+      <svg class="mp-mark" viewBox="0 0 160 160" role="img" aria-label="Mastery Path logo">
+  <circle cx="80" cy="80" r="74" fill="#FAF7EF" stroke="#2FA98D" stroke-width="5"/>
+  <rect class="mp-bar mp-bar-1" x="36" y="90" width="17" height="24" rx="5" fill="#2FA98D"/>
+  <rect class="mp-bar mp-bar-2" x="59" y="74" width="17" height="40" rx="5" fill="#7FC9B7"/>
+  <rect class="mp-bar mp-bar-3" x="82" y="56" width="17" height="58" rx="5" fill="#E0B457"/>
+  <rect class="mp-bar mp-bar-4" x="105" y="38" width="17" height="76" rx="5" fill="#C97B4A"/>
+  <circle class="mp-dot" cx="44.5" cy="82" r="7" fill="#22261f"/>
+</svg>
+    </a>
+    Go Mastery Path
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/SIGILIPELLI/go-mastery-path" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    go-mastery-path
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interview-questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interview Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheat Sheet
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheat Sheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#level-1-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 1 · Entry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 1 · Entry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#02-variables-types-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Variables, Types &amp; Operators
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-control-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Control Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-functions-multiple-returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Functions &amp; Multiple Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-arrays-slices-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Arrays, Slices &amp; Maps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-structs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Structs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-pointers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Pointers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Error Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-packages-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Packages &amp; Modules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-2-intermediate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 2 · Intermediate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 2 · Intermediate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · Interfaces
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-goroutines-channels-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Goroutines &amp; Channels Basics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-methods-receivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Methods &amp; Receivers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-custom-errors-error-wrapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Custom Errors &amp; Error Wrapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-json-encodingdecoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · JSON Encoding/Decoding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-testing-with-the-testing-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Testing with the testing Package
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-file-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · File I/O
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-working-with-nethttp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Working with net/http
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-dependency-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Dependency Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-3-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 3 · Advanced
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 3 · Advanced">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-concurrency-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · Concurrency Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-building-rest-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Building REST APIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-databases-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Databases &amp; SQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-the-context-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · The context Package
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-design-patterns-the-go-way" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Design Patterns, the Go Way
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-testing-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Testing, Advanced
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-profiling-benchmarking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Profiling &amp; Benchmarking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-building-clis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Building CLIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-interfaces-generics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Interfaces &amp; Generics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-project-rest-api-with-sqlite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Project: REST API with SQLite
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-4-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 4 · Master
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 4 · Master">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-advanced-concurrency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · Advanced Concurrency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-microservices-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Microservices Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-grpc-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · gRPC Basics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-production-grade-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Production-Grade APIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-testing-at-scale-ci" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Testing at Scale &amp; CI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-deployment-with-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Deployment with Docker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Observability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-security-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Security Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-performance-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Performance Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../level-1/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level 1 · Entry
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Level 1 · Entry
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/01-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · Setup & First Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/02-variables-types-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · Variables, Types & Operators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/03-control-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · Control Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/04-functions-multiple-returns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · Functions & Multiple Returns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/05-arrays-slices-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · Arrays, Slices & Maps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/06-structs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · Structs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/07-pointers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · Pointers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/08-error-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · Error Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/09-packages-modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Packages & Modules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/10-project-todo-cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · Project — CLI To-Do App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../level-2/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level 2 · Intermediate
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Level 2 · Intermediate
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/01-interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · Interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/02-goroutines-channels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · Goroutines & Channels Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/03-methods-receivers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · Methods & Receivers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/04-custom-errors-wrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · Custom Errors & Error Wrapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/05-json-encoding-decoding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · JSON Encoding/Decoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/06-testing-package/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · Testing with the testing Package
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/07-file-io/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · File I/O
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/08-net-http-client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · Working with net/http
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/09-dependency-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Dependency Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/10-project-weather-cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · Project — Weather CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../level-3/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level 3 · Advanced
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Level 3 · Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/01-concurrency-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · Concurrency Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/02-building-rest-apis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · Building REST APIs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/03-databases-sql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · Databases & SQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/04-context-package/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · The `context` Package
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/05-design-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · Design Patterns, the Go Way
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/06-testing-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · Testing, Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/07-profiling-benchmarking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · Profiling & Benchmarking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/08-building-clis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · Building CLIs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/09-interfaces-generics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Interfaces & Generics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/10-project-rest-api-sqlite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · Project: REST API with SQLite
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../level-4/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level 4 · Master
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Level 4 · Master
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/01-advanced-concurrency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · Advanced Concurrency
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/02-microservices-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · Microservices Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/03-grpc-basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · gRPC Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/04-production-grade-apis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · Production-Grade APIs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/05-testing-at-scale-ci/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · Testing at Scale & CI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/06-deployment-docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · Deployment with Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/07-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · Observability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/08-security-best-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · Security Best Practices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/09-performance-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Performance Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/10-capstone-project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · Capstone: A Production-Shaped URL Shortener
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Final Quiz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#level-1-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 1 · Entry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 1 · Entry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#02-variables-types-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Variables, Types &amp; Operators
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-control-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Control Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-functions-multiple-returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Functions &amp; Multiple Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-arrays-slices-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Arrays, Slices &amp; Maps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-structs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Structs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-pointers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Pointers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Error Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-packages-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Packages &amp; Modules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-2-intermediate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 2 · Intermediate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 2 · Intermediate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · Interfaces
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-goroutines-channels-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Goroutines &amp; Channels Basics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-methods-receivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Methods &amp; Receivers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-custom-errors-error-wrapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Custom Errors &amp; Error Wrapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-json-encodingdecoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · JSON Encoding/Decoding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-testing-with-the-testing-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Testing with the testing Package
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-file-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · File I/O
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-working-with-nethttp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Working with net/http
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-dependency-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Dependency Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-3-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 3 · Advanced
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 3 · Advanced">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-concurrency-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · Concurrency Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-building-rest-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Building REST APIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-databases-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Databases &amp; SQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-the-context-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · The context Package
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-design-patterns-the-go-way" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Design Patterns, the Go Way
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-testing-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Testing, Advanced
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-profiling-benchmarking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Profiling &amp; Benchmarking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-building-clis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Building CLIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-interfaces-generics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Interfaces &amp; Generics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-project-rest-api-with-sqlite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Project: REST API with SQLite
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-4-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 4 · Master
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 4 · Master">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-advanced-concurrency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · Advanced Concurrency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-microservices-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Microservices Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-grpc-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · gRPC Basics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-production-grade-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Production-Grade APIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-testing-at-scale-ci" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Testing at Scale &amp; CI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-deployment-with-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Deployment with Docker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Observability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-security-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Security Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-performance-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Performance Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+  
+  
+
+
+<h1 id="go-cheat-sheet">Go Cheat Sheet<a class="headerlink" href="#go-cheat-sheet" title="Permanent link">&para;</a></h1>
+<p>Quick-reference tables from <strong>36 lessons</strong> of the free Go Mastery Path, in course order from beginner to advanced. Each section links to the full lesson with explanations and runnable examples.</p>
+<h2 id="level-1-entry">Level 1 · Entry<a class="headerlink" href="#level-1-entry" title="Permanent link">&para;</a></h2>
+<h3 id="02-variables-types-operators"><a href="../level-1/02-variables-types-operators/">02 · Variables, Types &amp; Operators</a><a class="headerlink" href="#02-variables-types-operators" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Declare with inference</td>
+<td><code>x := 5</code></td>
+</tr>
+<tr>
+<td>Declare with explicit type</td>
+<td><code>var x int = 5</code></td>
+</tr>
+<tr>
+<td>Zero value</td>
+<td><code>var x int</code> → <code>0</code></td>
+</tr>
+<tr>
+<td>Constant</td>
+<td><code>const Pi = 3.14</code></td>
+</tr>
+<tr>
+<td>Enum-like constants</td>
+<td><code>const ( A = iota; B; C )</code></td>
+</tr>
+<tr>
+<td>Convert types</td>
+<td><code>float64(x)</code>, <code>int(y)</code></td>
+</tr>
+<tr>
+<td>Multiple assignment</td>
+<td><code>a, b := 1, 2</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="03-control-flow"><a href="../level-1/03-control-flow/">03 · Control Flow</a><a class="headerlink" href="#03-control-flow" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Construct</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>If</td>
+<td><code>if x &gt; 0 { ... }</code></td>
+</tr>
+<tr>
+<td>If/else if/else</td>
+<td><code>if ... else if ... else { ... }</code></td>
+</tr>
+<tr>
+<td>If with initializer</td>
+<td><code>if v, err := f(); err == nil { ... }</code></td>
+</tr>
+<tr>
+<td>Classic for</td>
+<td><code>for i := 0; i &lt; n; i++ { ... }</code></td>
+</tr>
+<tr>
+<td>While-style</td>
+<td><code>for cond { ... }</code></td>
+</tr>
+<tr>
+<td>Infinite</td>
+<td><code>for { ... break }</code></td>
+</tr>
+<tr>
+<td>Range (index, value)</td>
+<td><code>for i, v := range slice { ... }</code></td>
+</tr>
+<tr>
+<td>Range (value only)</td>
+<td><code>for _, v := range slice { ... }</code></td>
+</tr>
+<tr>
+<td>Switch</td>
+<td><code>switch x { case 1: ...; default: ... }</code></td>
+</tr>
+<tr>
+<td>Switch, no expression</td>
+<td><code>switch { case cond: ... }</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="04-functions-multiple-returns"><a href="../level-1/04-functions-multiple-returns/">04 · Functions &amp; Multiple Returns</a><a class="headerlink" href="#04-functions-multiple-returns" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Basic function</td>
+<td><code>func add(a, b int) int { return a + b }</code></td>
+</tr>
+<tr>
+<td>Multiple returns</td>
+<td><code>func f() (int, error) { ... }</code></td>
+</tr>
+<tr>
+<td>Named returns</td>
+<td><code>func f() (x int) { x = 1; return }</code></td>
+</tr>
+<tr>
+<td>Variadic</td>
+<td><code>func f(nums ...int) { ... }</code></td>
+</tr>
+<tr>
+<td>Spread a slice</td>
+<td><code>f(values...)</code></td>
+</tr>
+<tr>
+<td>Discard a return</td>
+<td><code>_, err := f()</code></td>
+</tr>
+<tr>
+<td>Function value</td>
+<td><code>var f func(int) int = double</code></td>
+</tr>
+<tr>
+<td>Closure</td>
+<td><code>func() func() int { ... }</code></td>
+</tr>
+<tr>
+<td>Deferred cleanup</td>
+<td><code>defer file.Close()</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="05-arrays-slices-maps"><a href="../level-1/05-arrays-slices-maps/">05 · Arrays, Slices &amp; Maps</a><a class="headerlink" href="#05-arrays-slices-maps" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Array (fixed size)</td>
+<td><code>var a [3]int</code></td>
+</tr>
+<tr>
+<td>Slice literal</td>
+<td><code>s := []int{1, 2, 3}</code></td>
+</tr>
+<tr>
+<td>Slice with make</td>
+<td><code>s := make([]int, len, cap)</code></td>
+</tr>
+<tr>
+<td>Append</td>
+<td><code>s = append(s, 4, 5)</code></td>
+</tr>
+<tr>
+<td>Slice a slice</td>
+<td><code>s[1:3]</code></td>
+</tr>
+<tr>
+<td>Copy independently</td>
+<td><code>copy(dst, src)</code></td>
+</tr>
+<tr>
+<td>Map literal</td>
+<td><code>m := map[string]int{"a": 1}</code></td>
+</tr>
+<tr>
+<td>Map with make</td>
+<td><code>m := make(map[string]int)</code></td>
+</tr>
+<tr>
+<td>Read + existence check</td>
+<td><code>v, ok := m[key]</code></td>
+</tr>
+<tr>
+<td>Delete a key</td>
+<td><code>delete(m, key)</code></td>
+</tr>
+<tr>
+<td>Length (slice or map)</td>
+<td><code>len(s)</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="06-structs"><a href="../level-1/06-structs/">06 · Structs</a><a class="headerlink" href="#06-structs" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Define</td>
+<td><code>type Person struct { Name string; Age int }</code></td>
+</tr>
+<tr>
+<td>Create (named fields)</td>
+<td><code>Person{Name: "A", Age: 1}</code></td>
+</tr>
+<tr>
+<td>Create (positional)</td>
+<td><code>Person{"A", 1}</code></td>
+</tr>
+<tr>
+<td>Zero value</td>
+<td><code>var p Person</code></td>
+</tr>
+<tr>
+<td>Access/set field</td>
+<td><code>p.Name</code>, <code>p.Name = "X"</code></td>
+</tr>
+<tr>
+<td>Nested access</td>
+<td><code>e.Address.City</code></td>
+</tr>
+<tr>
+<td>Embedding</td>
+<td><code>type Dog struct { Animal; Breed string }</code></td>
+</tr>
+<tr>
+<td>Compare (comparable fields)</td>
+<td><code>a == b</code></td>
+</tr>
+<tr>
+<td>Struct tag</td>
+<td><code>`json:"host"`</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="07-pointers"><a href="../level-1/07-pointers/">07 · Pointers</a><a class="headerlink" href="#07-pointers" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Address-of</td>
+<td><code>p := &amp;x</code></td>
+</tr>
+<tr>
+<td>Dereference</td>
+<td><code>*p</code></td>
+</tr>
+<tr>
+<td>Pointer type</td>
+<td><code>var p *int</code></td>
+</tr>
+<tr>
+<td>Pointer to struct literal</td>
+<td><code>&amp;Point{X: 1, Y: 2}</code></td>
+</tr>
+<tr>
+<td>Allocate zeroed</td>
+<td><code>p := new(Point)</code></td>
+</tr>
+<tr>
+<td>Auto-deref field access</td>
+<td><code>p.X</code> (shorthand for <code>(*p).X</code>)</td>
+</tr>
+<tr>
+<td>Nil check</td>
+<td><code>if p == nil { ... }</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="08-error-handling"><a href="../level-1/08-error-handling/">08 · Error Handling</a><a class="headerlink" href="#08-error-handling" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Return a plain error</td>
+<td><code>errors.New("message")</code></td>
+</tr>
+<tr>
+<td>Return a formatted error</td>
+<td><code>fmt.Errorf("bad value: %d", n)</code></td>
+</tr>
+<tr>
+<td>Check for failure</td>
+<td><code>if err != nil { ... }</code></td>
+</tr>
+<tr>
+<td>Custom error type</td>
+<td><code>type X struct{}; func (X) Error() string { ... }</code></td>
+</tr>
+<tr>
+<td>Stop execution</td>
+<td><code>panic("message")</code></td>
+</tr>
+<tr>
+<td>Catch a panic</td>
+<td><code>defer func() { recover() }()</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="09-packages-modules"><a href="../level-1/09-packages-modules/">09 · Packages &amp; Modules</a><a class="headerlink" href="#09-packages-modules" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Command / syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Create a module</td>
+<td><code>go mod init &lt;module-name&gt;</code></td>
+</tr>
+<tr>
+<td>Add a dependency</td>
+<td><code>go get &lt;import-path&gt;@&lt;version&gt;</code></td>
+</tr>
+<tr>
+<td>Clean up dependencies</td>
+<td><code>go mod tidy</code></td>
+</tr>
+<tr>
+<td>Import a package</td>
+<td><code>import "todoapp/task"</code></td>
+</tr>
+<tr>
+<td>Import stdlib package</td>
+<td><code>import "fmt"</code></td>
+</tr>
+<tr>
+<td>Import with alias</td>
+<td><code>import f "fmt"</code></td>
+</tr>
+<tr>
+<td>Exported identifier</td>
+<td>Starts with an uppercase letter</td>
+</tr>
+<tr>
+<td>Unexported identifier</td>
+<td>Starts with a lowercase letter</td>
+</tr>
+</tbody>
+</table>
+<h2 id="level-2-intermediate">Level 2 · Intermediate<a class="headerlink" href="#level-2-intermediate" title="Permanent link">&para;</a></h2>
+<h3 id="01-interfaces"><a href="../level-2/01-interfaces/">01 · Interfaces</a><a class="headerlink" href="#01-interfaces" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Declare an interface</td>
+<td><code>type S interface { Area() float64 }</code></td>
+</tr>
+<tr>
+<td>Satisfy an interface</td>
+<td>just define the methods — nothing to declare</td>
+</tr>
+<tr>
+<td>Empty interface</td>
+<td><code>any</code> (or <code>interface{}</code>)</td>
+</tr>
+<tr>
+<td>Safe type assertion</td>
+<td><code>v, ok := x.(Concrete)</code></td>
+</tr>
+<tr>
+<td>Type switch</td>
+<td><code>switch v := x.(type) { case int: ... }</code></td>
+</tr>
+<tr>
+<td>Embed interfaces</td>
+<td><code>type RC interface { Reader; Closer }</code></td>
+</tr>
+<tr>
+<td>Compile-time check</td>
+<td><code>var _ Iface = (*Impl)(nil)</code></td>
+</tr>
+<tr>
+<td>Print concrete type</td>
+<td><code>fmt.Printf("%T", x)</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="02-goroutines-channels-basics"><a href="../level-2/02-goroutines-channels/">02 · Goroutines &amp; Channels Basics</a><a class="headerlink" href="#02-goroutines-channels-basics" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Start a goroutine</td>
+<td><code>go doWork(arg)</code></td>
+</tr>
+<tr>
+<td>Unbuffered channel</td>
+<td><code>ch := make(chan int)</code></td>
+</tr>
+<tr>
+<td>Buffered channel</td>
+<td><code>ch := make(chan int, 10)</code></td>
+</tr>
+<tr>
+<td>Send / receive</td>
+<td><code>ch &lt;- v</code> / <code>v := &lt;-ch</code></td>
+</tr>
+<tr>
+<td>Receive with closed check</td>
+<td><code>v, ok := &lt;-ch</code></td>
+</tr>
+<tr>
+<td>Close a channel</td>
+<td><code>close(ch)</code> (sender only)</td>
+</tr>
+<tr>
+<td>Loop until closed</td>
+<td><code>for v := range ch { ... }</code></td>
+</tr>
+<tr>
+<td>Send-only / receive-only</td>
+<td><code>chan&lt;- int</code> / <code>&lt;-chan int</code></td>
+</tr>
+<tr>
+<td>Wait for N goroutines</td>
+<td><code>wg.Add(1)</code> / <code>defer wg.Done()</code> / <code>wg.Wait()</code></td>
+</tr>
+<tr>
+<td>Multiplex channels</td>
+<td><code>select { case v := &lt;-a: ... }</code></td>
+</tr>
+<tr>
+<td>Timeout</td>
+<td><code>case &lt;-time.After(2 * time.Second):</code></td>
+</tr>
+<tr>
+<td>Mutual exclusion</td>
+<td><code>mu.Lock(); defer mu.Unlock()</code></td>
+</tr>
+<tr>
+<td>Detect data races</td>
+<td><code>go run -race .</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="03-methods-receivers"><a href="../level-2/03-methods-receivers/">03 · Methods &amp; Receivers</a><a class="headerlink" href="#03-methods-receivers" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Value-receiver method</td>
+<td><code>func (t T) M() { ... }</code></td>
+</tr>
+<tr>
+<td>Pointer-receiver method</td>
+<td><code>func (t *T) M() { ... }</code></td>
+</tr>
+<tr>
+<td>Call on a value</td>
+<td><code>v.M()</code> — auto <code>&amp;v</code> if needed and addressable</td>
+</tr>
+<tr>
+<td>Call on a pointer</td>
+<td><code>p.M()</code> — auto <code>*p</code> if needed</td>
+</tr>
+<tr>
+<td>Method on a named non-struct</td>
+<td><code>type ID int; func (i ID) String() string</code></td>
+</tr>
+<tr>
+<td>Satisfy an interface with pointer methods</td>
+<td>pass <code>&amp;T{}</code>, not <code>T{}</code></td>
+</tr>
+<tr>
+<td>Method value</td>
+<td><code>f := v.M; f()</code></td>
+</tr>
+<tr>
+<td>Method expression</td>
+<td><code>f := T.M; f(v)</code></td>
+</tr>
+<tr>
+<td>Nil-safe method</td>
+<td><code>if t == nil { return zero }</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="04-custom-errors-error-wrapping"><a href="../level-2/04-custom-errors-wrapping/">04 · Custom Errors &amp; Error Wrapping</a><a class="headerlink" href="#04-custom-errors-error-wrapping" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sentinel error</td>
+<td><code>var ErrX = errors.New("x")</code></td>
+</tr>
+<tr>
+<td>Formatted error</td>
+<td><code>fmt.Errorf("bad id %d", id)</code></td>
+</tr>
+<tr>
+<td>Wrap with context</td>
+<td><code>fmt.Errorf("loading: %w", err)</code></td>
+</tr>
+<tr>
+<td>Compare to a sentinel</td>
+<td><code>errors.Is(err, ErrX)</code></td>
+</tr>
+<tr>
+<td>Extract a typed error</td>
+<td><code>var e *MyErr; errors.As(err, &amp;e)</code></td>
+</tr>
+<tr>
+<td>Make a type unwrappable</td>
+<td><code>func (e *MyErr) Unwrap() error</code></td>
+</tr>
+<tr>
+<td>Peel one layer</td>
+<td><code>errors.Unwrap(err)</code></td>
+</tr>
+<tr>
+<td>Combine errors</td>
+<td><code>errors.Join(err1, err2)</code></td>
+</tr>
+<tr>
+<td>Custom error type</td>
+<td><code>func (e *MyErr) Error() string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="05-json-encodingdecoding"><a href="../level-2/05-json-encoding-decoding/">05 · JSON Encoding/Decoding</a><a class="headerlink" href="#05-json-encodingdecoding" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Struct → JSON</td>
+<td><code>data, err := json.Marshal(v)</code></td>
+</tr>
+<tr>
+<td>Pretty JSON</td>
+<td><code>json.MarshalIndent(v, "", "  ")</code></td>
+</tr>
+<tr>
+<td>JSON → struct</td>
+<td><code>json.Unmarshal(data, &amp;v)</code></td>
+</tr>
+<tr>
+<td>Read from a stream</td>
+<td><code>json.NewDecoder(r).Decode(&amp;v)</code></td>
+</tr>
+<tr>
+<td>Write to a stream</td>
+<td><code>json.NewEncoder(w).Encode(v)</code></td>
+</tr>
+<tr>
+<td>Reject unknown keys</td>
+<td><code>dec.DisallowUnknownFields()</code></td>
+</tr>
+<tr>
+<td>Rename a key</td>
+<td><code>`json:"user_id"`</code></td>
+</tr>
+<tr>
+<td>Omit zero values</td>
+<td><code>`json:"bio,omitempty"`</code></td>
+</tr>
+<tr>
+<td>Skip a field</td>
+<td><code>`json:"-"`</code></td>
+</tr>
+<tr>
+<td>Unknown shape</td>
+<td><code>var m map[string]any</code></td>
+</tr>
+<tr>
+<td>Validate JSON text</td>
+<td><code>json.Valid(data)</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="06-testing-with-the-testing-package"><a href="../level-2/06-testing-package/">06 · Testing with the testing Package</a><a class="headerlink" href="#06-testing-with-the-testing-package" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Test function</td>
+<td><code>func TestX(t *testing.T)</code></td>
+</tr>
+<tr>
+<td>Report and continue</td>
+<td><code>t.Errorf("got %v; want %v", got, want)</code></td>
+</tr>
+<tr>
+<td>Report and stop</td>
+<td><code>t.Fatalf(...)</code></td>
+</tr>
+<tr>
+<td>Named subtest</td>
+<td><code>t.Run(name, func(t *testing.T){ ... })</code></td>
+</tr>
+<tr>
+<td>Skip</td>
+<td><code>t.Skip("needs network")</code></td>
+</tr>
+<tr>
+<td>Temp dir</td>
+<td><code>dir := t.TempDir()</code></td>
+</tr>
+<tr>
+<td>Teardown</td>
+<td><code>t.Cleanup(func(){ ... })</code></td>
+</tr>
+<tr>
+<td>Mark a helper</td>
+<td><code>t.Helper()</code></td>
+</tr>
+<tr>
+<td>Run in parallel</td>
+<td><code>t.Parallel()</code></td>
+</tr>
+<tr>
+<td>Compare slices</td>
+<td><code>slices.Equal(got, want)</code></td>
+</tr>
+<tr>
+<td>Compare anything</td>
+<td><code>reflect.DeepEqual(got, want)</code></td>
+</tr>
+<tr>
+<td>Run all tests</td>
+<td><code>go test ./...</code></td>
+</tr>
+<tr>
+<td>Coverage</td>
+<td><code>go test -cover ./...</code></td>
+</tr>
+<tr>
+<td>Race detection</td>
+<td><code>go test -race ./...</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="07-file-io"><a href="../level-2/07-file-io/">07 · File I/O</a><a class="headerlink" href="#07-file-io" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Read a whole file</td>
+<td><code>data, err := os.ReadFile(path)</code></td>
+</tr>
+<tr>
+<td>Write a whole file</td>
+<td><code>os.WriteFile(path, data, 0644)</code></td>
+</tr>
+<tr>
+<td>Open for reading</td>
+<td><code>f, err := os.Open(path)</code></td>
+</tr>
+<tr>
+<td>Create / truncate</td>
+<td><code>f, err := os.Create(path)</code></td>
+</tr>
+<tr>
+<td>Open for appending</td>
+<td><code>os.OpenFile(p, os.O_APPEND\|os.O_CREATE\|os.O_WRONLY, 0644)</code></td>
+</tr>
+<tr>
+<td>Close reliably</td>
+<td><code>defer f.Close()</code></td>
+</tr>
+<tr>
+<td>Read line by line</td>
+<td><code>sc := bufio.NewScanner(f); for sc.Scan() { sc.Text() }</code></td>
+</tr>
+<tr>
+<td>Check scanner errors</td>
+<td><code>if err := sc.Err(); err != nil</code></td>
+</tr>
+<tr>
+<td>Buffered writing</td>
+<td><code>w := bufio.NewWriter(f)</code> … <code>w.Flush()</code></td>
+</tr>
+<tr>
+<td>Formatted write</td>
+<td><code>fmt.Fprintf(w, "x = %d\n", x)</code></td>
+</tr>
+<tr>
+<td>File metadata</td>
+<td><code>info, err := os.Stat(path)</code></td>
+</tr>
+<tr>
+<td>Missing-file check</td>
+<td><code>errors.Is(err, os.ErrNotExist)</code></td>
+</tr>
+<tr>
+<td>Delete / rename</td>
+<td><code>os.Remove(p)</code> / <code>os.Rename(old, new)</code></td>
+</tr>
+<tr>
+<td>Make directories</td>
+<td><code>os.MkdirAll(dir, 0755)</code></td>
+</tr>
+<tr>
+<td>List a directory</td>
+<td><code>os.ReadDir(dir)</code></td>
+</tr>
+<tr>
+<td>Walk a tree</td>
+<td><code>filepath.WalkDir(root, fn)</code></td>
+</tr>
+<tr>
+<td>Join paths</td>
+<td><code>filepath.Join("a", "b")</code></td>
+</tr>
+<tr>
+<td>Stream copy</td>
+<td><code>io.Copy(dst, src)</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="08-working-with-nethttp"><a href="../level-2/08-net-http-client/">08 · Working with net/http</a><a class="headerlink" href="#08-working-with-nethttp" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Quick GET</td>
+<td><code>resp, err := http.Get(url)</code></td>
+</tr>
+<tr>
+<td>Always close the body</td>
+<td><code>defer resp.Body.Close()</code></td>
+</tr>
+<tr>
+<td>Read the whole body</td>
+<td><code>io.ReadAll(resp.Body)</code></td>
+</tr>
+<tr>
+<td>Bounded read</td>
+<td><code>io.ReadAll(io.LimitReader(resp.Body, 1&lt;&lt;20))</code></td>
+</tr>
+<tr>
+<td>Decode JSON</td>
+<td><code>json.NewDecoder(resp.Body).Decode(&amp;v)</code></td>
+</tr>
+<tr>
+<td>Client with a timeout</td>
+<td><code>&amp;http.Client{Timeout: 10 * time.Second}</code></td>
+</tr>
+<tr>
+<td>Build a request</td>
+<td><code>http.NewRequest(method, url, body)</code></td>
+</tr>
+<tr>
+<td>With cancellation</td>
+<td><code>http.NewRequestWithContext(ctx, ...)</code></td>
+</tr>
+<tr>
+<td>Send it</td>
+<td><code>resp, err := client.Do(req)</code></td>
+</tr>
+<tr>
+<td>Set a header</td>
+<td><code>req.Header.Set("Authorization", "Bearer "+t)</code></td>
+</tr>
+<tr>
+<td>JSON POST body</td>
+<td><code>bytes.NewReader(jsonBytes)</code></td>
+</tr>
+<tr>
+<td>Query parameters</td>
+<td><code>u.RawQuery = url.Values{...}.Encode()</code></td>
+</tr>
+<tr>
+<td>Status constants</td>
+<td><code>http.StatusOK</code>, <code>http.StatusNotFound</code></td>
+</tr>
+<tr>
+<td>Stream to disk</td>
+<td><code>io.Copy(file, resp.Body)</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="09-dependency-management"><a href="../level-2/09-dependency-management/">09 · Dependency Management</a><a class="headerlink" href="#09-dependency-management" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Start a module</td>
+<td><code>go mod init github.com/you/proj</code></td>
+</tr>
+<tr>
+<td>Add / update a dependency</td>
+<td><code>go get github.com/x/y@v1.2.3</code></td>
+</tr>
+<tr>
+<td>Sync <code>go.mod</code> with imports</td>
+<td><code>go mod tidy</code></td>
+</tr>
+<tr>
+<td>Upgrade everything</td>
+<td><code>go get -u ./...</code></td>
+</tr>
+<tr>
+<td>Patch-only upgrades</td>
+<td><code>go get -u=patch ./...</code></td>
+</tr>
+<tr>
+<td>Remove a dependency</td>
+<td><code>go get github.com/x/y@none</code></td>
+</tr>
+<tr>
+<td>List the build's modules</td>
+<td><code>go list -m all</code></td>
+</tr>
+<tr>
+<td>Show available updates</td>
+<td><code>go list -m -u all</code></td>
+</tr>
+<tr>
+<td>Explain a dependency</td>
+<td><code>go mod why github.com/x/y</code></td>
+</tr>
+<tr>
+<td>Verify checksums</td>
+<td><code>go mod verify</code></td>
+</tr>
+<tr>
+<td>Vendor dependencies</td>
+<td><code>go mod vendor</code></td>
+</tr>
+<tr>
+<td>Local override</td>
+<td><code>replace github.com/x/y =&gt; ../y</code></td>
+</tr>
+<tr>
+<td>Multi-module workspace</td>
+<td><code>go work init ./a ./b</code></td>
+</tr>
+<tr>
+<td>Download without building</td>
+<td><code>go mod download</code></td>
+</tr>
+<tr>
+<td>Scan for vulnerabilities</td>
+<td><code>govulncheck ./...</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="level-3-advanced">Level 3 · Advanced<a class="headerlink" href="#level-3-advanced" title="Permanent link">&para;</a></h2>
+<h3 id="01-concurrency-patterns"><a href="../level-3/01-concurrency-patterns/">01 · Concurrency Patterns</a><a class="headerlink" href="#01-concurrency-patterns" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Shape</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Worker pool</td>
+<td>N goroutines <code>range</code> over a shared <code>jobs</code> channel</td>
+</tr>
+<tr>
+<td>Fan-out</td>
+<td>Multiple goroutines reading the <em>same</em> input channel</td>
+</tr>
+<tr>
+<td>Fan-in</td>
+<td><code>merge()</code> combines several channels into one with a <code>WaitGroup</code></td>
+</tr>
+<tr>
+<td>Pipeline</td>
+<td><code>stage2(stage1(source()))</code> — each stage its own goroutine</td>
+</tr>
+<tr>
+<td>Exactly-once init</td>
+<td><code>var once sync.Once; once.Do(fn)</code></td>
+</tr>
+<tr>
+<td>Rate limit</td>
+<td><code>limiter := time.Tick(d); &lt;-limiter</code> before each unit of work</td>
+</tr>
+<tr>
+<td>Safe channel close</td>
+<td>Close only from the sender, only after all sends are done</td>
+</tr>
+<tr>
+<td>Cancellable send</td>
+<td><code>select { case ch &lt;- v: case &lt;-ctx.Done(): return }</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="02-building-rest-apis"><a href="../level-3/02-building-rest-apis/">02 · Building REST APIs</a><a class="headerlink" href="#02-building-rest-apis" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>API</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Serve JSON</td>
+<td><code>w.Header().Set("Content-Type","application/json")</code> then <code>json.NewEncoder(w).Encode(v)</code></td>
+</tr>
+<tr>
+<td>Parse JSON body</td>
+<td><code>json.NewDecoder(r.Body).Decode(&amp;v)</code></td>
+</tr>
+<tr>
+<td>Path parameter (Go 1.22+)</td>
+<td><code>mux.HandleFunc("GET /x/{id}", ...)</code>, <code>r.PathValue("id")</code></td>
+</tr>
+<tr>
+<td>Set status code</td>
+<td><code>w.WriteHeader(http.StatusCreated)</code> — before any <code>Write</code></td>
+</tr>
+<tr>
+<td>Method-not-allowed</td>
+<td><code>http.Error(w, "...", http.StatusMethodNotAllowed)</code></td>
+</tr>
+<tr>
+<td>Wrap handlers</td>
+<td><code>func(next http.Handler) http.Handler</code></td>
+</tr>
+<tr>
+<td>Concurrency-safe state</td>
+<td>Guard shared maps/slices with <code>sync.Mutex</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="03-databases-sql"><a href="../level-3/03-databases-sql/">03 · Databases &amp; SQL</a><a class="headerlink" href="#03-databases-sql" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>API</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Register a driver</td>
+<td><code>import _ "modernc.org/sqlite"</code> (blank import for its <code>init()</code>)</td>
+</tr>
+<tr>
+<td>Open a pooled handle</td>
+<td><code>db, err := sql.Open(driverName, dsn)</code></td>
+</tr>
+<tr>
+<td>Run DDL/DML, no rows back</td>
+<td><code>db.Exec(query, args...)</code></td>
+</tr>
+<tr>
+<td>Reusable prepared statement</td>
+<td><code>db.Prepare(query)</code> then <code>stmt.Exec(args...)</code></td>
+</tr>
+<tr>
+<td>Query multiple rows</td>
+<td><code>rows, err := db.Query(query, args...)</code>; <code>defer rows.Close()</code></td>
+</tr>
+<tr>
+<td>Query exactly one row</td>
+<td><code>db.QueryRow(query, args...).Scan(&amp;dest...)</code></td>
+</tr>
+<tr>
+<td>No matching row</td>
+<td>compare scan error to <code>sql.ErrNoRows</code></td>
+</tr>
+<tr>
+<td>Multi-statement atomicity</td>
+<td><code>tx, _ := db.Begin()</code>; <code>tx.Exec(...)</code>; <code>tx.Commit()</code> / <code>tx.Rollback()</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="04-the-context-package"><a href="../level-3/04-context-package/">04 · The <code>context</code> Package</a><a class="headerlink" href="#04-the-context-package" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Need</th>
+<th>API</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Root context</td>
+<td><code>context.Background()</code> (real programs) / <code>context.TODO()</code> (not yet wired up)</td>
+</tr>
+<tr>
+<td>Cancel manually</td>
+<td><code>ctx, cancel := context.WithCancel(parent)</code></td>
+</tr>
+<tr>
+<td>Cancel after a duration</td>
+<td><code>ctx, cancel := context.WithTimeout(parent, d)</code></td>
+</tr>
+<tr>
+<td>Cancel at a wall-clock time</td>
+<td><code>ctx, cancel := context.WithDeadline(parent, t)</code></td>
+</tr>
+<tr>
+<td>Wait for cancellation</td>
+<td><code>select { case &lt;-ctx.Done(): ... }</code></td>
+</tr>
+<tr>
+<td>Why it ended</td>
+<td><code>ctx.Err()</code> → <code>context.Canceled</code> or <code>context.DeadlineExceeded</code></td>
+</tr>
+<tr>
+<td>Attach request-scoped data</td>
+<td><code>context.WithValue(ctx, privateKeyType, v)</code></td>
+</tr>
+<tr>
+<td>Read it back</td>
+<td><code>v, ok := ctx.Value(privateKeyType).(T)</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="05-design-patterns-the-go-way"><a href="../level-3/05-design-patterns/">05 · Design Patterns, the Go Way</a><a class="headerlink" href="#05-design-patterns-the-go-way" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>GoF-flavored need</th>
+<th>Go idiom</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Configurable constructor</td>
+<td>Functional options: <code>func(*T)</code> closures, <code>opts ...Option</code></td>
+</tr>
+<tr>
+<td>Interchangeable algorithms</td>
+<td>Small interface + multiple implementing types</td>
+</tr>
+<tr>
+<td>Add behavior without subclassing</td>
+<td>Wrap the interface in another type holding <code>next</code></td>
+</tr>
+<tr>
+<td>"Abstract base class"</td>
+<td>An interface with no default implementation</td>
+</tr>
+<tr>
+<td>Singleton-ish shared state</td>
+<td>Package-level var + <code>sync.Once</code> (see <a href="../level-3/01-concurrency-patterns/">Module 1</a>)</td>
+</tr>
+<tr>
+<td>Builder-style construction</td>
+<td>Return <code>*T</code> from each step, or use functional options</td>
+</tr>
+</tbody>
+</table>
+<h3 id="06-testing-advanced"><a href="../level-3/06-testing-advanced/">06 · Testing, Advanced</a><a class="headerlink" href="#06-testing-advanced" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Command / API</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Run all tests, verbose</td>
+<td><code>go test -v ./...</code></td>
+</tr>
+<tr>
+<td>Run one named test/subtest</td>
+<td><code>go test -run TestAdd/2\+3</code></td>
+</tr>
+<tr>
+<td>Table test with subtests</td>
+<td><code>for _, c := range cases { t.Run(name, func(t *testing.T){...}) }</code></td>
+</tr>
+<tr>
+<td>Fail, keep running rest of table</td>
+<td><code>t.Errorf(...)</code></td>
+</tr>
+<tr>
+<td>Fail, stop this test now</td>
+<td><code>t.Fatalf(...)</code></td>
+</tr>
+<tr>
+<td>Fuzz a function</td>
+<td><code>func FuzzX(f *testing.F)</code>, seed with <code>f.Add(...)</code>, <code>f.Fuzz(func(t *testing.T, ...){...})</code></td>
+</tr>
+<tr>
+<td>Run fuzzing</td>
+<td><code>go test -run=^$ -fuzz=FuzzX -fuzztime=30s</code></td>
+</tr>
+<tr>
+<td>Benchmark</td>
+<td><code>func BenchmarkX(b *testing.B) { for i:=0;i&lt;b.N;i++ {...} }</code></td>
+</tr>
+<tr>
+<td>Run benchmarks only</td>
+<td><code>go test -bench=. -run=^$</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="07-profiling-benchmarking"><a href="../level-3/07-profiling-benchmarking/">07 · Profiling &amp; Benchmarking</a><a class="headerlink" href="#07-profiling-benchmarking" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Benchmark with allocation stats</td>
+<td><code>go test -bench=. -run=^$ -benchmem</code></td>
+</tr>
+<tr>
+<td>Write a CPU profile</td>
+<td><code>go test -bench=X -run=^$ -cpuprofile=cpu.prof</code></td>
+</tr>
+<tr>
+<td>Write a memory profile</td>
+<td><code>go test -bench=X -run=^$ -memprofile=mem.prof</code></td>
+</tr>
+<tr>
+<td>Inspect a profile, top functions</td>
+<td><code>go tool pprof -top -nodecount=N cpu.prof</code></td>
+</tr>
+<tr>
+<td>Interactive profile browser</td>
+<td><code>go tool pprof cpu.prof</code> then <code>top</code>, <code>list &lt;func&gt;</code>, <code>web</code></td>
+</tr>
+<tr>
+<td>Live profiling for a running server</td>
+<td><code>import _ "net/http/pprof"</code>, hit <code>/debug/pprof/profile</code></td>
+</tr>
+<tr>
+<td>Statistically compare benchmark runs</td>
+<td><code>benchstat old.txt new.txt</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="08-building-clis"><a href="../level-3/08-building-clis/">08 · Building CLIs</a><a class="headerlink" href="#08-building-clis" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>API</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Boolean flag</td>
+<td><code>f := flag.Bool("name", false, "usage")</code></td>
+</tr>
+<tr>
+<td>String flag</td>
+<td><code>f := flag.String("name", "", "usage")</code></td>
+</tr>
+<tr>
+<td>Parse <code>os.Args</code></td>
+<td><code>flag.Parse()</code> (call before reading any flag value)</td>
+</tr>
+<tr>
+<td>Non-flag positional args</td>
+<td><code>flag.Args()</code>, <code>flag.Arg(i)</code>, <code>flag.NArg()</code></td>
+</tr>
+<tr>
+<td>Per-subcommand flags</td>
+<td><code>fs := flag.NewFlagSet("name", flag.ExitOnError)</code></td>
+</tr>
+<tr>
+<td>Read stdin line by line</td>
+<td><code>bufio.NewScanner(os.Stdin)</code>, <code>for scanner.Scan() { scanner.Text() }</code></td>
+</tr>
+<tr>
+<td>Report an error</td>
+<td><code>fmt.Fprintln(os.Stderr, "...", err)</code></td>
+</tr>
+<tr>
+<td>Signal failure to the shell</td>
+<td><code>os.Exit(1)</code> (or <code>2</code> for usage errors)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="09-interfaces-generics"><a href="../level-3/09-interfaces-generics/">09 · Interfaces &amp; Generics</a><a class="headerlink" href="#09-interfaces-generics" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Need</th>
+<th>Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Generic function</td>
+<td><code>func F[T any](v T) T</code></td>
+</tr>
+<tr>
+<td>Multiple type params</td>
+<td><code>func Map[T, U any](in []T, f func(T) U) []U</code></td>
+</tr>
+<tr>
+<td>Numeric-only constraint</td>
+<td><code>type Number interface { ~int \| ~int64 \| ~float64 }</code></td>
+</tr>
+<tr>
+<td>Generic struct</td>
+<td><code>type Stack[T any] struct { items []T }</code></td>
+</tr>
+<tr>
+<td>Method on generic struct</td>
+<td><code>func (s *Stack[T]) Push(v T)</code></td>
+</tr>
+<tr>
+<td>Zero value of a type param</td>
+<td><code>var zero T</code></td>
+</tr>
+<tr>
+<td>Explicit type argument</td>
+<td><code>Sum[int](level-3/vals)</code> (when inference can't determine it)</td>
+</tr>
+<tr>
+<td>Interface composition</td>
+<td>Embed interfaces inside another <code>interface { A; B }</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="10-project-rest-api-with-sqlite"><a href="../level-3/10-project-rest-api-sqlite/">10 · Project: REST API with SQLite</a><a class="headerlink" href="#10-project-rest-api-with-sqlite" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Piece</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Interface for testability</td>
+<td><code>Store</code> in <code>store.go</code> (Module 5's strategy pattern)</td>
+</tr>
+<tr>
+<td>Context-aware DB calls</td>
+<td><code>db.ExecContext</code>/<code>QueryRowContext</code> (Module 3 + 4)</td>
+</tr>
+<tr>
+<td>Method+wildcard routing</td>
+<td><code>mux.HandleFunc("PATCH /tasks/{id}", ...)</code> (Module 2)</td>
+</tr>
+<tr>
+<td>Request logging</td>
+<td><code>withLogging</code> middleware wraps the whole mux</td>
+</tr>
+<tr>
+<td>Fast tests, no real DB</td>
+<td><code>fakeStore</code> + <code>httptest.NewRequest</code>/<code>NewRecorder</code></td>
+</tr>
+<tr>
+<td>Sentinel not-found error</td>
+<td><code>ErrNotFound</code>, checked via <code>errors.Is</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="level-4-master">Level 4 · Master<a class="headerlink" href="#level-4-master" title="Permanent link">&para;</a></h2>
+<h3 id="01-advanced-concurrency"><a href="../level-4/01-advanced-concurrency/">01 · Advanced Concurrency</a><a class="headerlink" href="#01-advanced-concurrency" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Need</th>
+<th>Tool</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Run N goroutines, fail-fast, propagate first error</td>
+<td><code>errgroup.WithContext</code> + <code>g.Go(func() error {...})</code></td>
+</tr>
+<tr>
+<td>Bound concurrent goroutines in a group</td>
+<td><code>g.SetLimit(n)</code></td>
+</tr>
+<tr>
+<td>Concurrent-safe counter</td>
+<td><code>atomic.Int64</code> (typed) or <code>atomic.AddInt64(&amp;x, ...)</code></td>
+</tr>
+<tr>
+<td>Concurrent-safe map, disjoint keys</td>
+<td><code>sync.Map</code> — <code>Store</code>, <code>Load</code>, <code>Range</code>, <code>Delete</code></td>
+</tr>
+<tr>
+<td>Concurrent-safe map, general case</td>
+<td><code>map[K]V</code> + <code>sync.RWMutex</code></td>
+</tr>
+<tr>
+<td>Wait for goroutines, no error propagation needed</td>
+<td><code>sync.WaitGroup</code> (<a href="../level-3/01-concurrency-patterns/">Level 3</a>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="02-microservices-patterns"><a href="../level-4/02-microservices-patterns/">02 · Microservices Patterns</a><a class="headerlink" href="#02-microservices-patterns" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concern</th>
+<th>Pattern</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Never hang forever on a dependency</td>
+<td><code>&amp;http.Client{Timeout: d}</code></td>
+</tr>
+<tr>
+<td>Fake a downstream service for tests</td>
+<td><code>httptest.NewServer(mux)</code></td>
+</tr>
+<tr>
+<td>Stop calling a failing dependency</td>
+<td>Circuit breaker: count failures, <code>open</code> after threshold</td>
+</tr>
+<tr>
+<td>Recover after cooldown</td>
+<td>Half-open state — one trial call after a wait, not shown above</td>
+</tr>
+<tr>
+<td>Bound total time across N dependency calls</td>
+<td><code>errgroup.WithContext</code> (<a href="../level-4/01-advanced-concurrency/">Module 1</a>)</td>
+</tr>
+<tr>
+<td>Reuse connections</td>
+<td>One shared <code>*http.Client</code> per destination, not one per call</td>
+</tr>
+</tbody>
+</table>
+<h3 id="03-grpc-basics"><a href="../level-4/03-grpc-basics/">03 · gRPC Basics</a><a class="headerlink" href="#03-grpc-basics" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Command / API</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Install tooling</td>
+<td><code>brew install protobuf</code>; <code>go install google.golang.org/protobuf/cmd/protoc-gen-go@latest</code>; <code>go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest</code></td>
+</tr>
+<tr>
+<td>Generate Go code</td>
+<td><code>protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative x.proto</code></td>
+</tr>
+<tr>
+<td>Start a server</td>
+<td><code>grpc.NewServer()</code>; <code>pb.RegisterXServer(s, impl)</code>; <code>s.Serve(lis)</code></td>
+</tr>
+<tr>
+<td>Connect a client</td>
+<td><code>grpc.NewClient(addr, grpc.WithTransportCredentials(insecure.NewCredentials()))</code></td>
+</tr>
+<tr>
+<td>Bound an RPC call</td>
+<td><code>context.WithTimeout(ctx, d)</code>, pass <code>ctx</code> as the call's first argument</td>
+</tr>
+<tr>
+<td>Nil-safe field access</td>
+<td>Generated getters: <code>msg.GetField()</code>, never <code>msg.Field</code> on a possibly-nil message</td>
+</tr>
+<tr>
+<td>Typed error with status code</td>
+<td><code>status.Errorf(codes.NotFound, "...")</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="04-production-grade-apis"><a href="../level-4/04-production-grade-apis/">04 · Production-Grade APIs</a><a class="headerlink" href="#04-production-grade-apis" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concern</th>
+<th>Setting / pattern</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Protect against slow header writers</td>
+<td><code>http.Server{ReadHeaderTimeout: d}</code></td>
+</tr>
+<tr>
+<td>Bound full request/response time</td>
+<td><code>ReadTimeout</code>, <code>WriteTimeout</code></td>
+</tr>
+<tr>
+<td>Idle keep-alive connections</td>
+<td><code>IdleTimeout</code></td>
+</tr>
+<tr>
+<td>Structured JSON error response</td>
+<td>Custom <code>apiError</code> type + a <code>writeError</code> helper</td>
+</tr>
+<tr>
+<td>Survive a handler panic</td>
+<td><code>recoverMiddleware</code> wrapping the whole mux</td>
+</tr>
+<tr>
+<td>Stop accepting new work, finish in-flight</td>
+<td><code>srv.Shutdown(ctx)</code> on <code>SIGINT</code>/<code>SIGTERM</code></td>
+</tr>
+<tr>
+<td>Distinguish clean shutdown from real failure</td>
+<td><code>errors.Is(err, http.ErrServerClosed)</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="05-testing-at-scale-ci"><a href="../level-4/05-testing-at-scale-ci/">05 · Testing at Scale &amp; CI</a><a class="headerlink" href="#05-testing-at-scale-ci" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Run tests with coverage</td>
+<td><code>go test -coverprofile=cover.out ./...</code></td>
+</tr>
+<tr>
+<td>Per-function coverage report</td>
+<td><code>go tool cover -func=cover.out</code></td>
+</tr>
+<tr>
+<td>Browsable HTML coverage</td>
+<td><code>go tool cover -html=cover.out -o cover.html</code></td>
+</tr>
+<tr>
+<td>Gate a test behind a build tag</td>
+<td><code>//go:build integration</code> (first line, blank line after)</td>
+</tr>
+<tr>
+<td>Run tagged tests</td>
+<td><code>go test -tags=integration ./...</code></td>
+</tr>
+<tr>
+<td>Race detector in CI</td>
+<td><code>go test -race ./...</code></td>
+</tr>
+<tr>
+<td>Lint beyond <code>go vet</code></td>
+<td><code>golangci-lint run</code> (<code>golangci-lint-action</code> in Actions)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="06-deployment-with-docker"><a href="../level-4/06-deployment-docker/">06 · Deployment with Docker</a><a class="headerlink" href="#06-deployment-with-docker" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Command / directive</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Static cross-compile for Linux</td>
+<td><code>CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build ...</code></td>
+</tr>
+<tr>
+<td>Strip debug info, shrink binary</td>
+<td><code>-ldflags="-s -w"</code></td>
+</tr>
+<tr>
+<td>Minimal build stage</td>
+<td><code>FROM golang:1.23 AS build</code></td>
+</tr>
+<tr>
+<td>Minimal final image (CGO-free, no TLS needed)</td>
+<td><code>FROM scratch</code></td>
+</tr>
+<tr>
+<td>Minimal final image, TLS or <code>/etc/passwd</code> needed</td>
+<td><code>FROM gcr.io/distroless/static</code></td>
+</tr>
+<tr>
+<td>Cache module downloads across builds</td>
+<td><code>COPY go.mod go.sum ./</code> then <code>go mod download</code>, <em>before</em> <code>COPY . .</code></td>
+</tr>
+<tr>
+<td>Copy the built binary into the final stage</td>
+<td><code>COPY --from=build /app /app</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="07-observability"><a href="../level-4/07-observability/">07 · Observability</a><a class="headerlink" href="#07-observability" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Need</th>
+<th>API</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Structured JSON logs</td>
+<td><code>slog.New(slog.NewJSONHandler(os.Stdout, nil))</code></td>
+</tr>
+<tr>
+<td>Log a field</td>
+<td><code>slog.String(k, v)</code>, <code>slog.Int(k, v)</code>, <code>slog.Duration(k, d)</code></td>
+</tr>
+<tr>
+<td>Counter metric</td>
+<td><code>promauto.NewCounterVec(prometheus.CounterOpts{...}, labels)</code></td>
+</tr>
+<tr>
+<td>Histogram (latency) metric</td>
+<td><code>promauto.NewHistogramVec(prometheus.HistogramOpts{...}, labels)</code></td>
+</tr>
+<tr>
+<td>Increment/observe</td>
+<td><code>.WithLabelValues(...).Inc()</code> / <code>.Observe(seconds)</code></td>
+</tr>
+<tr>
+<td>Expose a scrape endpoint</td>
+<td><code>mux.Handle("GET /metrics", promhttp.Handler())</code></td>
+</tr>
+<tr>
+<td>Capture the response status in middleware</td>
+<td>Wrap <code>http.ResponseWriter</code>, override <code>WriteHeader</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="08-security-best-practices"><a href="../level-4/08-security-best-practices/">08 · Security Best Practices</a><a class="headerlink" href="#08-security-best-practices" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Need</th>
+<th>API</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hash a password</td>
+<td><code>bcrypt.GenerateFromPassword([]byte(pw), bcrypt.DefaultCost)</code></td>
+</tr>
+<tr>
+<td>Verify a password</td>
+<td><code>bcrypt.CompareHashAndPassword(hash, pw) == nil</code></td>
+</tr>
+<tr>
+<td>Sign a message</td>
+<td><code>hmac.New(sha256.New, secret)</code> then <code>.Write</code>/<code>.Sum(nil)</code></td>
+</tr>
+<tr>
+<td>Compare secrets safely</td>
+<td><code>subtle.ConstantTimeCompare(a, b) == 1</code></td>
+</tr>
+<tr>
+<td>Cryptographically secure random bytes</td>
+<td><code>crypto/rand.Read(buf)</code></td>
+</tr>
+<tr>
+<td>Parameterized SQL</td>
+<td><code>db.Query("... WHERE x = ?", val)</code> — never string-concatenate</td>
+</tr>
+<tr>
+<td>Per-endpoint rate limiting</td>
+<td><code>rate.NewLimiter(eventsPerSecond, burst)</code>, <code>.Allow()</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="09-performance-optimization"><a href="../level-4/09-performance-optimization/">09 · Performance Optimization</a><a class="headerlink" href="#09-performance-optimization" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Optimization</th>
+<th>How</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Avoid slice regrowth</td>
+<td><code>make([]T, 0, n)</code> when <code>n</code> is known ahead of time</td>
+</tr>
+<tr>
+<td>Avoid a misleading zero-allocation benchmark</td>
+<td>Assign the result to a package-level <code>sink</code> var after the loop</td>
+</tr>
+<tr>
+<td>See why something escapes to the heap</td>
+<td><code>go build -gcflags="-m" .</code></td>
+</tr>
+<tr>
+<td>Prefer values over pointers for small structs</td>
+<td><code>[]T</code> in hot paths, <code>[]*T</code> only for large/shared/mutable elements</td>
+</tr>
+<tr>
+<td>Confirm a benchmark isn't dead code</td>
+<td>Compare with and without a sink; a real workload's numbers shouldn't collapse to zero</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>Go deeper with the full <a href="../">Go Mastery Path</a> curriculum or test yourself with the <a href="../interview-questions/">interview questions</a>.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+  
+  <nav class="mp-related" aria-label="Related free courses">
+    <h2>Related free courses</h2>
+    <ul>
+      <li><a href="https://learnmasterypath.com/python-mastery-path/">Python</a></li><li><a href="https://learnmasterypath.com/java-mastery-path/">Java</a></li><li><a href="https://learnmasterypath.com/javascript-mastery-path/">JavaScript</a></li><li><a href="https://learnmasterypath.com/typescript-mastery-path/">TypeScript</a></li><li><a href="https://learnmasterypath.com/csharp-mastery-path/">C#</a></li>
+      <li><a href="https://learnmasterypath.com/">All 100+ courses &rarr;</a></li>
+    </ul>
+  </nav>
+  
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../interview-questions/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Interview Questions">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Interview Questions
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../level-1/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Overview
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+  <div class="mp-foot">
+    <div class="mp-foot-inner">
+      <a class="mp-foot-brand" href="https://learnmasterypath.com/"><svg class="mp-mark" viewBox="0 0 160 160" role="img" aria-label="Mastery Path logo">
+  <circle cx="80" cy="80" r="74" fill="#FAF7EF" stroke="#2FA98D" stroke-width="5"/>
+  <rect class="mp-bar mp-bar-1" x="36" y="90" width="17" height="24" rx="5" fill="#2FA98D"/>
+  <rect class="mp-bar mp-bar-2" x="59" y="74" width="17" height="40" rx="5" fill="#7FC9B7"/>
+  <rect class="mp-bar mp-bar-3" x="82" y="56" width="17" height="58" rx="5" fill="#E0B457"/>
+  <rect class="mp-bar mp-bar-4" x="105" y="38" width="17" height="76" rx="5" fill="#C97B4A"/>
+  <circle class="mp-dot" cx="44.5" cy="82" r="7" fill="#22261f"/>
+</svg><span>Mastery Path</span></a>
+      <nav class="mp-sitelinks" aria-label="Site and legal links">
+        <a href="https://learnmasterypath.com/">All courses</a>
+        <a href="https://learnmasterypath.com/about.html">About</a>
+        <a href="https://learnmasterypath.com/contact.html">Contact</a>
+        <a href="https://learnmasterypath.com/go-mastery-path/privacy/">Privacy Policy</a>
+        <a href="https://learnmasterypath.com/terms.html">Terms</a>
+        <a href="https://learnmasterypath.com/go-mastery-path/license/">License</a>
+        <a href="https://learnmasterypath.com/verify/">Verify a certificate</a>
+      </nav>
+    </div>
+    <p class="mp-license-note">
+      © 2026 Vinod Kumar Sigilipelli · Except where otherwise noted, lesson content is licensed under
+      <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> and code examples under the
+      <a href="https://opensource.org/license/mit">MIT License</a>.
+    </p>
+  </div>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.path", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.footer", "navigation.indexes", "toc.follow", "content.code.copy", "content.code.annotate", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="../javascripts/progress-tracker.js"></script>
+      
+        <script src="../javascripts/final-quiz.js"></script>
+      
+    
+  </body>
+</html>
